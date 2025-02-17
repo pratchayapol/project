@@ -2,7 +2,7 @@
 
     $servername = "lockingdevice.pcnone.com";  // เปลี่ยนจาก localhost เป็นโดเมนของคุณ
     $username = "root";  // ชื่อผู้ใช้ที่ใช้เชื่อมต่อกับฐานข้อมูล
-    $password = "@Project67 ";  // รหัสผ่านของฐานข้อมูล ถ้ามี
+    $password = "";  // รหัสผ่านของฐานข้อมูล ถ้ามี
     $dbname = "project";  // ชื่อฐานข้อมูล
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);
