@@ -38,7 +38,7 @@
                 <label for="first_name" class="block text-sm font-medium text-gray-700">ชื่อจริง</label>
                 <input type="text" id="first_name" name="first_name" required
                 class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
-                placeholder="ชื่จริง" required>
+                placeholder="ชื่อจริง" required>
             </div>
 
             <div>
