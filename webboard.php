@@ -56,17 +56,17 @@
             </button>
         </div>
         <ul class="mt-4">
-            <li><a href="login.php" class="block px-4 py-2 hover:bg-blue-100 menu-item">เข้าสู่ระบบ</a></li>
-            <li><a href="register.php" class="block px-4 py-2 hover:bg-blue-100 menu-item">สมัครเข้าสู่ระบบ</a></li>
-            <li><a href="approval.php" class="block px-4 py-2 hover:bg-blue-100 menu-item">ตรวจสอบสถานะ</a></li>
+            <li><a href="login.php" class="block px-4 py-2 hover:bg-blue-100 menu-item font-sans">เข้าสู่ระบบ</a></li>
+            <li><a href="register.php" class="block px-4 py-2 hover:bg-blue-100 menu-item font-sans">สมัครเข้าสู่ระบบ</a></li>
+            <li><a href="approval.php" class="block px-4 py-2 hover:bg-blue-100 menu-item font-sans">ตรวจสอบสถานะ</a></li>
         </ul>
     </div>
 
     <!-- เนื้อหาหลัก -->
     <div class="container mx-auto mt-12 px-6">
         <div class="bg-white shadow-md rounded-lg p-8">
-            <h1 class="text-3xl gradient-heading bordered-heading mb-6">คู่มือการเข้าใช้ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่ายสำหรับเจ้าหน้าที่</h1>
-            <p class="text-gray-700 text-lg mb-8" style="font-size: 24px;">คู่มือการเข้าใช้ระบบรับรหัสและล็อกล้อ</p>
+            <h1 class="text-3xl gradient-heading bordered-heading mb-6 font-sans">คู่มือการเข้าใช้ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่ายสำหรับเจ้าหน้าที่</h1>
+            <p class="text-gray-700 text-lg mb-8" style="font-size: 24px; font-sans">คู่มือการเข้าใช้ระบบรับรหัสและล็อกล้อ</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- ปุ่มไอคอนข้อมูล -->
@@ -75,7 +75,7 @@
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">1.กดปุ่มบนอุปกรณ์</span>
+                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">1.กดปุ่มบนอุปกรณ์</span>
                 </button>
 
                 <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
@@ -83,7 +83,7 @@
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">2.เชื่อมต่อ wi-fi : ESP32_LOCK</span>
+                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">2.เชื่อมต่อ wi-fi : ESP32_LOCK</span>
                 </button>
 
                 <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
@@ -91,7 +91,7 @@
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">3.สแกน QRCode บนกล่องอุปกรณ์</span>
+                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">3.สแกน QRCode บนกล่องอุปกรณ์</span>
                 </button>
 
                 <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
@@ -99,7 +99,7 @@
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">4.ล็อกอินบนเว็บไซต์ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่าย</span>
+                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">4.ล็อกอินบนเว็บไซต์ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่าย</span>
                 </button>
 
                 <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
@@ -107,7 +107,7 @@
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">5.กดดำเนินการต่อและรับรหัสผ่าน</span>
+                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">5.กดดำเนินการต่อและรับรหัสผ่าน</span>
                 </button>
 
                 <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
@@ -115,17 +115,17 @@
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">6.รับรหัสปลดล็อกอุปกรณ์และนำไปบันทึกในระบบบันทึกข้อมูลรถยนต์</span>
+                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">6.รับรหัสปลดล็อกอุปกรณ์และนำไปบันทึกในระบบบันทึกข้อมูลรถยนต์</span>
                 </button>
             </div>
             <div class="bg-white shadow-md rounded-lg p-8 flex flex-col items-center justify-center">
-                <p class="text-gray-700 text-lg mb-8 text-center" style="font-size: 24px;">QR Code สำหรับเข้าใช้ระบบปลดล็อกอุปกรณ์สำหรับเจ้าหน้าที่แบบสแกนจ่าย</p>
+                <p class="text-gray-700 text-lg mb-8 text-center" style="font-size: 24px; font-sans">QR Code สำหรับเข้าใช้ระบบปลดล็อกอุปกรณ์สำหรับเจ้าหน้าที่แบบสแกนจ่าย</p>
                 <img
                     src="https://scontent-atl3-1.xx.fbcdn.net/v/t1.15752-9/472674903_1870284703504796_8326530023000965747_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeHUCagIwpxmNJryeOib0IvcMGKEtS1JS_cwYoS1LUlL99gUPtk_2oum8-b8CWtAW9eQO2-Qcih9FZvz8I4AxoWc&_nc_ohc=4qRRVWz7KnkQ7kNvgGSRcjc&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&oh=03_Q7cD1gE4-IheKlBWOJTZ2dgZO6cHQ8gPyVr_rY_cwisrCTMH8g&oe=67B05B67"
                     alt="คู่มือการสมัคร"
                     class="max-w-full"
                 />
-                <p class="text-gray-700 text-lg mb-8 text-center" style="font-size: 24px;">หรือเข้าที่ IP : 192.16.4.1</p>
+                <p class="text-gray-700 text-lg mb-8 text-center font-sans" style="font-size: 24px;">หรือเข้าที่ IP : 192.16.4.1</p>
             </div>
         </div>
     </div>
