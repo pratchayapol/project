@@ -91,22 +91,25 @@ $conn->close();
         </nav>
     </div>
     <div class="container mx-auto px-4 py-6">
-        <div class="bg-white shadow-lg rounded-lg p-4 md:p-6">
-        <div class="mb-6">
+      <div class="bg-white shadow-lg rounded-lg p-4 md:p-6">
+        <div class="mb-6 flex items-center space-x-2">
           <input 
             type="text" 
             id="searchInput" 
             class="p-2 border border-gray-300 rounded w-full" 
             placeholder="ค้นหาข้อมูล..."
+            onkeyup="searchTable()" 
           />
           <button 
-            onclick="searchTable()" 
-            class="mt-2 p-2 bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white rounded w-full"
+            onclick="clearSearch()" 
+            class="p-2 bg-gray-400 text-white rounded"
           >
-            ค้นหา
+            ล้าง
           </button>
         </div>
-
+        <p id="noDataMessage" class="text-red-500 text-center hidden">ไม่พบข้อมูล</p>
+      </div>
+    </div>
         <div class="overflow-x-auto">
         <table id="carInfoTable" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
             <thead class="bg-gray-200">
@@ -145,6 +148,7 @@ $conn->close();
     function searchTable() {
       const input = document.getElementById("searchInput").value.toLowerCase();
       const rows = document.querySelectorAll("#dataTable tbody tr");
+      let found = false;
 
       rows.forEach(row => {
         const cells = row.querySelectorAll("td");
@@ -157,7 +161,15 @@ $conn->close();
         });
 
         row.style.display = showRow ? "" : "none";
+        if (showRow) found = true;
       });
+
+      document.getElementById("noDataMessage").classList.toggle("hidden", found);
+    }
+
+    function clearSearch() {
+      document.getElementById("searchInput").value = "";
+      searchTable();
     }
     document.addEventListener('DOMContentLoaded', () => {
             const menuToggle = document.getElementById('menu-toggle');
