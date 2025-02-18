@@ -83,15 +83,15 @@ $stmt->close();
                 <li><a href="user_information.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">ตรวจสอบข้อมูล</a></li>
                 <li><a href="edit.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">แก้ไขข้อมูล</a></li>
                 <li><a href="transfer.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">ชำระค่าปรับ</a></li>
-                <!-- <li><a href="sum_unlock.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">ตรวจสอบรหัสปลดล็อค</a></li> -->
+                <!-- <li><a href="sum_unlock.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">ตรวจสอบรหัสปลดล็อก</a></li> -->
                 <li><a href="webhome.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">ออกจากระบบชำระค่าปรับ</a></li>
             </ul>
         </nav>
     </div>
     <div class="container mx-auto mt-12 px-6">
         <div class="bg-white shadow-md rounded-lg p-8">
-            <h1 class="text-3xl gradient-heading bordered-heading mb-6">คู่มือการเข้าใช้ระบบอุปกรณ์ล็อคล้อแบบสแกนจ่ายสำหรับผู้ชำระค่าปรับ</h1>
-            <p class="text-gray-700 text-lg mb-8" style="font-size: 24px;">คู่มือการเข้าใช้ระบบสแกนจ่ายและระบบกรอกรหัสล็อคล้อ</p>
+            <h1 class="text-3xl gradient-heading bordered-heading mb-6">คู่มือการเข้าใช้ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่ายสำหรับผู้ชำระค่าปรับ</h1>
+            <p class="text-gray-700 text-lg mb-8" style="font-size: 24px;">คู่มือการเข้าใช้ระบบสแกนจ่ายและระบบกรอกรหัสล็อกล้อ</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- ปุ่มไอคอนข้อมูล -->
@@ -124,7 +124,7 @@ $stmt->close();
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">4.หลักฐานถูกต้องจะได้รับรหัสปลดล็อคอุปกรณ์</span>
+                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">4.หลักฐานถูกต้องจะได้รับรหัสปลดล็อกอุปกรณ์</span>
                 </button>
 
                 <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
@@ -156,11 +156,11 @@ $stmt->close();
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">8.กรอกรหัสที่ได้รับเพื่อปลดล็อคอุปกรณ์</span>
+                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">8.กรอกรหัสที่ได้รับเพื่อปลดล็อกอุปกรณ์</span>
                 </button>
             </div>
             <div class="bg-white shadow-md rounded-lg p-8 flex flex-col items-center justify-center">
-                <p class="text-gray-700 text-lg mb-8 text-center" style="font-size: 24px;">QR Code สำหรับเข้าใช้ระบบปกรอกรหัสเพื่อปลดล็อคอุปกรณ์</p>
+                <p class="text-gray-700 text-lg mb-8 text-center" style="font-size: 24px;">QR Code สำหรับเข้าใช้ระบบปกรอกรหัสเพื่อปลดล็อกอุปกรณ์</p>
                 <img
                     src="https://scontent-atl3-1.xx.fbcdn.net/v/t1.15752-9/472674903_1870284703504796_8326530023000965747_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeHUCagIwpxmNJryeOib0IvcMGKEtS1JS_cwYoS1LUlL99gUPtk_2oum8-b8CWtAW9eQO2-Qcih9FZvz8I4AxoWc&_nc_ohc=4qRRVWz7KnkQ7kNvgGSRcjc&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&oh=03_Q7cD1gE4-IheKlBWOJTZ2dgZO6cHQ8gPyVr_rY_cwisrCTMH8g&oe=67B05B67"
                     alt="คู่มือการสมัคร"

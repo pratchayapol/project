@@ -179,7 +179,7 @@ if (!$result) {
                     <th class="border px-2 py-1 whitespace-nowrap">ยี่ห้อ</th>
                     <th class="border px-2 py-1 whitespace-nowrap">ยอดชำระค่าปรับ</th>
                     <th class="border px-2 py-1 whitespace-nowrap">อุปกรณ์</th>
-                    <th class="border px-2 py-1 whitespace-nowrap">รหัสปลดล็อค</th>
+                    <th class="border px-2 py-1 whitespace-nowrap">รหัสปลดล็อก</th>
                     <th class="border px-2 py-1 whitespace-nowrap">ชื่อ-สกุล</th>
                     <th class="border px-2 py-1 whitespace-nowrap">อีเมล</th>
                     <th class="border px-2 py-1 whitespace-nowrap">วันที่บันทึก</th>

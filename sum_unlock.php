@@ -131,10 +131,10 @@ $conn->close();
         <div style="text-align: center; margin-top: 50px;">
             <?php if (!empty($unlock_codes)): ?>
                 <?php foreach ($unlock_codes as $code): ?>
-                    <p style="font-size: 24px; font-weight: bold; color: green;">รหัสปลดล็อคของคุณคือ: <?php echo $code; ?></p>
+                    <p style="font-size: 24px; font-weight: bold; color: green;">รหัสปลดล็อกของคุณคือ: <?php echo $code; ?></p>
                 <?php endforeach; ?>
             <?php else: ?>
-                <p style="color: red;">ไม่พบรหัสปลดล็อค</p>
+                <p style="color: red;">ไม่พบรหัสปลดล็อก</p>
             <?php endif; ?>
             <button type="button" onclick="copyAndOpen()" class="w-full sm:w-auto px-10 py-1 bg-indigo-500 text-white rounded-md shadow-sm">
                 คัดลอก

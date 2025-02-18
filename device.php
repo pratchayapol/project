@@ -134,7 +134,7 @@
                         <th class="border px-2 py-1 whitespace-nowrap">ประเภทรถ</th>
                         <th class="border px-2 py-1 whitespace-nowrap">ยี่ห้อรถ</th>
                         <th class="border px-2 py-1 whitespace-nowrap">ยอดชำระค่าปรับ</th>
-                        <th class="border px-2 py-1 whitespace-nowrap">รหัสปลดล็อค</th>                        
+                        <th class="border px-2 py-1 whitespace-nowrap">รหัสปลดล็อก</th>                        
                         <th class="border px-2 py-1 whitespace-nowrap">อุปกรณ์เครื่องที่</th>
                         <th class="border px-2 py-1 whitespace-nowrap">เวลาที่เพิ่ม</th>
                     </tr>

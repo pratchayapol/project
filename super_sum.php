@@ -116,7 +116,7 @@ $conn->close();
                   <th class="border px-2 py-1 whitespace-nowrap">นามสกุล</th>
                   <th class="border px-2 py-1 whitespace-nowrap">อีเมล</th>
                   <th class="border px-2 py-1 whitespace-nowrap">เบอร์โทรติดต่อ</th>
-                  <th class="border px-2 py-1 whitespace-nowrap">รหัสเข้าระบบล็อคอุปกรณ์</th>
+                  <th class="border px-2 py-1 whitespace-nowrap">รหัสเข้าระบบล็อกอุปกรณ์</th>
               </tr>
             </thead>
             <tbody>

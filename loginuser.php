@@ -87,9 +87,9 @@
             </div>
 
             <div class="mb-4">
-                <label for="device_user" class="block text-sm font-medium text-gray-700">หมายเลขอุปกรณ์ล็อค:</label>
+                <label for="device_user" class="block text-sm font-medium text-gray-700">หมายเลขอุปกรณ์ล็อก:</label>
                 <select id="id" name="device_user" required class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
-                    <option value="">--เลือกหมายเลขอุปกรณ์ล็อค--</option>
+                    <option value="">--เลือกหมายเลขอุปกรณ์ล็อก--</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>

@@ -160,7 +160,7 @@ $conn->close();
                     <button 
                         class="mt-4 bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transform transition-all duration-300" 
                         onclick="showUnlockCode('<?php echo $row['unlockcar']; ?>')">
-                        <i class="fas fa-unlock-alt"></i> แสดงรหัสปลดล็อค
+                        <i class="fas fa-unlock-alt"></i> แสดงรหัสปลดล็อก
                     </button>
                 </div>
 
@@ -169,9 +169,9 @@ $conn->close();
                         <!-- ไอคอนแจ้งเตือน -->
                         <img src="https://www.svgrepo.com/show/500740/warn-triangle-filled.svg" class="h-6 w-6 text-yellow-500 mr-3" alt="Warning Icon"/>
                         <!-- ข้อความแจ้งเตือน -->
-                        <h4 class="text-lg font-semibold text-yellow-600">ขั้นตอนการปลดล็อคล้อด้วยตนเอง</h4>
+                        <h4 class="text-lg font-semibold text-yellow-600">ขั้นตอนการปลดล็อกล้อด้วยตนเอง</h4>
                     </div>
-                    <span class="text-gray-700 mt-2">ขั้นตอนการปลดล็อคอุปกรณ์จะแสดงอยู่ที่</span>
+                    <span class="text-gray-700 mt-2">ขั้นตอนการปลดล็อกอุปกรณ์จะแสดงอยู่ที่</span>
                     <span class="mt-4">
                         <a href="show_user_db1.php" class="text-blue-500 hover:underline">หน้าหลัก</a>
                     </span>
@@ -185,7 +185,7 @@ $conn->close();
     <script>
         function showUnlockCode(code) {
             Swal.fire({
-                title: 'รหัสปลดล็อค',
+                title: 'รหัสปลดล็อก',
                 html: `<i class="fas fa-unlock-alt fa-3x"></i><br><br>รหัสของคุณคือ: ${code}`, // เพิ่มไอคอน unlock
                 icon: 'info',
                 confirmButtonText: 'ปิด'
