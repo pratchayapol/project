@@ -67,6 +67,9 @@ $conn->close();
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+        }       
         /* เมนูด้านซ้าย */
         #left-menu {
             transform: translateX(-100%);
@@ -105,14 +108,14 @@ $conn->close();
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <h1 class="text-xl font-semibold text-center flex-grow">รหัสปลดล็อกอุปกรณ์ล็อกล้อ</h1>
+            <h1 class="text-xl font-sans text-center flex-grow">รหัสปลดล็อกอุปกรณ์ล็อกล้อ</h1>
         </div>
     </header>
 
     <!-- Left Sliding Menu -->
     <div id="left-menu" class="fixed top-0 left-0 bg-white shadow-lg">
         <div class="p-4 bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white flex justify-between items-center">
-            <h2 class=" text-lg font-semibold">เมนู</h2>
+            <h2 class=" text-lg font-sans">เมนู</h2>
             <button id="menu-close" class="text-gray-600 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />

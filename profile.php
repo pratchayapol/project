@@ -34,6 +34,7 @@ if (!$user) {
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
+            font-family: 'Roboto', sans-serif;
             background: url('https://cdn.pixabay.com/photo/2019/04/10/11/56/watercolor-4116932_640.png') no-repeat center center fixed;
             background-size: cover;
         }
@@ -55,16 +56,16 @@ if (!$user) {
                 <h2 class="text-3xl font-extrabold text-gray-800">ข้อมูลส่วนตัว</h2>
                 <div class="mt-8 space-y-6">
                     <div class="text-left bg-gray-100 p-2 rounded-lg shadow">
-                        <p class="text-lg text-gray-700"><i class="fas fa-user text-gray-500 mr-2"></i><span class="font-semibold text-gray-900">ชื่อจริง:</span> <?php echo htmlspecialchars($user['firstname']); ?></p>
+                        <p class="text-lg text-gray-700"><i class="fas fa-user text-gray-500 mr-2"></i><span class="font-sans text-gray-900">ชื่อจริง:</span> <?php echo htmlspecialchars($user['firstname']); ?></p>
                     </div>
                     <div class="text-left bg-gray-100 p-2 rounded-lg shadow">
-                        <p class="text-lg text-gray-700"><i class="fas fa-user text-gray-500 mr-2"></i><span class="font-semibold text-gray-900">นามสกุล:</span> <?php echo htmlspecialchars($user['lastname']); ?></p>
+                        <p class="text-lg text-gray-700"><i class="fas fa-user text-gray-500 mr-2"></i><span class="font-sans text-gray-900">นามสกุล:</span> <?php echo htmlspecialchars($user['lastname']); ?></p>
                     </div>
                     <div class="text-left bg-gray-100 p-2 rounded-lg shadow">
-                        <p class="text-lg text-gray-700"><i class="fas fa-envelope text-gray-500 mr-2"></i><span class="font-semibold text-gray-900">อีเมล:</span> <?php echo htmlspecialchars($user['email']); ?></p>
+                        <p class="text-lg text-gray-700"><i class="fas fa-envelope text-gray-500 mr-2"></i><span class="font-sans text-gray-900">อีเมล:</span> <?php echo htmlspecialchars($user['email']); ?></p>
                     </div>
                     <div class="text-left bg-gray-100 p-2 rounded-lg shadow">
-                        <p class="text-lg text-gray-700"><i class="fas fa-phone text-gray-500 mr-2"></i><span class="font-semibold text-gray-900">เบอร์โทรที่ติดต่อได้:</span> <?php echo htmlspecialchars($user['phone']); ?></p>
+                        <p class="text-lg text-gray-700"><i class="fas fa-phone text-gray-500 mr-2"></i><span class="font-sans text-gray-900">เบอร์โทรที่ติดต่อได้:</span> <?php echo htmlspecialchars($user['phone']); ?></p>
                     </div>
                 </div>
 

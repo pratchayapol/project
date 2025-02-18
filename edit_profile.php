@@ -108,6 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <style>
         body {
+            font-family: 'Roboto', sans-serif;
             background: url('https://cdn.pixabay.com/photo/2019/04/10/11/56/watercolor-4116932_640.png') no-repeat center center fixed;
             background-size: cover;
         }
@@ -142,33 +143,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         <!-- Profile Image Upload -->
         <div class="mb-4">
-            <label for="profile_image" class="block text-gray-700 font-semibold mb-2">อัพโหลดรูปภาพ </label>
+            <label for="profile_image" class="block text-gray-700 font-sans mb-2">อัพโหลดรูปภาพ </label>
             <div class="flex items-center">
                 <img src="uploads/<?php echo htmlspecialchars($user['profile_image'] ?? 'default.png'); ?>" alt="Profile Image" class="w-24 h-24 object-cover rounded-full mr-4">
-                <input type="file" name="profile_image" id="profile_image" class="block w-full text-sm text-gray-500 file:bg-gray-100 file:border-0 file:mr-4 file:rounded-lg file:px-4 file:py-2 file:text-sm file:font-semibold file:text-gray-700 hover:file:bg-gray-200">
+                <input type="file" name="profile_image" id="profile_image" class="block w-full text-sm text-gray-500 file:bg-gray-100 file:border-0 file:mr-4 file:rounded-lg file:px-4 file:py-2 file:text-sm file:font-sans file:text-gray-700 hover:file:bg-gray-200">
             </div>
         </div>
 
         <div class="mb-4">
-            <label for="firstname" class="block text-gray-700 font-semibold mb-2">
+            <label for="firstname" class="block text-gray-700 font-sans mb-2">
                 <i class="fas fa-user text-gray-500 mr-2"></i> ชื่อจริง
             </label>
             <input type="text" id="firstname" name="firstname" value="<?php echo htmlspecialchars($user['firstname'] ?? ''); ?>" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
         </div>
         <div class="mb-4">
-            <label for="lastname" class="block text-gray-700 font-semibold mb-2">
+            <label for="lastname" class="block text-gray-700 font-sans mb-2">
                 <i class="fas fa-user text-gray-500 mr-2"></i> นามสกุล
             </label>
             <input type="text" id="lastname" name="lastname" value="<?php echo htmlspecialchars($user['lastname']); ?>" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
         </div>
         <div class="mb-4">
-            <label for="phone" class="block text-gray-700 font-semibold mb-2">
+            <label for="phone" class="block text-gray-700 font-sans mb-2">
                 <i class="fas fa-phone text-gray-500 mr-2"></i> เบอร์โทรศัพท์
             </label>
             <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($user['phone'] ?? ''); ?>" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
         </div>
         <div class="mb-4 relative">
-            <label for="current_password" class="block text-gray-700 font-semibold mb-2">
+            <label for="current_password" class="block text-gray-700 font-sans mb-2">
                 <i class="fas fa-lock text-gray-500 mr-2"></i> รหัสผ่านเดิม
             </label>
             <div class="relative">
@@ -186,7 +187,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <!-- New Password -->
         <div class="mb-4 relative">
-            <label for="new_password" class="block text-gray-700 font-semibold mb-2">
+            <label for="new_password" class="block text-gray-700 font-sans mb-2">
                 <i class="fas fa-lock text-gray-500 mr-2"></i> ตั้งรหัสผ่านใหม่
             </label>
             <div class="relative">
@@ -204,7 +205,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <!-- Confirm New Password -->
         <div class="mb-4 relative">
-            <label for="confirm_password" class="block text-gray-700 font-semibold mb-2">
+            <label for="confirm_password" class="block text-gray-700 font-sans mb-2">
                 <i class="fas fa-lock text-gray-500 mr-2"></i> ยืนยันรหัสผ่านใหม่
             </label>
             <div class="relative">

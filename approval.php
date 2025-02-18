@@ -43,6 +43,7 @@ $conn->close(); // ปิดการเชื่อมต่อฐานข้�
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
+            font-family: 'Roboto', sans-serif;
             background: url('https://cdn.pixabay.com/photo/2019/04/10/11/56/watercolor-4116932_640.png') no-repeat center center fixed;
             background-size: cover;
         }
@@ -111,7 +112,7 @@ $conn->close(); // ปิดการเชื่อมต่อฐานข้�
         <!-- Form -->
         <form method="POST" action="" class="space-y-3" onsubmit="showLoading()">
             <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                <label for="email" class="block text-sm font-sans text-gray-700 mb-1">
                     อีเมล์:
                 </label>
                 <input type="email" id="email" name="email" 
@@ -119,7 +120,7 @@ $conn->close(); // ปิดการเชื่อมต่อฐานข้�
                        placeholder="กรุณากรอกอีเมล@gmail.com" required>
             </div>
             <button type="submit" 
-            class="w-full bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300 font-medium py-2 px-4 rounded-lg shadow-sm mt-3">
+            class="w-full bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300 font-sans py-2 px-4 rounded-lg shadow-sm mt-3">
                 ตรวจสอบคำขอ
             </button>
         </form>
@@ -152,7 +153,7 @@ $conn->close(); // ปิดการเชื่อมต่อฐานข้�
                         บัญชีของคุณได้รับการอนุมัติแล้ว คุณสามารถดำเนินการต่อได้เลย!
                     </p>
                     <button onclick="window.location.href='login.php'" 
-                            class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg font-medium hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
+                            class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg font-sans hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
                         ดำเนินการต่อ
                     </button>
                 <?php else: ?>

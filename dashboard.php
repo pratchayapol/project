@@ -124,6 +124,9 @@ while ($row = $weeklyData->fetch_assoc()) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <style>
+        body{           
+             font-family: 'Roboto', sans-serif;
+            }
         #left-menu {
             transform: translateX(-100%);
             transition: transform 0.3s ease-in-out;
@@ -156,7 +159,7 @@ while ($row = $weeklyData->fetch_assoc()) {
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <h1 class="text-xl font-semibold" style="font-size: 16px;">สรุปยอดชำระค่าปรับรายเดือน</h1>
+            <h1 class="text-xl font-sans" style="font-size: 16px;">สรุปยอดชำระค่าปรับรายเดือน</h1>
             <div class="flex items-center space-x-6">
                 <div class="relative group cursor-pointer">
                     <!-- User Icon with External SVG -->
@@ -174,7 +177,7 @@ while ($row = $weeklyData->fetch_assoc()) {
     <!-- Left Sliding Menu -->
     <div id="left-menu" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg z-50">
         <div class="p-4 bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white flex justify-between items-center">
-            <h2 class=" text-lg font-semibold"></h2>
+            <h2 class=" text-lg font-sans"></h2>
             <button id="menu-close" class="text-gray-600 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -231,7 +234,7 @@ while ($row = $weeklyData->fetch_assoc()) {
             <!-- สรุปข้อมูลหลัก -->
             <div class="flex flex-col sm:flex-row justify-center items-center sm:space-x-4 mb-8">
                 <div class="bg-blue-100 text-blue-800 rounded-lg shadow-md p-6 w-full sm:w-1/3 text-center">
-                    <h3 class="text-lg sm:text-xl font-semibold">จำนวนเงินรวม</h3>
+                    <h3 class="text-lg sm:text-xl font-sans">จำนวนเงินรวม</h3>
                     <p class="text-xl sm:text-2xl font-bold mt-2"><?php echo number_format($totalAmount, 2); ?> บาท</p>
                 </div>
             </div>
@@ -276,13 +279,13 @@ while ($row = $weeklyData->fetch_assoc()) {
             </div>
             <!-- กราฟรายเดือน -->
             <div class="bg-white p-4 sm:p-6 rounded-lg shadow-lg mt-6">
-                <h3 class="text-lg sm:text-xl font-semibold text-gray-700 mb-4">กราฟรายเดือน</h3>
+                <h3 class="text-lg sm:text-xl font-sans text-gray-700 mb-4">กราฟรายเดือน</h3>
                 <div id="monthlyChart" class="w-full h-64"></div>
             </div>
 
             <!-- กราฟรายสัปดาห์ -->
             <div class="bg-white p-4 sm:p-6 rounded-lg shadow-lg mt-6">
-                <h3 class="text-lg sm:text-xl font-semibold text-gray-700 mb-4">กราฟรายสัปดาห์</h3>
+                <h3 class="text-lg sm:text-xl font-sans text-gray-700 mb-4">กราฟรายสัปดาห์</h3>
                 <div id="weeklyChart" class="w-full h-64"></div>
             </div>
         </div>

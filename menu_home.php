@@ -47,6 +47,9 @@ $password_lock = htmlspecialchars($user['password_lock']);
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
         #left-menu {
             transform: translateX(-100%);
             transition: transform 0.3s ease-in-out;
@@ -96,7 +99,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
     <!-- Left Sliding Menu -->
     <div id="left-menu" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg z-50">
         <div class="p-4 bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white flex justify-between items-center">
-            <h2 class=" text-lg font-semibold"></h2>
+            <h2 class=" text-lg font-sans"></h2>
             <button id="menu-close" class="text-gray-600 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -132,7 +135,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- ปุ่มไอคอนข้อมูล -->
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/504058/button-electricity-charging-plug-energy-power.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -140,7 +143,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">1.กดปุ่มบนอุปกรณ์</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/61290/wifi-logo.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -148,7 +151,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">2.เชื่อมต่อ wi-fi : ESP32_LOCK</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/503562/scan-qrcode.svg"
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -156,7 +159,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">3.สแกน QRCode บนกล่องอุปกรณ์</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/476344/login-lock-refresh.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -164,7 +167,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">4.ล็อกอินบนเว็บไซต์ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่าย</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/455949/click.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -172,7 +175,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">5.กดดำเนินการต่อและรับรหัสผ่าน</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/381143/password-account-security-reset-safety.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 

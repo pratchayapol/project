@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
+            font-family: 'Roboto', sans-serif;
             background: url('https://cdn.pixabay.com/photo/2019/04/10/11/56/watercolor-4116932_640.png') no-repeat center center fixed;
             background-size: cover;
         }
@@ -35,7 +36,7 @@
                 <img src="https://upload.wikimedia.org/wikipedia/th/e/e0/RMUTI_KORAT.png" alt="RMUTI Logo" class="w-24 h-auto">
             </div>
 
-            <h2 class="text-2xl font-semibold text-center mb-6" style="font-size: 16px;">ลงทะเบียนเข้าสู่เว็บไซต์สำหรับเจ้าหน้าที่ใหม่</h2>
+            <h2 class="text-2xl font-sans text-center mb-6" style="font-size: 16px;">ลงทะเบียนเข้าสู่เว็บไซต์สำหรับเจ้าหน้าที่ใหม่</h2>
 
             <form action="register_db.php" method="post">
             <?php if(isset($_SESSION['error'])) : ?>
@@ -113,7 +114,7 @@
                 <!-- Submit Button -->
                 <div>
                     <button type="submit" name="reg_user" 
-                    class="w-full bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300 font-medium py-2 px-4 rounded-lg shadow-sm mt-3">
+                    class="w-full bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300 font-medium py-2 px-4 rounded-lg shadow-sm mt-3">
                         ยืนยัน
                     </button>
                 </div>

@@ -7,6 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
         /* กำหนดเมนูด้านข้าง */
         #sidebar {
             transform: translateX(-100%); /* ซ่อนเมนูในเริ่มต้น */
@@ -45,7 +48,7 @@
     <!-- เมนูด้านข้าง -->
     <div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50">
         <div class="p-4  bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white flex justify-between items-center">
-            <span class="text-lg font-semibold">เมนูนำทาง</span>
+            <span class="text-lg font-sans">เมนูนำทาง</span>
             <button id="close-btn" class="text-white">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -67,7 +70,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- ปุ่มไอคอนข้อมูล -->
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/504058/button-electricity-charging-plug-energy-power.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -75,7 +78,7 @@
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">1.กดปุ่มบนอุปกรณ์</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/61290/wifi-logo.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -83,7 +86,7 @@
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">2.เชื่อมต่อ wi-fi : ESP32_LOCK</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/503562/scan-qrcode.svg"
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -91,7 +94,7 @@
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">3.สแกน QRCode บนกล่องอุปกรณ์</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/476344/login-lock-refresh.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -99,7 +102,7 @@
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">4.ล็อกอินบนเว็บไซต์ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่าย</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/455949/click.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -107,7 +110,7 @@
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">5.กดดำเนินการต่อและรับรหัสผ่าน</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/381143/password-account-security-reset-safety.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 

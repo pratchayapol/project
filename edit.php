@@ -77,6 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
     <style>
         body {
+            font-family: 'Roboto', sans-serif;
             background: url('https://cdn.pixabay.com/photo/2015/07/24/11/11/watercolor-858169_640.jpg') no-repeat center center fixed;
             background-size: cover;
         }
@@ -124,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
 <body class="bg-gray-100 font-sans antialiased flex items-center justify-center h-screen">
 
 <div class="w-full sm:w-80 md:w-[600px] lg:w-[500px] mx-auto mt-4 p-4 bg-white shadow-lg rounded-lg">
-    <h2 class="text-2xl font-semibold text-center text-gray-800 mb-6">แก้ไขข้อมูล</h2>
+    <h2 class="text-2xl font-sans text-center text-gray-800 mb-6">แก้ไขข้อมูล</h2>
     
     <form method="post" action="" class="space-y-4">
         <div>

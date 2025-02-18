@@ -59,6 +59,9 @@ $data = $result->fetch_assoc();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.0/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.0/dist/sweetalert2.all.min.js"></script>
     <style>
+                body{
+            font-family: 'Roboto', sans-serif;
+        }  
         /* Modal styles */
         #modal {
             display: flex;
@@ -117,35 +120,35 @@ $data = $result->fetch_assoc();
             <div class="flex flex-col space-y-8">
                 <!-- ข้อมูลผู้ใช้ -->
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-300">
-                    <h3 class="text-2xl text-gray-700 mb-4 font-semibold">ข้อมูลผู้ใช้</h3>
+                    <h3 class="text-2xl text-gray-700 mb-4 font-sans">ข้อมูลผู้ใช้</h3>
                     <p class="text-lg text-gray-600 mb-2">ชื่อ: 
-                        <span class="font-semibold"><?= htmlspecialchars($data['first_name'] . ' ' . $data['last_name']) ?></span>
+                        <span class="font-sans"><?= htmlspecialchars($data['first_name'] . ' ' . $data['last_name']) ?></span>
                     </p>
                     <p class="text-lg text-gray-600 mb-2">อีเมล: 
-                        <span class="font-semibold"><?= htmlspecialchars($data['email']) ?></span>
+                        <span class="font-sans"><?= htmlspecialchars($data['email']) ?></span>
                     </p>
                     <p class="text-lg text-gray-600 mb-2">เบอร์โทร: 
-                        <span class="font-semibold"><?= htmlspecialchars($data['phone_number']) ?></span>
+                        <span class="font-sans"><?= htmlspecialchars($data['phone_number']) ?></span>
                     </p>
                     <p class="text-lg text-gray-600 mb-2">จังหวัด: 
-                        <span class="font-semibold"><?= htmlspecialchars($data['province']) ?></span>
+                        <span class="font-sans"><?= htmlspecialchars($data['province']) ?></span>
                     </p>
                 </div>
             
                 <!-- ข้อมูลรถ -->
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-300">
-                    <h3 class="text-2xl text-gray-700 mb-4 font-semibold">ข้อมูลรถ</h3>
+                    <h3 class="text-2xl text-gray-700 mb-4 font-sans">ข้อมูลรถ</h3>
                     <p class="text-lg text-gray-600 mb-2">ทะเบียนรถ: 
-                        <span class="font-semibold"><?= htmlspecialchars($data['plate_number']) ?></span>
+                        <span class="font-sans"><?= htmlspecialchars($data['plate_number']) ?></span>
                     </p>
                     <p class="text-lg text-gray-600 mb-2">ประเภทรถ: 
-                        <span class="font-semibold"><?= htmlspecialchars($data['car_type']) ?></span>
+                        <span class="font-sans"><?= htmlspecialchars($data['car_type']) ?></span>
                     </p>
                     <p class="text-lg text-gray-600 mb-2">ยี่ห้อ: 
-                        <span class="font-semibold"><?= htmlspecialchars($data['brand']) ?></span>
+                        <span class="font-sans"><?= htmlspecialchars($data['brand']) ?></span>
                     </p>
                     <p class="text-lg text-gray-600 mb-2">ยอดชำระค่าปรับ: 
-                        <span class="font-semibold"><?= number_format($data['price'], 2) ?> บาท</span>
+                        <span class="font-sans"><?= number_format($data['price'], 2) ?> บาท</span>
                     </p>
                 </div>
             </div>

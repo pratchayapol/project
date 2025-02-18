@@ -38,6 +38,9 @@
         }
     </script>
     <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+        }  
         /* เมนูด้านซ้าย */
         #left-menu {
             transform: translateX(-100%);
@@ -76,13 +79,13 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <h1 class="text-xl font-semibold text-center flex-grow">ชำระค่าปรับพร้อมแนบหลักฐาน</h1>
+            <h1 class="text-xl font-sans text-center flex-grow">ชำระค่าปรับพร้อมแนบหลักฐาน</h1>
         </div>
     </header>
     <!-- Left Sliding Menu -->
     <div id="left-menu" class="fixed top-0 left-0 bg-white shadow-lg">
         <div class="p-4 bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white flex justify-between items-center">
-            <h2 class=" text-lg font-semibold"></h2>
+            <h2 class=" text-lg font-sans"></h2>
             <button id="menu-close" class="text-gray-600 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -103,7 +106,7 @@
 
         <div class="bg-white shadow-lg rounded-xl p-6 sm:p-8 md:p-12">
             <div class="text-center">
-                <h2 class="text-3xl font-semibold text-gray-800 mb-4">ข้อมูลที่ลงทะเบียน</h2>
+                <h2 class="text-3xl font-sans text-gray-800 mb-4">ข้อมูลที่ลงทะเบียน</h2>
             </div>
 
             <?php
@@ -115,7 +118,7 @@
                 echo "<p class='text-lg mb-2 text-center'>ชื่อ: " . htmlspecialchars($_SESSION['first_name']) . " " . htmlspecialchars($_SESSION['last_name']) . "</p>";
                 echo "<p class='text-lg mb-2 text-center'>อีเมล: " . htmlspecialchars($_SESSION['email']) . "</p>";
                 echo "<p class='text-lg mb-2 text-center'>เบอร์โทร: " . htmlspecialchars($_SESSION['phone_number']) . "</p>";
-                echo "<h2 class='text-xl font-semibold text-gray-700 mt-6 mb-2 text-center'>ข้อมูลรถ</h2>";
+                echo "<h2 class='text-xl font-sans text-gray-700 mt-6 mb-2 text-center'>ข้อมูลรถ</h2>";
                 echo "<p class='text-lg mb-2 text-center'>ทะเบียนรถ: " . htmlspecialchars($_SESSION['plate_number']) . "</p>";
                 echo "<p class='text-lg mb-2 text-center'>จังหวัด: " . htmlspecialchars($_SESSION['province']) . "</p>";
                 echo "<p class='text-lg mb-2 text-center'>ประเภทรถ: " . htmlspecialchars($_SESSION['car_type']) . "</p>";
@@ -132,7 +135,7 @@
 
             <div class="text-center mt-8">
                 <h2 class="text-2xl font-bold text-gray-700">เลขพร้อมเพย์สำหรับโอนเงิน</h2>
-                <h2 class="font-semibold text-blue-600">065-625-3502</h2>
+                <h2 class="font-sans text-blue-600">065-625-3502</h2>
             </div>
 
             <!-- ฟอร์มอัปโหลดรูปภาพ -->

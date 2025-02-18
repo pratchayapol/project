@@ -59,6 +59,9 @@ $result = $conn->query($query);
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
         /* เมนูด้านซ้าย */
         #left-menu {
             transform: translateX(-100%);
@@ -219,7 +222,7 @@ $result = $conn->query($query);
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <h1 class="text-xl font-semibold">จัดการกับสถานะผู้ใช้</h1>
+            <h1 class="text-xl font-sans">จัดการกับสถานะผู้ใช้</h1>
             <div class="flex items-center space-x-6">
                 <div class="relative group cursor-pointer">
                     <img src="https://www.svgrepo.com/show/524199/user-circle.svg" alt="User Icon" class="h-6 w-6 group-hover:text-gray-200" style="filter: brightness(0) invert(1);">
@@ -235,7 +238,7 @@ $result = $conn->query($query);
     <!-- Left Sliding Menu -->
     <div id="left-menu" class="fixed top-0 left-0 bg-white shadow-lg">
         <div class="p-4 bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white flex justify-between items-center">
-            <h2 class=" text-lg font-semibold"></h2>
+            <h2 class=" text-lg font-sans"></h2>
             <button id="menu-close" class="text-gray-600 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -312,7 +315,7 @@ $result = $conn->query($query);
         <div class="bg-white rounded-lg shadow-lg p-6 w-96">
             <form method="POST">
                 <h2 class="text-xl font-bold mb-4">สถานะเจ้าหน้าที่:</h2>
-                <p class="mb-4">สถานะเดิม: <span id="current_role" class="font-semibold"></span></p>
+                <p class="mb-4">สถานะเดิม: <span id="current_role" class="font-sans"></span></p>
                 <input type="hidden" name="user_id" id="user_id">
 
                 <label for="new_role" class="block text-sm font-medium text-gray-700 mb-2">:</label>

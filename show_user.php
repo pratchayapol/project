@@ -8,6 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.1.8/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+    <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+                background: url('https://cdn.pixabay.com/photo/2019/04/10/11/56/watercolor-4116932_640.png') no-repeat center center fixed;
+                background-size: cover;
+            }
+    </style>
+</head>
 <body class="bg-gray-100 font-sans antialiased">
     <div id="app"></div> <!-- เนื้อหาจะถูกแสดงที่นี่จาก JavaScript -->
     
@@ -23,21 +31,21 @@
                         // สร้าง HTML ที่จะแสดงผล
                         let html = `
                             <div class="max-w-7xl mx-auto p-8 bg-white shadow-xl rounded-lg mt-12">
-                                <h2 class="text-4xl font-semibold text-gray-800 mb-8 text-center">ข้อมูลที่ลงทะเบียน</h2>
+                                <h2 class="text-4xl font-sans text-gray-800 mb-8 text-center">ข้อมูลที่ลงทะเบียน</h2>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                                     <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                                        <h3 class="text-2xl text-gray-700 mb-4 font-semibold">ข้อมูลผู้ใช้</h3>
-                                        <p class="text-lg text-gray-600 mb-2">ชื่อ: <span class="font-semibold">${data.first_name} ${data.last_name}</span></p>
-                                        <p class="text-lg text-gray-600 mb-2">อีเมลล์: <span class="font-semibold">${data.email}</span></p>
-                                        <p class="text-lg text-gray-600 mb-2">เบอร์โทร: <span class="font-semibold">${data.phone_number}</span></p>
-                                        <p class="text-lg text-gray-600 mb-2">จังหวัด: <span class="font-semibold">${data.province}</span></p>
+                                        <h3 class="text-2xl text-gray-700 mb-4 font-sans">ข้อมูลผู้ใช้</h3>
+                                        <p class="text-lg text-gray-600 mb-2">ชื่อ: <span class="font-sans">${data.first_name} ${data.last_name}</span></p>
+                                        <p class="text-lg text-gray-600 mb-2">อีเมลล์: <span class="font-sans">${data.email}</span></p>
+                                        <p class="text-lg text-gray-600 mb-2">เบอร์โทร: <span class="font-sans">${data.phone_number}</span></p>
+                                        <p class="text-lg text-gray-600 mb-2">จังหวัด: <span class="font-sans">${data.province}</span></p>
                                     </div>
                                     <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                                        <h3 class="text-2xl text-gray-700 mb-4 font-semibold">ข้อมูลรถ</h3>
-                                        <p class="text-lg text-gray-600 mb-2">ทะเบียนรถ: <span class="font-semibold">${data.plate_number}</span></p>
-                                        <p class="text-lg text-gray-600 mb-2">ประเภทรถ: <span class="font-semibold">${data.car_type}</span></p>
-                                        <p class="text-lg text-gray-600 mb-2">ยี่ห้อ: <span class="font-semibold">${data.brand}</span></p>
-                                        <p class="text-lg text-gray-600 mb-2">ยอดชำระค่าปรับ: <span class="font-semibold">${data.price} บาท</span></p>
+                                        <h3 class="text-2xl text-gray-700 mb-4 font-sans">ข้อมูลรถ</h3>
+                                        <p class="text-lg text-gray-600 mb-2">ทะเบียนรถ: <span class="font-sans">${data.plate_number}</span></p>
+                                        <p class="text-lg text-gray-600 mb-2">ประเภทรถ: <span class="font-sans">${data.car_type}</span></p>
+                                        <p class="text-lg text-gray-600 mb-2">ยี่ห้อ: <span class="font-sans">${data.brand}</span></p>
+                                        <p class="text-lg text-gray-600 mb-2">ยอดชำระค่าปรับ: <span class="font-sans">${data.price} บาท</span></p>
                                     </div>
                                 </div>
                                 <div class="flex space-x-6 justify-center mt-8">

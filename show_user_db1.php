@@ -28,6 +28,9 @@ $stmt->close();
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
         /* เมนูด้านซ้าย */
         #left-menu {
             transform: translateX(-100%);
@@ -72,7 +75,7 @@ $stmt->close();
     <!-- Left Sliding Menu -->
     <div id="left-menu" class="fixed top-0 left-0 bg-white shadow-lg">
         <div class="p-4 bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white flex justify-between items-center">
-            <h2 class=" text-lg font-semibold"></h2>
+            <h2 class=" text-lg font-sans"></h2>
             <button id="menu-close" class="text-gray-600 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -94,7 +97,7 @@ $stmt->close();
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- ปุ่มไอคอนข้อมูล -->
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/374676/form.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4"
@@ -102,7 +105,7 @@ $stmt->close();
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">1.กรอกข้อมูลทั่วไปและข้อมูลทะเบียนรถ</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/94170/form.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -110,7 +113,7 @@ $stmt->close();
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">2.ตรวจสอบข้อมูลของท่านให้เรียบร้อย</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/261309/transfer-account.svg"
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -118,7 +121,7 @@ $stmt->close();
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">3.ชำระค่าปรับพร้อมแนบหลักฐานการโอนเงินชำระ</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/503116/unlocked.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -126,7 +129,7 @@ $stmt->close();
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">4.หลักฐานถูกต้องจะได้รับรหัสปลดล็อกอุปกรณ์</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/513070/wifi-1029.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -134,7 +137,7 @@ $stmt->close();
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">6.เชื่อมต่อ WIFI ที่ชื่อ "ESP32_LOCK"</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/257107/worldwide-internet.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -142,7 +145,7 @@ $stmt->close();
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">6.เข้าสู่ระบบด้วยเลข IP : 192.16.4.1</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/478283/web-page.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
@@ -150,7 +153,7 @@ $stmt->close();
                     <span class="text-lg font-medium text-white" style="font-size: 1rem;">7.เมื่อเข้าสู่เว็บไซต์ให้เลือก "ผู้ชำระค่าปรับ"</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     <img src="https://www.svgrepo.com/show/501413/unlock.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 

@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
+            font-family: 'Roboto', sans-serif;
             background: url('https://cdn.pixabay.com/photo/2015/07/24/11/11/watercolor-858169_640.jpg') no-repeat center center fixed;
             background-size: cover;
         }
@@ -21,7 +22,7 @@
                 <img src="https://upload.wikimedia.org/wikipedia/th/e/e0/RMUTI_KORAT.png" alt="RMUTI Logo" class="w-24 h-auto">
             </div>
 
-            <h2 class="text-2xl font-semibold text-center mb-4" style="font-size: 16px;">ลงทะเบียนเข้าสู่เว็บไซต์สำหรัชำระค่าปรับ</h2>
+            <h2 class="text-2xl font-sans text-center mb-4" style="font-size: 16px;">ลงทะเบียนเข้าสู่เว็บไซต์สำหรัชำระค่าปรับ</h2>
 
             <form action="loginuser_db.php" method="post">
             <?php if(isset($_SESSION['error'])) : ?>
@@ -117,11 +118,11 @@
             <!-- Buttons -->
             <div class="flex justify-between items-center">
                 <button type="button" onclick="goHome()"
-                    class="px-5 py-2 bg-gradient-to-r from-[#800000] to-[#B21807] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                    class="px-5 py-2 bg-gradient-to-r from-[#800000] to-[#B21807] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     ยกเลิก
                 </button>
                 <button type="submit" name="submit_payment"
-                    class="px-5 py-2 bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                    class="px-5 py-2 bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
                     ขั้นตอนต่อไป
                 </button>
             </div>

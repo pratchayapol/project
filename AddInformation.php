@@ -41,6 +41,7 @@
             background-color: #0F8D23;
         }
         body {
+            font-family: 'Roboto', sans-serif;
             background: url('https://cdn.pixabay.com/photo/2019/04/10/11/56/watercolor-4116932_640.png') no-repeat center center fixed;
             background-size: cover;
         }
@@ -52,13 +53,13 @@
         <form action="AddInformation_db.php" method="post" id="carInfoForm">
             <!-- เลขทะเบียนรถ -->
             <div class="mb-4">
-                <label for="plate_number" class="block text-sm font-medium text-gray-700">เลขทะเบียนรถ:</label>
+                <label for="plate_number" class="block text-sm font-sans text-gray-700">เลขทะเบียนรถ:</label>
                 <input type="text" id="plate_number" name="plate_number" required pattern="[\dก-๙]+" title="กรุณากรอกเฉพาะตัวเลขหรืออักษรไทยเท่านั้น" class="mt-1 block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
             </div>
 
             <!-- จังหวัด -->
             <div class="mb-4">
-                <label for="province" class="block text-sm font-medium text-gray-700">จังหวัด:</label>
+                <label for="province" class="block text-sm font-sans text-gray-700">จังหวัด:</label>
                 <select id="province" name="province" required class="mt-1 block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                     <option value="">--เลือกจังหวัด--</option>
                     <?php
@@ -76,7 +77,7 @@
 
             <!-- ประเภทรถ -->
             <div class="mb-4">
-                <label for="car_type" class="block text-sm font-medium text-gray-700">ประเภทรถ:</label>
+                <label for="car_type" class="block text-sm font-sans text-gray-700">ประเภทรถ:</label>
                 <select id="car_type" name="car_type" required class="mt-1 block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                     <option value="">--เลือกประเภทรถ--</option>
                     <?php
@@ -93,7 +94,7 @@
 
             <!-- ยี่ห้อรถ -->
             <div class="mb-4">
-                <label for="brand" class="block text-sm font-medium text-gray-700">ยี่ห้อรถ:</label>
+                <label for="brand" class="block text-sm font-sans text-gray-700">ยี่ห้อรถ:</label>
                 <select id="brand" name="brand" required class="mt-1 block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                     <option value="">--เลือกยี่ห้อรถ--</option>
                     <?php
@@ -110,19 +111,19 @@
 
             <!-- ยอดชำระค่าปรับ -->
             <div class="mb-4">
-                <label for="price" class="block text-sm font-medium text-gray-700">ยอดชำระค่าปรับ:</label>
+                <label for="price" class="block text-sm font-sans text-gray-700">ยอดชำระค่าปรับ:</label>
                 <input type="number" id="price" name="price" required class="mt-1 block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
             </div>
 
             <!-- อุปกรณ์ -->
             <div class="mb-4">
-                <label for="device" class="block text-sm font-medium text-gray-700">อุปกรณ์:</label>
+                <label for="device" class="block text-sm font-sans text-gray-700">อุปกรณ์:</label>
                 <input type="text" name="device" required class="mt-1 block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
             </div>
 
             <!-- รหัสปลดล็อก -->
             <div class="mb-4">
-                <label for="unlockcar" class="block text-sm font-medium text-gray-700">รหัสปลดล็อก:</label>
+                <label for="unlockcar" class="block text-sm font-sans text-gray-700">รหัสปลดล็อก:</label>
                 <input type="text" id="unlockcar" name="unlockcar" readonly class="mt-1 block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                 
                 <!-- ใช้ flexbox เพื่อจัดปุ่มให้อยู่ข้างกัน -->
@@ -135,7 +136,7 @@
                     </button>
                 </div>
             </div>
-            <p class="text-lg font-medium mb-4">ชื่อเจ้าหน้าที่บันทึก <span class="text-indigo-600"><?= htmlspecialchars($firstname) ?></span></p>
+            <p class="text-lg font-sans mb-4">ชื่อเจ้าหน้าที่บันทึก <span class="text-indigo-600"><?= htmlspecialchars($firstname) ?></span></p>
 
             <!-- ปุ่ม -->
             <div class="flex justify-between">
