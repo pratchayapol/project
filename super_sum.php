@@ -144,7 +144,7 @@ $conn->close();
   <script>
     function searchTable() {
       const input = document.getElementById("searchInput").value.toLowerCase();
-      const rows = document.querySelectorAll("#dataTable tbody tr");
+      const rows = document.querySelectorAll("#carInfoTable tbody tr");
 
       rows.forEach(row => {
         const cells = row.querySelectorAll("td");
