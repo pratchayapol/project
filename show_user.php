@@ -6,6 +6,7 @@
     <title>ข้อมูลที่ลงทะเบียน</title>
     <!-- เชื่อมต่อ Tailwind CSS จาก CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.1.8/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-100 font-sans antialiased">
     <div id="app"></div> <!-- เนื้อหาจะถูกแสดงที่นี่จาก JavaScript -->
