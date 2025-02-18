@@ -65,7 +65,7 @@
     <!-- เนื้อหาหลัก -->
     <div class="container mx-auto mt-12 px-6">
         <div class="bg-white shadow-md rounded-lg p-8">
-            <h1 class="text-3xl gradient-heading bordered-heading mb-6 font-sans">คู่มือการเข้าใช้ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่ายสำหรับเจ้าหน้าที่</h1>
+            <h1 class="text-2xl gradient-heading bordered-heading mb-6 font-sans">คู่มือการเข้าใช้ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่ายสำหรับเจ้าหน้าที่</h1>
             <p class="text-gray-700 text-lg mb-8" style="font-size: 24px; font-sans">คู่มือการเข้าใช้ระบบรับรหัสและล็อกล้อ</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
