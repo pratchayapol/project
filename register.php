@@ -55,7 +55,7 @@
                     <label for="firstname" class="block text-sm font-medium text-gray-700">ชื่อ:</label>
                     <input type="text" name="firstname" id="firstname" 
                            class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
-                           placeholder="ชื่อ" required>
+                           placeholder="ชื่อ" required title="กรุณากรอกชื่อให้ครบถ้วน">
                 </div>
 
                 <!-- Last Name -->
