@@ -120,11 +120,9 @@
             </div>
             <div class="bg-white shadow-md rounded-lg p-8 flex flex-col items-center justify-center">
                 <p class="text-gray-700 text-lg mb-8 text-center" style="font-size: 24px; font-sans">QR Code สำหรับเข้าใช้ระบบปลดล็อกอุปกรณ์สำหรับเจ้าหน้าที่แบบสแกนจ่าย</p>
-                <img
-                    src="https://imgur.com/tuj6BxM"
-                    alt="คู่มือการสมัคร"
-                    class="max-w-full"
-                />
+                <img src="https://i.postimg.cc/kg9XtKn4/472674903-1870284703504796-8326530023000965747-n-2.jpg" 
+                    alt="รูปจาก PostImages" 
+                    class="max-w-full">
                 <p class="text-gray-700 text-lg mb-8 text-center font-sans" style="font-size: 24px;">หรือเข้าที่ IP : 192.16.4.1</p>
             </div>
         </div>
