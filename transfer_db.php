@@ -145,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['fileToUpload'])) {
                                 <script>
                                     Swal.fire({
                                         title: 'ข้อผิดพลาด!',
-                                        text: 'ยอดเงินที่โอนมาจากสลิปไม่ถูกต้อง (ต้องเป็น 2 บาท)',
+                                        text: 'ยอดเงินที่โอนมาจากสลิปไม่ถูกต้อง กรุณาติดต่อเจ้าหน้าที่ได้ที่เบอร์ 065-625-3502',
                                         icon: 'error',
                                         confirmButtonText: 'ตกลง'
                                     }).then((result) => {
