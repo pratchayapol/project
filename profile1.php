@@ -74,7 +74,7 @@ if (!$user) {
                     class="w-full max-w-[250px] bg-[#FFA500] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#E9AB17] transform hover:scale-105 transition text-center text-sm">
                     แก้ไขข้อมูลส่วนตัว
                     </a>
-                    <a href="menu_home.php" 
+                    <a href="super_admin.php" 
                     onclick="showAlert('ย้อนกลับ', 'คุณต้องการย้อนกลับไปยังเมนูหลักหรือไม่?', this.href)" 
                     class="w-full max-w-[250px] bg-[#990000] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#C11B17] transform hover:scale-105 transition text-center text-sm">
                     ย้อนกลับ
