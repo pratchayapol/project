@@ -140,7 +140,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">1.กดปุ่มบนอุปกรณ์</span>
+                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">1.กดปุ่มบนอุปกรณ์</span>
                 </button>
 
                 <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
@@ -148,7 +148,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">2.เชื่อมต่อ wi-fi : ESP32_LOCK</span>
+                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">2.เชื่อมต่อ wi-fi : ESP32_LOCK</span>
                 </button>
 
                 <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
@@ -156,7 +156,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">3.สแกน QRCode บนกล่องอุปกรณ์</span>
+                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">3.สแกน QRCode บนกล่องอุปกรณ์</span>
                 </button>
 
                 <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
@@ -164,7 +164,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">4.ล็อกอินบนเว็บไซต์ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่าย</span>
+                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">4.ล็อกอินบนเว็บไซต์ระบบอุปกรณ์ล็อกล้อและปลดล็อกล้อ ด้วยหรัส <?php echo htmlspecialchars($password_lock); ?></span>
                 </button>
 
                 <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
@@ -172,7 +172,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">5.กดดำเนินการต่อและรับรหัสผ่าน</span>
+                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">5.กดดำเนินการต่อและรับรหัสผ่าน</span>
                 </button>
 
                 <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
@@ -180,7 +180,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">6.รับรหัสปลดล็อกอุปกรณ์และนำไปบันทึกในระบบบันทึกข้อมูลรถยนต์</span>
+                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">6.รับรหัสปลดล็อกอุปกรณ์และนำไปบันทึกในระบบบันทึกข้อมูลรถยนต์</span>
                 </button>
             </div>
             <div class="bg-white shadow-md rounded-lg p-8 flex flex-col items-center justify-center">
