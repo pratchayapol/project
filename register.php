@@ -90,15 +90,15 @@
 
                 <!-- First Name -->
                 <div class="mb-4">
-                    <label for="firstname" class="block text-sm font-medium text-gray-700">ชื่อ:</label>
+                    <label for="firstname" class="block text-sm font-sans text-gray-700">ชื่อ:</label>
                     <input type="text" name="firstname" id="firstname" 
                            class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
-                           placeholder="ชื่อ"  required oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')" oninput="this.setCustomValidity('')">
+                           placeholder="ชื่อ" required>
                 </div>
 
                 <!-- Last Name -->
                 <div class="mb-4">
-                    <label for="lastname" class="block text-sm font-medium text-gray-700">นามสกุล:</label>
+                    <label for="lastname" class="block text-sm font-sans text-gray-700">นามสกุล:</label>
                     <input type="text" name="lastname" id="lastname" 
                            class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
                            placeholder="นามสกุล" required>
@@ -106,7 +106,7 @@
 
                 <!-- Email -->
                 <div class="mb-4">
-                    <label for="email" class="block text-sm font-medium text-gray-700">อีเมล:</label>
+                    <label for="email" class="block text-sm font-sans text-gray-700">อีเมล:</label>
                     <input type="email" name="email" id="email" 
                            class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
                            placeholder="อีเมล" required>
@@ -114,7 +114,7 @@
 
                 <!-- Password -->
                 <div class="mb-4 relative">
-                    <label for="password" class="block text-sm font-medium text-gray-700">รหัสผ่าน:</label>
+                    <label for="password" class="block text-sm font-sans text-gray-700">รหัสผ่าน:</label>
                     <div class="relative">
                         <input type="password" name="password" id="password" 
                                pattern=".{6,}" 
@@ -130,7 +130,7 @@
 
                 <!-- Confirm Password -->
                 <div class="mb-6 relative">
-                    <label for="password_2" class="block text-sm font-medium text-gray-700">ยืนยันรหัสผ่าน:</label>
+                    <label for="password_2" class="block text-sm font-sans text-gray-700">ยืนยันรหัสผ่าน:</label>
                     <div class="relative">
                         <input type="password" name="password_2" id="password_2" 
                                pattern=".{6,}" 
@@ -152,7 +152,7 @@
                 <!-- Submit Button -->
                 <div>
                     <button type="submit" name="reg_user" 
-                    class="w-full bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300 font-medium py-2 px-4 rounded-lg shadow-sm mt-3">
+                    class="w-full bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300 font-sans py-2 px-4 rounded-lg shadow-sm mt-3">
                         ยืนยัน
                     </button>
                 </div>
