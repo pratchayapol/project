@@ -134,7 +134,7 @@
             ?>
 
             <div class="text-center mt-8">
-                <h2 class="text-2xl font-bold text-gray-700"style="font-family: 'Kanit', sans-serif;">เลขพร้อมเพย์สำหรับโอนเงิน</h2>
+                <h3 class="text-2xl font-bold text-gray-700"style="font-family: 'Kanit', sans-serif;">เลขพร้อมเพย์สำหรับโอนเงิน</h3>
                 <img
                     src="https://i.postimg.cc/7hwLF7dR/fb75be15-51eb-4025-8429-7a6d0bfa9f3a-1.png"
                     alt="คู่มือการสมัคร"
