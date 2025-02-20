@@ -68,17 +68,18 @@ if (!$user) {
                         <p class="text-lg text-gray-700"><i class="fas fa-phone text-gray-500 mr-2"></i><span class="text-gray-900"style="font-family: 'Kanit', sans-serif;">เบอร์โทรที่ติดต่อได้:</span> <?php echo htmlspecialchars($user['phone']); ?></p>
                     </div>
                 </div>
-
-                <!-- Buttons -->
-                <div class="mt-8 flex justify-center space-x-6">
+                <div class="mt-8 flex flex-col items-center space-y-3 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0">
                     <a href="edit_profile.php" 
-                       onclick="showAlert('แก้ไขข้อมูลส่วนตัว', 'คุณต้องการแก้ไขข้อมูลส่วนตัวหรือไม่?', this.href)" 
-                       class="bg-[#FFA500] text-white px-6 py-3 rounded-xl shadow-lg hover:bg-[#E9AB17] transform hover:scale-105 transition">แก้ไขข้อมูลส่วนตัว</a>
-                    <a href="super_admin.php" 
-                       onclick="showAlert('ย้อนกลับ', 'คุณต้องการย้อนกลับไปยังเมนูหลักหรือไม่?', this.href)" 
-                       class="bg-[#990000] text-white px-6 py-3 rounded-xl shadow-lg hover:bg-[#C11B17] transform hover:scale-105 transition">ย้อนกลับ</a>
+                    onclick="showAlert('แก้ไขข้อมูลส่วนตัว', 'คุณต้องการแก้ไขข้อมูลส่วนตัวหรือไม่?', this.href)" 
+                    class="w-full max-w-[250px] bg-[#FFA500] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#E9AB17] transform hover:scale-105 transition text-center text-sm">
+                    แก้ไขข้อมูลส่วนตัว
+                    </a>
+                    <a href="menu_home.php" 
+                    onclick="showAlert('ย้อนกลับ', 'คุณต้องการย้อนกลับไปยังเมนูหลักหรือไม่?', this.href)" 
+                    class="w-full max-w-[250px] bg-[#990000] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#C11B17] transform hover:scale-105 transition text-center text-sm">
+                    ย้อนกลับ
+                    </a>
                 </div>
-
                 <!-- ฟังก์ชัน JavaScript -->
                 <script>
                     function showAlert(title, text, url) {
