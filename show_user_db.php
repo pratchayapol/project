@@ -94,8 +94,8 @@ $stmt->close();
     </div>
     <div class="container mx-auto mt-12 px-6">
         <div class="bg-white shadow-md rounded-lg p-8">
-            <h1 class="text-3xl gradient-heading bordered-heading mb-6"style="font-family: 'Kanit', sans-serif;">คู่มือการเข้าใช้ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่ายสำหรับผู้ชำระค่าปรับ</h1>
-            <p class="text-gray-700 text-lg mb-8" style="font-size: 24px; font-family: 'Kanit', sans-serif;">คู่มือการเข้าใช้ระบบสแกนจ่ายและระบบกรอกรหัสล็อกล้อ</p>
+            <h1 class="text-3xl gradient-heading bordered-heading mb-6"style="font-family: 'Kanit', sans-serif;">วิธีการเข้าใช้ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่ายสำหรับผู้ชำระค่าปรับ</h1>
+            <p class="text-gray-700 text-lg mb-8" style="font-size: 24px; font-family: 'Kanit', sans-serif;">วิธีการเข้าใช้ระบบสแกนจ่ายและระบบกรอกรหัสล็อกล้อ</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300"style="font-family: 'Kanit', sans-serif;">
