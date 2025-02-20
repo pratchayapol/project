@@ -37,7 +37,6 @@
                     input.setCustomValidity("");
                 });
             });
-        });
             // ตรวจสอบรหัสผ่านให้ตรงกัน
             const password = document.getElementById("password");
             const confirmPassword = document.getElementById("password_2");
