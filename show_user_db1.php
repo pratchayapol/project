@@ -96,31 +96,6 @@ $stmt->close();
             <p class="text-gray-700 text-lg mb-8" style="font-size: 24px; font-family: 'Kanit', sans-serif;">คู่มือการเข้าใช้ระบบสแกนจ่ายและระบบกรอกรหัสล็อกล้อ</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- ปุ่มไอคอนข้อมูล -->
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300"style="font-family: 'Kanit', sans-serif;">
-                    <img src="https://www.svgrepo.com/show/374676/form.svg" 
-                    alt="Icon Information" 
-                    class="w-16 h-16 mb-4 mt-4"
-                    style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">1.กรอกข้อมูลทั่วไปและข้อมูลทะเบียนรถ</span>
-                </button>
-
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300"style="font-family: 'Kanit', sans-serif;">
-                    <img src="https://www.svgrepo.com/show/94170/form.svg" 
-                    alt="Icon Information" 
-                    class="w-16 h-16 mb-4 mt-4" 
-                    style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">2.ตรวจสอบข้อมูลของท่านให้เรียบร้อย</span>
-                </button>
-
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300"style="font-family: 'Kanit', sans-serif;">
-                    <img src="https://www.svgrepo.com/show/261309/transfer-account.svg"
-                    alt="Icon Information" 
-                    class="w-16 h-16 mb-4 mt-4" 
-                    style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">3.ชำระค่าปรับพร้อมแนบหลักฐานการโอนเงินชำระ</span>
-                </button>
-
                 <button class="flex flex-col items-center bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300"style="font-family: 'Kanit', sans-serif;">
                     <img src="https://www.svgrepo.com/show/503116/unlocked.svg" 
                     alt="Icon Information" 
