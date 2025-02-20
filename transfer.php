@@ -94,6 +94,7 @@
         </div>
         <nav class="p-4"style="font-family: 'Kanit', sans-serif;">
             <ul>
+                <li><a href="show_user_db.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">หน้าหลัก</a></li>
                 <li><a href="user_information.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">ตรวจสอบข้อมูล</a></li>
                 <li><a href="edit.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">แก้ไขข้อมูล</a></li>
                 <li><a href="transfer.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">ชำระค่าปรับ</a></li>
