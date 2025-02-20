@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ข้อมูลผู้ลงทะเบียน</title>
+    <title>ชำระเงินพร้อมแนบหลักฐาน</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap" rel="stylesheet">
     <script>
@@ -69,7 +69,7 @@
         };
     </script>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100"style="font-family: 'Kanit', sans-serif;">
     <!-- Navbar -->
     <header class="bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white shadow-lg">
         <div class="container mx-auto px-4 py-6 flex items-center justify-between">
@@ -79,20 +79,20 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <h1 class="text-xl font-sans text-center flex-grow">ชำระค่าปรับพร้อมแนบหลักฐาน</h1>
+            <h1 class="text-xl text-center flex-grow"style="font-family: 'Kanit', sans-serif;">ชำระค่าปรับพร้อมแนบหลักฐาน</h1>
         </div>
     </header>
     <!-- Left Sliding Menu -->
     <div id="left-menu" class="fixed top-0 left-0 bg-white shadow-lg">
         <div class="p-4 bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white flex justify-between items-center">
-            <h2 class=" text-lg font-sans"></h2>
+            <h2 class=" text-lg"style="font-family: 'Kanit', sans-serif;"></h2>
             <button id="menu-close" class="text-gray-600 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
         </div>
-        <nav class="p-4">
+        <nav class="p-4"style="font-family: 'Kanit', sans-serif;">
             <ul>
                 <li><a href="user_information.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">ตรวจสอบข้อมูล</a></li>
                 <li><a href="edit.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">แก้ไขข้อมูล</a></li>
@@ -106,7 +106,7 @@
 
         <div class="bg-white shadow-lg rounded-xl p-6 sm:p-8 md:p-12">
             <div class="text-center">
-                <h2 class="text-3xl font-sans text-gray-800 mb-4">ข้อมูลที่ลงทะเบียน</h2>
+                <h2 class="text-3xl text-gray-800 mb-4"style="font-family: 'Kanit', sans-serif;">ข้อมูลที่ลงทะเบียน</h2>
             </div>
 
             <?php
@@ -115,16 +115,16 @@
                       $_SESSION['plate_number'], $_SESSION['province'], $_SESSION['car_type'], 
                       $_SESSION['brand'], $_SESSION['price'], $_SESSION['device_user'])) {
                 echo "<div class='bg-white border border-gray-300 p-4 rounded-lg shadow-md mb-4'>";
-                echo "<p class='text-lg mb-2 text-center'>ชื่อ: " . htmlspecialchars($_SESSION['first_name']) . " " . htmlspecialchars($_SESSION['last_name']) . "</p>";
-                echo "<p class='text-lg mb-2 text-center'>อีเมล: " . htmlspecialchars($_SESSION['email']) . "</p>";
-                echo "<p class='text-lg mb-2 text-center'>เบอร์โทร: " . htmlspecialchars($_SESSION['phone_number']) . "</p>";
-                echo "<h2 class='text-xl font-sans text-gray-700 mt-6 mb-2 text-center'>ข้อมูลรถ</h2>";
-                echo "<p class='text-lg mb-2 text-center'>ทะเบียนรถ: " . htmlspecialchars($_SESSION['plate_number']) . "</p>";
-                echo "<p class='text-lg mb-2 text-center'>จังหวัด: " . htmlspecialchars($_SESSION['province']) . "</p>";
-                echo "<p class='text-lg mb-2 text-center'>ประเภทรถ: " . htmlspecialchars($_SESSION['car_type']) . "</p>";
-                echo "<p class='text-lg mb-2 text-center'>ยี่ห้อ: " . htmlspecialchars($_SESSION['brand']) . "</p>";
-                echo "<p class='text-lg mb-6 text-center'>ค่าปรับ: " . htmlspecialchars($_SESSION['price']) . "</p>";
-                echo "<p class='text-lg mb-6 text-center'>อุปกรณ์ล็อกเครื่องที่:  " . htmlspecialchars($_SESSION['device_user']) . "</p>";
+                echo "<p class='text-lg mb-2 text-center' style='font-family: 'Kanit', sans-serif;'>ชื่อ: " . htmlspecialchars($_SESSION['first_name']) . " " . htmlspecialchars($_SESSION['last_name']) . "</p>";
+                echo "<p class='text-lg mb-2 text-center' style='font-family: 'Kanit', sans-serif;'>อีเมล: " . htmlspecialchars($_SESSION['email']) . "</p>";
+                echo "<p class='text-lg mb-2 text-center' style='font-family: 'Kanit', sans-serif;'>เบอร์โทร: " . htmlspecialchars($_SESSION['phone_number']) . "</p>";
+                echo "<h2 class='text-xl text-gray-700 mt-6 mb-2 text-center' style='font-family: 'Kanit', sans-serif;'>ข้อมูลรถ</h2>";
+                echo "<p class='text-lg mb-2 text-center' style='font-family: 'Kanit', sans-serif;'>ทะเบียนรถ: " . htmlspecialchars($_SESSION['plate_number']) . "</p>";
+                echo "<p class='text-lg mb-2 text-center' style='font-family: 'Kanit', sans-serif;'>จังหวัด: " . htmlspecialchars($_SESSION['province']) . "</p>";
+                echo "<p class='text-lg mb-2 text-center' style='font-family: 'Kanit', sans-serif;'>ประเภทรถ: " . htmlspecialchars($_SESSION['car_type']) . "</p>";
+                echo "<p class='text-lg mb-2 text-center' style='font-family: 'Kanit', sans-serif;'>ยี่ห้อ: " . htmlspecialchars($_SESSION['brand']) . "</p>";
+                echo "<p class='text-lg mb-6 text-center' style='font-family: 'Kanit', sans-serif;'>ค่าปรับ: " . htmlspecialchars($_SESSION['price']) . "</p>";
+                echo "<p class='text-lg mb-6 text-center' style='font-family: 'Kanit', sans-serif;'>อุปกรณ์ล็อกเครื่องที่:  " . htmlspecialchars($_SESSION['device_user']) . "</p>";
                 echo "</div>";
             } else {
                 echo "<div class='bg-red-100 border border-red-300 p-4 rounded-lg shadow-md mb-4'>";
@@ -134,14 +134,18 @@
             ?>
 
             <div class="text-center mt-8">
-                <h2 class="text-2xl font-bold text-gray-700">เลขพร้อมเพย์สำหรับโอนเงิน</h2>
-                <h2 class="font-sans text-blue-600">065-625-3502</h2>
+                <h2 class="text-2xl font-bold text-gray-700"style="font-family: 'Kanit', sans-serif;">เลขพร้อมเพย์สำหรับโอนเงิน</h2>
+                <img
+                    src="https://i.postimg.cc/7hwLF7dR/fb75be15-51eb-4025-8429-7a6d0bfa9f3a-1.png"
+                    alt="คู่มือการสมัคร"
+                    class="max-w-full"
+                />
             </div>
 
             <!-- ฟอร์มอัปโหลดรูปภาพ -->
             <form action="transfer_db.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()" class="space-y-6 mt-8">
                 <div class="flex flex-col items-center space-y-4">
-                    <label for="fileToUpload" class="text-lg font-medium text-gray-700">กรุณาแนบหลักฐานการโอน:</label>
+                    <label for="fileToUpload" class="text-lg font-medium text-gray-700"style="font-family: 'Kanit', sans-serif;">กรุณาแนบหลักฐานการโอน:</label>
                     <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" onchange="showPreview(this)" required class="border border-gray-300 rounded-lg p-3 w-full max-w-sm text-gray-800 focus:ring-2 focus:ring-blue-500">
                 </div>
                 
@@ -149,7 +153,7 @@
                     <img id="preview" style="display:none; width: 200px; height: auto;" class="rounded-lg shadow-xl" />
                 </div>
                 
-                <div class="flex justify-center mt-6">
+                <div class="flex justify-center mt-6"style="font-family: 'Kanit', sans-serif;">
                     <input type="submit" value="บันทึกรูปภาพ" class="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-8 rounded-full shadow-md hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300">
                 </div>
             </form>

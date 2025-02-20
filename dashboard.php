@@ -166,7 +166,7 @@ while ($row = $weeklyData->fetch_assoc()) {
                     <img src="https://www.svgrepo.com/show/524199/user-circle.svg" alt="User Icon" class="h-6 w-6 group-hover:text-gray-200" style="filter: brightness(0) invert(1);">
                     <!-- Dropdown -->
                     <div class="absolute right-0 mt-2 w-40 bg-white text-gray-800 shadow-lg rounded-md opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200">
-                        <a href="Profile1.php" class="block px-4 py-2 hover:bg-gray-100" style="font-family: 'Kanit', sans-serif;">Profile</a>
+                        <a href="profile1.php" class="block px-4 py-2 hover:bg-gray-100" style="font-family: 'Kanit', sans-serif;">Profile</a>
                         <a href="logout.php" class="block px-4 py-2 hover:bg-gray-100" style="font-family: 'Kanit', sans-serif;">Logout</a>
                     </div>
                 </div>

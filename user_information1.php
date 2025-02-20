@@ -109,7 +109,7 @@ $data = $result->fetch_assoc();
         }
     </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100"style="font-family: 'Kanit', sans-serif;">
 
     <!-- Modal for entire page -->
     <div id="modal">
@@ -119,41 +119,41 @@ $data = $result->fetch_assoc();
             <?php if ($data): ?>
             <div class="flex flex-col space-y-8">
                 <!-- ข้อมูลผู้ใช้ -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-300">
-                    <h3 class="text-2xl text-gray-700 mb-4 font-sans">ข้อมูลผู้ใช้</h3>
-                    <p class="text-lg text-gray-600 mb-2">ชื่อ: 
-                        <span class="font-sans"><?= htmlspecialchars($data['first_name'] . ' ' . $data['last_name']) ?></span>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-300"style="font-family: 'Kanit', sans-serif;">
+                    <h3 class="text-2xl text-gray-700 mb-4"style="font-family: 'Kanit', sans-serif;">ข้อมูลผู้ใช้</h3>
+                    <p class="text-lg text-gray-600 mb-2"style="font-family: 'Kanit', sans-serif;">ชื่อ: 
+                        <span style="font-family: 'Kanit', sans-serif;"><?= htmlspecialchars($data['first_name'] . ' ' . $data['last_name']) ?></span>
                     </p>
-                    <p class="text-lg text-gray-600 mb-2">อีเมล: 
-                        <span class="font-sans"><?= htmlspecialchars($data['email']) ?></span>
+                    <p class="text-lg text-gray-600 mb-2"style="font-family: 'Kanit', sans-serif;">อีเมล: 
+                        <span style="font-family: 'Kanit', sans-serif;"><?= htmlspecialchars($data['email']) ?></span>
                     </p>
-                    <p class="text-lg text-gray-600 mb-2">เบอร์โทร: 
-                        <span class="font-sans"><?= htmlspecialchars($data['phone_number']) ?></span>
+                    <p class="text-lg text-gray-600 mb-2"style="font-family: 'Kanit', sans-serif;">เบอร์โทร: 
+                        <span style="font-family: 'Kanit', sans-serif;"><?= htmlspecialchars($data['phone_number']) ?></span>
                     </p>
-                    <p class="text-lg text-gray-600 mb-2">จังหวัด: 
-                        <span class="font-sans"><?= htmlspecialchars($data['province']) ?></span>
+                    <p class="text-lg text-gray-600 mb-2"style="font-family: 'Kanit', sans-serif;">จังหวัด: 
+                        <span style="font-family: 'Kanit', sans-serif;"><?= htmlspecialchars($data['province']) ?></span>
                     </p>
                 </div>
             
                 <!-- ข้อมูลรถ -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-300">
-                    <h3 class="text-2xl text-gray-700 mb-4 font-sans">ข้อมูลรถ</h3>
-                    <p class="text-lg text-gray-600 mb-2">ทะเบียนรถ: 
-                        <span class="font-sans"><?= htmlspecialchars($data['plate_number']) ?></span>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-300"style="font-family: 'Kanit', sans-serif;">
+                    <h3 class="text-2xl text-gray-700 mb-4"style="font-family: 'Kanit', sans-serif;">ข้อมูลรถ</h3>
+                    <p class="text-lg text-gray-600 mb-2"style="font-family: 'Kanit', sans-serif;">ทะเบียนรถ: 
+                        <span style="font-family: 'Kanit', sans-serif;"><?= htmlspecialchars($data['plate_number']) ?></span>
                     </p>
-                    <p class="text-lg text-gray-600 mb-2">ประเภทรถ: 
-                        <span class="font-sans"><?= htmlspecialchars($data['car_type']) ?></span>
+                    <p class="text-lg text-gray-600 mb-2"style="font-family: 'Kanit', sans-serif;">ประเภทรถ: 
+                        <span style="font-family: 'Kanit', sans-serif;"><?= htmlspecialchars($data['car_type']) ?></span>
                     </p>
-                    <p class="text-lg text-gray-600 mb-2">ยี่ห้อ: 
-                        <span class="font-sans"><?= htmlspecialchars($data['brand']) ?></span>
+                    <p class="text-lg text-gray-600 mb-2"style="font-family: 'Kanit', sans-serif;">ยี่ห้อ: 
+                        <span style="font-family: 'Kanit', sans-serif;"><?= htmlspecialchars($data['brand']) ?></span>
                     </p>
-                    <p class="text-lg text-gray-600 mb-2">ยอดชำระค่าปรับ: 
-                        <span class="font-sans"><?= number_format($data['price'], 2) ?> บาท</span>
+                    <p class="text-lg text-gray-600 mb-2"style="font-family: 'Kanit', sans-serif;">ยอดชำระค่าปรับ: 
+                        <span style="font-family: 'Kanit', sans-serif;"><?= number_format($data['price'], 2) ?> บาท</span>
                     </p>
                 </div>
             </div>
             <?php else: ?>
-            <div class="text-center text-red-600 text-lg font-medium mt-8">
+            <div class="text-center text-red-600 text-lg font-medium mt-8"style="font-family: 'Kanit', sans-serif;">
                 <p>ไม่พบข้อมูลของคุณในระบบ</p>
                 <p>กรุณาตรวจสอบอีกครั้งหรือติดต่อผู้ดูแลระบบ</p>
             </div>

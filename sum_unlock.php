@@ -97,7 +97,7 @@ $conn->close();
         };
     </script>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100"style="font-family: 'Kanit', sans-serif;">
     <!-- Navbar -->
     <header class="bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white shadow-lg">
         <div class="container mx-auto px-4 py-6 flex items-center justify-between">
@@ -107,21 +107,21 @@ $conn->close();
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <h1 class="text-xl font-sans text-center flex-grow">รหัสปลดล็อกอุปกรณ์ล็อกล้อ</h1>
+            <h1 class="text-xl text-center flex-grow"style="font-family: 'Kanit', sans-serif;">รหัสปลดล็อกอุปกรณ์ล็อกล้อ</h1>
         </div>
     </header>
 
     <!-- Left Sliding Menu -->
     <div id="left-menu" class="fixed top-0 left-0 bg-white shadow-lg">
         <div class="p-4 bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white flex justify-between items-center">
-            <h2 class=" text-lg font-sans">เมนู</h2>
+            <h2 class=" text-lg"style="font-family: 'Kanit', sans-serif;">เมนู</h2>
             <button id="menu-close" class="text-gray-600 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
         </div>
-        <nav class="p-4">
+        <nav class="p-4"style="font-family: 'Kanit', sans-serif;">
             <ul>
                 <li><a href="show_user_db1.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">หน้าหลัก</a></li>
                 <li><a href="user_information1.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">ตรวจสอบข้อมูล</a></li>
@@ -134,24 +134,24 @@ $conn->close();
         <div style="text-align: center; margin-top: 50px;">
             <?php if (!empty($unlock_codes)): ?>
                 <?php foreach ($unlock_codes as $code): ?>
-                    <p style="font-size: 24px; font-weight: bold; color: green;">รหัสปลดล็อกของคุณคือ: <?php echo $code; ?></p>
+                    <p style="font-size: 24px; font-weight: bold; color: green;"style="font-family: 'Kanit', sans-serif;">รหัสปลดล็อกของคุณคือ: <?php echo $code; ?></p>
                 <?php endforeach; ?>
             <?php else: ?>
-                <p style="color: red;">ไม่พบรหัสปลดล็อก</p>
+                <p style="color: red; font-family: 'Kanit', sans-serif;">ไม่พบรหัสปลดล็อก</p>
             <?php endif; ?>
-            <button type="button" onclick="copyAndOpen()" class="w-full sm:w-auto px-10 py-1 bg-indigo-500 text-white rounded-md shadow-sm">
+            <button type="button" onclick="copyAndOpen()" class="w-full sm:w-auto px-10 py-1 bg-indigo-500 text-white rounded-md shadow-sm"style="font-family: 'Kanit', sans-serif;">
                 คัดลอก
             </button>
         </div>
-        <div class="mt-8 bg-red-100 text-red-700 p-4 rounded-lg shadow-md flex items-center">
+        <div class="mt-8 bg-red-100 text-red-700 p-4 rounded-lg shadow-md flex items-center"style="font-family: 'Kanit', sans-serif;">
             <i class="fas fa-exclamation-triangle text-2xl mr-4"></i>
             <span class="font-bold">หากพบการจอดรถผิดกฎหมายเกิน 5 ครั้ง จะมีมาตรการลงโทษที่เข้มงวดมากขึ้น รวมถึงค่าปรับที่สูงขึ้นอย่างมาก.</span>
         </div>
         </div>
-        <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-gray-300 mt-8 w-full max-w-5xl mx-auto min-h-[200px]">
-            <h1 class="text-2xl font-bold text-red-600">🚨 โปรดจอดรถให้ถูกต้อง! 🚨</h1>
-                <p class="text-lg text-gray-700 mt-4">การจอดรถผิดกฎจราจรอาจทำให้เกิดอุบัติเหตุ ขัดขวางการจราจร และมีผลกระทบต่อผู้อื่น กรุณาเคารพกฎจราจรเพื่อความปลอดภัยของทุกคน</p>
-                    <ul class="text-left text-gray-700 mt-4 space-y-2">
+        <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-gray-300 mt-8 w-full max-w-5xl mx-auto min-h-[200px]"style="font-family: 'Kanit', sans-serif;">
+            <h1 class="text-2xl font-bold text-red-600"style="font-family: 'Kanit', sans-serif;">🚨 โปรดจอดรถให้ถูกต้อง! 🚨</h1>
+                <p class="text-lg text-gray-700 mt-4"style="font-family: 'Kanit', sans-serif;">การจอดรถผิดกฎจราจรอาจทำให้เกิดอุบัติเหตุ ขัดขวางการจราจร และมีผลกระทบต่อผู้อื่น กรุณาเคารพกฎจราจรเพื่อความปลอดภัยของทุกคน</p>
+                    <ul class="text-left text-gray-700 mt-4 space-y-2"style="font-family: 'Kanit', sans-serif;">
                         <li>✅ ปฏิบัติตามเครื่องหมายและป้ายจราจร</li>
                         <li>✅ หลีกเลี่ยงการจอดขวางทางเดินรถ</li>
                         <li>✅ ให้ความสำคัญกับทางคนข้าม</li>

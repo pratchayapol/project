@@ -120,7 +120,7 @@ $conn->close();
         };
     </script>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100"style="font-family: 'Kanit', sans-serif;">
     <!-- Navbar -->
     <header class="bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white shadow-lg">
         <div class="container mx-auto px-4 py-6 flex items-center justify-between">
@@ -143,7 +143,7 @@ $conn->close();
                 </svg>
             </button>
         </div>
-        <nav class="p-4">
+        <nav class="p-4"style="font-family: 'Kanit', sans-serif;">
             <ul>
             <li><a href="show_user_db1.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">หน้าหลัก</a></li>
                 <li><a href="user_information1.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">ตรวจสอบข้อมูล</a></li>
@@ -151,20 +151,20 @@ $conn->close();
             </ul>
         </nav>
     </div>
-    <div class="container mx-auto px-4 py-6">
+    <div class="container mx-auto px-4 py-6"style="font-family: 'Kanit', sans-serif;">
         <?php if (!empty($rows)): ?>
             <?php foreach ($rows as $row): ?>
                 <div class="bg-white p-6 rounded-2xl shadow-xl border-2 border-gray-300 mb-6 w-full max-w-2xl mx-auto min-h-[300px]">
                     <p class="text-gray-800 text-lg font-medium">
-                        <span class="text-gray-600 ml-4">ป้ายทะเบียน: <?php echo $row['plate_number']; ?></span> 
-                        <span class="text-gray-600 ml-4">จังหวัด<?php echo $row['province']; ?></span>
+                        <span class="text-gray-600 ml-4"style="font-family: 'Kanit', sans-serif;">ป้ายทะเบียน: <?php echo $row['plate_number']; ?></span> 
+                        <span class="text-gray-600 ml-4"style="font-family: 'Kanit', sans-serif;">จังหวัด<?php echo $row['province']; ?></span>
                     </p>
-                    <h5 class="text-green-500 mt-2">เจ้าหน้าที่ได้ตรวจสอบหลักฐานการชำระเงินเรียบร้อยแล้ว</h5>
+                    <h5 class="text-green-500 mt-2"style="font-family: 'Kanit', sans-serif;">เจ้าหน้าที่ได้ตรวจสอบหลักฐานการชำระเงินเรียบร้อยแล้ว</h5>
 
                     <button 
                         class="mt-4 bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transform transition-all duration-300" 
                         onclick="showUnlockCode('<?php echo $row['unlockcar']; ?>')">
-                        <i class="fas fa-unlock-alt"></i> แสดงรหัสปลดล็อก
+                        <i class="fas fa-unlock-alt"style="font-family: 'Kanit', sans-serif;"></i> แสดงรหัสปลดล็อก
                     </button>
                 </div>
 
@@ -173,16 +173,16 @@ $conn->close();
                         <!-- ไอคอนแจ้งเตือน -->
                         <img src="https://www.svgrepo.com/show/500740/warn-triangle-filled.svg" class="h-6 w-6 text-yellow-500 mr-3" alt="Warning Icon"/>
                         <!-- ข้อความแจ้งเตือน -->
-                        <h4 class="text-lg font-semibold text-yellow-600">ขั้นตอนการปลดล็อกล้อด้วยตนเอง</h4>
+                        <h4 class="text-lg font-semibold text-yellow-600"style="font-family: 'Kanit', sans-serif;">ขั้นตอนการปลดล็อกล้อด้วยตนเอง</h4>
                     </div>
-                    <span class="text-gray-700 mt-2">ขั้นตอนการปลดล็อกอุปกรณ์จะแสดงอยู่ที่</span>
+                    <span class="text-gray-700 mt-2"style="font-family: 'Kanit', sans-serif;">ขั้นตอนการปลดล็อกอุปกรณ์จะแสดงอยู่ที่</span>
                     <span class="mt-4">
-                        <a href="show_user_db1.php" class="text-blue-500 hover:underline">หน้าหลัก</a>
+                        <a href="show_user_db1.php" class="text-blue-500 hover:underline"style="font-family: 'Kanit', sans-serif;">หน้าหลัก</a>
                     </span>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p class="text-center text-red-500">ไม่พบข้อมูล</p>
+            <p class="text-center text-red-500"style="font-family: 'Kanit', sans-serif;">ไม่พบข้อมูล</p>
         <?php endif; ?>
     </div>
 
