@@ -14,33 +14,44 @@
         }
     </style>
     <script>
-document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
             const inputs = document.querySelectorAll("input[required]");
 
             inputs.forEach(input => {
-                input.addEventListener("invalid", function (event) {
-                    event.preventDefault();
+                // ตรวจสอบเมื่อกด submit แล้วไม่ได้กรอกข้อมูล
+                input.addEventListener("invalid", function () {
                     if (!input.value) {
                         input.setCustomValidity("กรุณากรอกข้อมูลให้ครบถ้วน");
                     }
                 });
 
+                // ล้างข้อความแจ้งเตือนเมื่อเริ่มพิมพ์
                 input.addEventListener("input", function () {
                     input.setCustomValidity("");
                 });
             });
 
             // ตรวจสอบรหัสผ่านให้ตรงกัน
-            document.getElementById("password_2").addEventListener("input", function () {
-                const password = document.getElementById("password").value;
-                const confirmPassword = this.value;
-                if (password !== confirmPassword) {
-                    this.setCustomValidity("รหัสผ่านไม่ตรงกัน");
+            const password = document.getElementById("password");
+            const confirmPassword = document.getElementById("password_2");
+
+            confirmPassword.addEventListener("input", function () {
+                if (password.value !== confirmPassword.value) {
+                    confirmPassword.setCustomValidity("รหัสผ่านไม่ตรงกัน");
                 } else {
-                    this.setCustomValidity("");
+                    confirmPassword.setCustomValidity("");
                 }
             });
         });
+
+        function togglePasswordVisibility(id) {
+            const passwordField = document.getElementById(id);
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
         function togglePasswordVisibility(fieldId) {
             const passwordField = document.getElementById(fieldId);
             const eyeIcon = document.getElementById(`eye-icon-${fieldId}`);
