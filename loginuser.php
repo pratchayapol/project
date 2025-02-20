@@ -37,42 +37,42 @@
             <?php endif ?>
 
             <div>
-                <label for="first_name" class="block text-sm font-medium text-gray-700">ชื่อจริง</label>
+                <label for="first_name" class="block text-sm font-sans text-gray-700">ชื่อจริง</label>
                 <input type="text" id="first_name" name="first_name" required
                 class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
                 placeholder="ชื่อจริง" required>
             </div>
 
             <div>
-                <label for="last_name" class="block text-sm font-medium text-gray-700">นามสกุล</label>
+                <label for="last_name" class="block text-sm font-sans text-gray-700">นามสกุล</label>
                 <input type="text" id="last_name" name="last_name" required
                 class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
                 placeholder="นามสุกล" required>
             </div>
 
             <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">อีเมล</label>
+                <label for="email" class="block text-sm font-sans text-gray-700">อีเมล</label>
                 <input type="email" id="email" name="email" required
                 class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
                 placeholder="อีเมล" required>
             </div>
 
             <div>
-                <label for="phone_number" class="block text-sm font-medium text-gray-700">เบอร์โทร</label>
+                <label for="phone_number" class="block text-sm font-sans text-gray-700">เบอร์โทร</label>
                 <input type="text" id="phone_number" name="phone_number" required
                 class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
                 placeholder="เบอร์โทร" required>
             </div>
 
             <div>
-                <label for="plate_number" class="block text-sm font-medium text-gray-700">หมายเลขทะเบียนรถ</label>
+                <label for="plate_number" class="block text-sm font-sans text-gray-700">หมายเลขทะเบียนรถ</label>
                 <input type="text" id="plate_number" name="plate_number" required
                 class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
                 placeholder="หมายเลขทะเบียนรถ" required>
             </div>
 
             <div class="mb-4">
-                <label for="province" class="block text-sm font-medium text-gray-700">จังหวัด:</label>
+                <label for="province" class="block text-sm font-sans text-gray-700">จังหวัด:</label>
                 <select id="province" name="province" required class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                     <option value="">--เลือกจังหวัด--</option>
                     <?php
@@ -89,7 +89,7 @@
             </div>
 
             <div class="mb-4">
-                <label for="device_user" class="block text-sm font-medium text-gray-700">หมายเลขอุปกรณ์ล็อก:</label>
+                <label for="device_user" class="block text-sm font-sans text-gray-700">หมายเลขอุปกรณ์ล็อก:</label>
                 <select id="id" name="device_user" required class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                     <option value="">--เลือกหมายเลขอุปกรณ์ล็อก--</option>
                     <option value="1">1</option>
@@ -102,16 +102,16 @@
                     <option value="8">8</option>
                     <option value="9">9</option>
                     <option value="10">10</option>
-                    <option value="10">11</option>
-                    <option value="2">12</option>
-                    <option value="3">13</option>
-                    <option value="4">14</option>
-                    <option value="5">15</option>
-                    <option value="6">16</option>
-                    <option value="7">17</option>
-                    <option value="8">18</option>
-                    <option value="9">19</option>
-                    <option value="10">20</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
                 </select>
             </div>
 
