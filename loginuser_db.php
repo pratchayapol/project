@@ -12,7 +12,7 @@ if (isset($_POST['submit_payment'])) {
     $phone_number = mysqli_real_escape_string($conn, $_POST['phone_number']);
     $plate_number = mysqli_real_escape_string($conn, $_POST['plate_number']);
     $province = mysqli_real_escape_string($conn, $_POST['province']);
-    $device_user = mysqli_real_escape_string($conn, $_POST['device_user']);
+    $device_user = (int) $_POST['device_user']; // แปลงเป็น integer
 
     // ตรวจสอบว่าฟิลด์ไม่ว่างเปล่า
     if (empty($first_name)) {
