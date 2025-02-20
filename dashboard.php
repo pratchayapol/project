@@ -120,12 +120,12 @@ while ($row = $weeklyData->fetch_assoc()) {
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- ApexCharts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <style>
         body{           
-             font-family: 'Roboto', sans-serif;
+            font-family: 'Kanit', sans-serif;
             }
         #left-menu {
             transform: translateX(-100%);
@@ -149,7 +149,7 @@ while ($row = $weeklyData->fetch_assoc()) {
         };
     </script>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100" style="font-family: 'Kanit', sans-serif;">
     <!-- Navbar -->
     <header class="bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white shadow-lg">
         <div class="container mx-auto px-4 py-6 flex items-center justify-between">
@@ -159,15 +159,15 @@ while ($row = $weeklyData->fetch_assoc()) {
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <h1 class="text-xl font-sans" style="font-size: 16px;">สรุปยอดชำระค่าปรับรายเดือน</h1>
+            <h1 class="text-xl" style="font-size: 16px; font-family: 'Kanit', sans-serif;">สรุปยอดชำระค่าปรับรายเดือน</h1>
             <div class="flex items-center space-x-6">
                 <div class="relative group cursor-pointer">
                     <!-- User Icon with External SVG -->
                     <img src="https://www.svgrepo.com/show/524199/user-circle.svg" alt="User Icon" class="h-6 w-6 group-hover:text-gray-200" style="filter: brightness(0) invert(1);">
                     <!-- Dropdown -->
                     <div class="absolute right-0 mt-2 w-40 bg-white text-gray-800 shadow-lg rounded-md opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200">
-                        <a href="Profile1.php" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
-                        <a href="logout.php" class="block px-4 py-2 hover:bg-gray-100">Logout</a>
+                        <a href="Profile1.php" class="block px-4 py-2 hover:bg-gray-100" style="font-family: 'Kanit', sans-serif;">Profile</a>
+                        <a href="logout.php" class="block px-4 py-2 hover:bg-gray-100" style="font-family: 'Kanit', sans-serif;">Logout</a>
                     </div>
                 </div>
             </div>
@@ -177,7 +177,7 @@ while ($row = $weeklyData->fetch_assoc()) {
     <!-- Left Sliding Menu -->
     <div id="left-menu" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg z-50">
         <div class="p-4 bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white flex justify-between items-center">
-            <h2 class=" text-lg font-sans"></h2>
+            <h2 class=" text-lg" style="font-family: 'Kanit', sans-serif;"></h2>
             <button id="menu-close" class="text-gray-600 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -186,21 +186,21 @@ while ($row = $weeklyData->fetch_assoc()) {
         </div>
         <nav class="p-4">
             <ul>
-            <li><a href="menu_home.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">หน้าหลัก</a></li>
-                <li><a href="AddInformation.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">เพิ่มข้อมูล</a></li>
-                <li><a href="edit_car.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">แก้ไขข้อมูลรถยนต์</a></li>
-                <li><a href="device.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">ตรวจเช็คสถานะอุปกรณ์</a></li>
-                <li><a href="user_sum.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">ข้อมูลผู้ชำระค่าปรับ</a></li>
+            <li><a href="menu_home.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200" style="font-family: 'Kanit', sans-serif;">หน้าหลัก</a></li>
+                <li><a href="AddInformation.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200" style="font-family: 'Kanit', sans-serif;">เพิ่มข้อมูล</a></li>
+                <li><a href="edit_car.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200" style="font-family: 'Kanit', sans-serif;">แก้ไขข้อมูลรถยนต์</a></li>
+                <li><a href="device.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200" style="font-family: 'Kanit', sans-serif;">ตรวจเช็คสถานะอุปกรณ์</a></li>
+                <li><a href="user_sum.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200" style="font-family: 'Kanit', sans-serif;">ข้อมูลผู้ชำระค่าปรับ</a></li>
             </ul>
         </nav>
     </div>
     <div class="container mx-auto px-4 py-8">
         <div class="bg-white rounded-lg shadow-lg p-6">
-            <h1 class="text-2xl sm:text-3xl font-bold text-center text-blue-700 mb-4">สรุปยอดค่าชำระรายเดือน</h1>
+            <h1 class="text-2xl sm:text-3xl font-bold text-center text-blue-700 mb-4" style="font-family: 'Kanit', sans-serif;">สรุปยอดค่าชำระรายเดือน</h1>
 
             <!-- ฟอร์มเลือกเดือนและปี -->
             <form method="get" action="" class="mb-8">
-                <div class="flex justify-center space-x-4">
+                <div class="flex justify-center space-x-4" style="font-family: 'Kanit', sans-serif;">
                     <select name="month" class="px-4 py-2 border rounded-lg">
                         <option value="1" <?php echo (isset($_GET['month']) && $_GET['month'] == 1) ? 'selected' : ''; ?>>มกราคม</option>
                         <option value="2" <?php echo (isset($_GET['month']) && $_GET['month'] == 2) ? 'selected' : ''; ?>>กุมภาพันธ์</option>
@@ -215,7 +215,7 @@ while ($row = $weeklyData->fetch_assoc()) {
                         <option value="11" <?php echo (isset($_GET['month']) && $_GET['month'] == 11) ? 'selected' : ''; ?>>พฤศจิกายน</option>
                         <option value="12" <?php echo (isset($_GET['month']) && $_GET['month'] == 12) ? 'selected' : ''; ?>>ธันวาคม</option>
                     </select>
-                    <select name="year" class="px-4 py-2 border rounded-lg">
+                    <select name="year" class="px-4 py-2 border rounded-lg" style="font-family: 'Kanit', sans-serif;">
                         <?php
                         $currentYear = date('Y');
                         for ($i = $currentYear; $i >= $currentYear - 5; $i--) {
@@ -223,7 +223,7 @@ while ($row = $weeklyData->fetch_assoc()) {
                         }
                         ?>
                     </select>
-                    <button type="submit" class="px-6 py-2 bg-blue-500 text-white rounded-lg">เลือก</button>
+                    <button type="submit" class="px-6 py-2 bg-blue-500 text-white rounded-lg" style="font-family: 'Kanit', sans-serif;">เลือก</button>
                 </div>
             </form>
 
@@ -234,20 +234,20 @@ while ($row = $weeklyData->fetch_assoc()) {
             <!-- สรุปข้อมูลหลัก -->
             <div class="flex flex-col sm:flex-row justify-center items-center sm:space-x-4 mb-8">
                 <div class="bg-blue-100 text-blue-800 rounded-lg shadow-md p-6 w-full sm:w-1/3 text-center">
-                    <h3 class="text-lg sm:text-xl font-sans">จำนวนเงินรวม</h3>
-                    <p class="text-xl sm:text-2xl font-bold mt-2"><?php echo number_format($totalAmount, 2); ?> บาท</p>
+                    <h3 class="text-lg sm:text-xl" style="font-family: 'Kanit', sans-serif;">จำนวนเงินรวม</h3>
+                    <p class="text-xl sm:text-2xl font-bold mt-2" style="font-family: 'Kanit', sans-serif;"><?php echo number_format($totalAmount, 2); ?> บาท</p>
                 </div>
             </div>
 
             <!-- รายงานรายละเอียด -->
             <div class="mb-8">
-                <h3 class="text-lg sm:text-xl font-bold text-green-700 mb-4">ข้อมูลแยกตามประเภทการโอน</h3>
+                <h3 class="text-lg sm:text-xl font-bold text-green-700 mb-4" style="font-family: 'Kanit', sans-serif;">ข้อมูลแยกตามประเภทการโอน</h3>
                 <div class="overflow-x-auto">
                     <table class="table-auto w-full border-collapse border border-gray-300 text-sm sm:text-base">
                         <thead>
                             <tr class="bg-blue-700 text-white">
-                                <th class="px-2 sm:px-4 py-2 border border-gray-300">ประเภทสถานะ</th>
-                                <th class="px-2 sm:px-4 py-2 border border-gray-300">ยอดรวม (บาท)</th>
+                                <th class="px-2 sm:px-4 py-2 border border-gray-300" style="font-family: 'Kanit', sans-serif;">ประเภทสถานะ</th>
+                                <th class="px-2 sm:px-4 py-2 border border-gray-300" style="font-family: 'Kanit', sans-serif;">ยอดรวม (บาท)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -268,8 +268,8 @@ while ($row = $weeklyData->fetch_assoc()) {
                             // แสดงผลข้อมูล
                             while ($row = $result->fetch_assoc()) {
                                 echo "<tr class='hover:bg-gray-100'>";
-                                echo "<td class='px-2 sm:px-4 py-2 border border-gray-300'>" . htmlspecialchars($row['status']) . "</td>";
-                                echo "<td class='px-2 sm:px-4 py-2 border border-gray-300'>" . number_format($row['total_amount'], 2) . " บาท</td>";
+                                echo "<td class='px-2 sm:px-4 py-2 border border-gray-300' style='font-family: 'Kanit', sans-serif;'>" . htmlspecialchars($row['status']) . "</td>";
+                                echo "<td class='px-2 sm:px-4 py-2 border border-gray-300' style='font-family: 'Kanit', sans-serif;'>" . number_format($row['total_amount'], 2) . " บาท</td>";
                                 echo "</tr>";
                             }
                             ?>
@@ -279,13 +279,13 @@ while ($row = $weeklyData->fetch_assoc()) {
             </div>
             <!-- กราฟรายเดือน -->
             <div class="bg-white p-4 sm:p-6 rounded-lg shadow-lg mt-6">
-                <h3 class="text-lg sm:text-xl font-sans text-gray-700 mb-4">กราฟรายเดือน</h3>
+                <h3 class="text-lg sm:text-xl text-gray-700 mb-4" style="font-family: 'Kanit', sans-serif;">กราฟรายเดือน</h3>
                 <div id="monthlyChart" class="w-full h-64"></div>
             </div>
 
             <!-- กราฟรายสัปดาห์ -->
             <div class="bg-white p-4 sm:p-6 rounded-lg shadow-lg mt-6">
-                <h3 class="text-lg sm:text-xl font-sans text-gray-700 mb-4">กราฟรายสัปดาห์</h3>
+                <h3 class="text-lg sm:text-xl text-gray-700 mb-4" style="font-family: 'Kanit', sans-serif;">กราฟรายสัปดาห์</h3>
                 <div id="weeklyChart" class="w-full h-64"></div>
             </div>
         </div>

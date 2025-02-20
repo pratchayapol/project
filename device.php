@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน้าอุปกรณ์</title>
+    <title>ตรวจสอบอุปกรณ์สำหรับเจ้าหน้าที่ตำรวจ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body{
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Kanit', sans-serif;
         }
         #left-menu {
             transform: translateX(-100%);
@@ -67,7 +67,7 @@
         }
     </script>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100" style="font-family: 'Kanit', sans-serif;">
     <!-- Navbar -->
     <header class="bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white shadow-lg">
         <div class="container mx-auto px-4 py-6 flex items-center justify-between">
@@ -77,15 +77,15 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <h1 class="text-xl font-sans">ตรวจเช็คสถานะอุปกรณ์</h1>
+            <h1 class="text-xl" style="font-family: 'Kanit', sans-serif;">ตรวจเช็คสถานะอุปกรณ์</h1>
             <div class="flex items-center space-x-6">
                 <div class="relative group cursor-pointer">
                     <!-- User Icon with External SVG -->
                     <img src="https://www.svgrepo.com/show/524199/user-circle.svg" alt="User Icon" class="h-6 w-6 group-hover:text-gray-200" style="filter: brightness(0) invert(1);">
                     <!-- Dropdown -->
                     <div class="absolute right-0 mt-2 w-40 bg-white text-gray-800 shadow-lg rounded-md opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200">
-                        <a href="Profile.php" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
-                        <a href="logout.php" class="block px-4 py-2 hover:bg-gray-100">Logout</a>
+                        <a href="Profile.php" class="block px-4 py-2 hover:bg-gray-100" style="font-family: 'Kanit', sans-serif;">Profile</a>
+                        <a href="logout.php" class="block px-4 py-2 hover:bg-gray-100" style="font-family: 'Kanit', sans-serif;">Logout</a>
                     </div>
                 </div>
             </div>
@@ -95,14 +95,14 @@
     <!-- Left Sliding Menu -->
     <div id="left-menu" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg z-50">
         <div class="p-4 bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white flex justify-between items-center">
-            <h2 class=" text-lg font-sans"></h2>
+            <h2 class=" text-lg" style="font-family: 'Kanit', sans-serif;"></h2>
             <button id="menu-close" class="text-gray-600 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
         </div>
-        <nav class="p-4">
+        <nav class="p-4" style="font-family: 'Kanit', sans-serif;">
             <ul>
                 <li><a href="menu_home.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">หน้าหลัก</a></li>
                 <li><a href="AddInformation.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">เพิ่มข้อมูล</a></li>
@@ -113,17 +113,17 @@
         </nav>
     </div>
 
-    <div class="container mx-auto px-4 py-6">
+    <div class="container mx-auto px-4 py-6" style="font-family: 'Kanit', sans-serif;">
         <div class="mb-6">
             <input 
                 type="text" 
                 id="searchInput" 
-                class="p-2 border border-gray-300 rounded w-full" 
+                class="p-2 border border-gray-300 rounded w-full" style="font-family: 'Kanit', sans-serif;"
                 placeholder="ค้นหาข้อมูล"
             />
             <button 
                 onclick="searchTable()" 
-                class="mt-2 p-2 bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white rounded w-full"
+                class="mt-2 p-2 bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white rounded w-full" style="font-family: 'Kanit', sans-serif;"
             >
                 ค้นหา
             </button>
@@ -132,7 +132,7 @@
         <table id="carInfoTable" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
             <thead class="bg-gray-200">
                 <thead>
-                    <tr class="bg-gray-200 text-left">
+                    <tr class="bg-gray-200 text-left" style="font-family: 'Kanit', sans-serif;">
                         <th class="border px-2 py-1 whitespace-nowrap">ทะเบียน</th>
                         <th class="border px-2 py-1 whitespace-nowrap">จังหวัด</th>
                         <th class="border px-2 py-1 whitespace-nowrap">ประเภทรถ</th>
@@ -160,14 +160,14 @@
                     const row = document.createElement('tr');
                     row.classList.add('border-b', 'border-gray-200');
                     row.innerHTML = `
-                        <td class='border px-2 py-1 whitespace-nowrap'> ${device.plate_number}</td>
-                        <td class='border px-2 py-1 whitespace-nowrap'> ${device.province}</td>
-                        <td class='border px-2 py-1 whitespace-nowrap'> ${device.car_type}</td>
-                        <td class='border px-2 py-1 whitespace-nowrap'> ${device.brand}</td>
-                        <td class='border px-2 py-1 whitespace-nowrap'> ${device.price}</td>
-                        <td class='border px-2 py-1 whitespace-nowrap'> ${device.unlockcar}</td>
-                        <td class='border px-2 py-1 whitespace-nowrap'> ${device.device}</td>
-                        <td class='border px-2 py-1 whitespace-nowrap'> ${device.created_at}</td>
+                        <td class='border px-2 py-1 whitespace-nowrap' style='font-family: 'Kanit', sans-serif;'> ${device.plate_number}</td>
+                        <td class='border px-2 py-1 whitespace-nowrap' style="font-family: 'Kanit', sans-serif;"> ${device.province}</td>
+                        <td class='border px-2 py-1 whitespace-nowrap' style="font-family: 'Kanit', sans-serif;"> ${device.car_type}</td>
+                        <td class='border px-2 py-1 whitespace-nowrap' style="font-family: 'Kanit', sans-serif;"> ${device.brand}</td>
+                        <td class='border px-2 py-1 whitespace-nowrap' style="font-family: 'Kanit', sans-serif;"> ${device.price}</td>
+                        <td class='border px-2 py-1 whitespace-nowrap' style="font-family: 'Kanit', sans-serif;"> ${device.unlockcar}</td>
+                        <td class='border px-2 py-1 whitespace-nowrap' style="font-family: 'Kanit', sans-serif;"> ${device.device}</td>
+                        <td class='border px-2 py-1 whitespace-nowrap' style="font-family: 'Kanit', sans-serif;"> ${device.created_at}</td>
                     `;
                     deviceList.appendChild(row);
                 });

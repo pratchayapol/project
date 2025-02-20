@@ -100,15 +100,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile</title>
+    <title>แก้ไขข้อมูลส่วนตัว</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Kanit', sans-serif;
             background: url('https://cdn.pixabay.com/photo/2019/04/10/11/56/watercolor-4116932_640.png') no-repeat center center fixed;
             background-size: cover;
         }
@@ -143,33 +143,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         <!-- Profile Image Upload -->
         <div class="mb-4">
-            <label for="profile_image" class="block text-gray-700 font-sans mb-2">อัพโหลดรูปภาพ </label>
+            <label for="profile_image" class="block text-gray-700 mb-2" style="font-family: 'Kanit', sans-serif;">อัพโหลดรูปภาพ </label>
             <div class="flex items-center">
                 <img src="uploads/<?php echo htmlspecialchars($user['profile_image'] ?? 'default.png'); ?>" alt="Profile Image" class="w-24 h-24 object-cover rounded-full mr-4">
-                <input type="file" name="profile_image" id="profile_image" class="block w-full text-sm text-gray-500 file:bg-gray-100 file:border-0 file:mr-4 file:rounded-lg file:px-4 file:py-2 file:text-sm file:font-sans file:text-gray-700 hover:file:bg-gray-200">
+                <input type="file" name="profile_image" id="profile_image" class="block w-full text-sm text-gray-500 file:bg-gray-100 file:border-0 file:mr-4 file:rounded-lg file:px-4 file:py-2 file:text-sm file: file:text-gray-700 hover:file:bg-gray-200"
+                style="font-family: 'Kanit', sans-serif;">
             </div>
         </div>
 
         <div class="mb-4">
-            <label for="firstname" class="block text-gray-700 font-sans mb-2">
-                <i class="fas fa-user text-gray-500 mr-2"></i> ชื่อจริง
+            <label for="firstname" class="block text-gray-700 mb-2" style="font-family: 'Kanit', sans-serif;">
+                <i class="fas fa-user text-gray-500 mr-2" ></i> ชื่อจริง
             </label>
             <input type="text" id="firstname" name="firstname" value="<?php echo htmlspecialchars($user['firstname'] ?? ''); ?>" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
         </div>
         <div class="mb-4">
-            <label for="lastname" class="block text-gray-700 font-sans mb-2">
+            <label for="lastname" class="block text-gray-700 mb-2"style="font-family: 'Kanit', sans-serif;">
                 <i class="fas fa-user text-gray-500 mr-2"></i> นามสกุล
             </label>
             <input type="text" id="lastname" name="lastname" value="<?php echo htmlspecialchars($user['lastname']); ?>" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
         </div>
         <div class="mb-4">
-            <label for="phone" class="block text-gray-700 font-sans mb-2">
+            <label for="phone" class="block text-gray-700 mb-2" style="font-family: 'Kanit', sans-serif;">
                 <i class="fas fa-phone text-gray-500 mr-2"></i> เบอร์โทรศัพท์
             </label>
-            <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($user['phone'] ?? ''); ?>" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
+            <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($user['phone'] ?? ''); ?>" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" style="font-family: 'Kanit', sans-serif;">
         </div>
         <div class="mb-4 relative">
-            <label for="current_password" class="block text-gray-700 font-sans mb-2">
+            <label for="current_password" class="block text-gray-700 mb-2" style="font-family: 'Kanit', sans-serif;">
                 <i class="fas fa-lock text-gray-500 mr-2"></i> รหัสผ่านเดิม
             </label>
             <div class="relative">
@@ -187,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <!-- New Password -->
         <div class="mb-4 relative">
-            <label for="new_password" class="block text-gray-700 font-sans mb-2">
+            <label for="new_password" class="block text-gray-700 mb-2" style="font-family: 'Kanit', sans-serif;">
                 <i class="fas fa-lock text-gray-500 mr-2"></i> ตั้งรหัสผ่านใหม่
             </label>
             <div class="relative">
@@ -205,7 +206,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <!-- Confirm New Password -->
         <div class="mb-4 relative">
-            <label for="confirm_password" class="block text-gray-700 font-sans mb-2">
+            <label for="confirm_password" class="block text-gray-700  mb-2" style="font-family: 'Kanit', sans-serif;">
                 <i class="fas fa-lock text-gray-500 mr-2"></i> ยืนยันรหัสผ่านใหม่
             </label>
             <div class="relative">

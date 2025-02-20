@@ -31,7 +31,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>กรอกข้อมูลรถ</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .bg-custom-green {
@@ -41,7 +41,7 @@
             background-color: #0F8D23;
         }
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Kanit', sans-serif;
             background: url('https://cdn.pixabay.com/photo/2019/04/10/11/56/watercolor-4116932_640.png') no-repeat center center fixed;
             background-size: cover;
         }
@@ -49,17 +49,17 @@
 </head>
 <body class="flex items-center justify-center h-screen">
 <div class="bg-white rounded-lg p-4 w-4/5 sm:w-2/3 md:w-1/2 mx-auto shadow-lg">
-        <h1 class="text-2xl font-bold mb-6 text-center">กรอกข้อมูลรถ</h1>
+        <h1 class="text-2xl font-bold mb-6 text-center" style="font-family: 'Kanit', sans-serif;">กรอกข้อมูลรถ</h1>
         <form action="AddInformation_db.php" method="post" id="carInfoForm">
             <!-- เลขทะเบียนรถ -->
             <div class="mb-4">
-                <label for="plate_number" class="block text-sm font-sans text-gray-700">เลขทะเบียนรถ:</label>
+                <label for="plate_number" class="block text-sm text-gray-700">เลขทะเบียนรถ:</label>
                 <input type="text" id="plate_number" name="plate_number" required pattern="[\dก-๙]+" title="กรุณากรอกเฉพาะตัวเลขหรืออักษรไทยเท่านั้น" class="mt-1 block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
             </div>
 
             <!-- จังหวัด -->
             <div class="mb-4">
-                <label for="province" class="block text-sm font-sans text-gray-700">จังหวัด:</label>
+                <label for="province" class="block text-sm text-gray-700"style="font-family: 'Kanit', sans-serif;">จังหวัด:</label>
                 <select id="province" name="province" required class="mt-1 block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                     <option value="">--เลือกจังหวัด--</option>
                     <?php
@@ -77,7 +77,7 @@
 
             <!-- ประเภทรถ -->
             <div class="mb-4">
-                <label for="car_type" class="block text-sm font-sans text-gray-700">ประเภทรถ:</label>
+                <label for="car_type" class="block text-sm text-gray-700" style="font-family: 'Kanit', sans-serif;">ประเภทรถ:</label>
                 <select id="car_type" name="car_type" required class="mt-1 block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                     <option value="">--เลือกประเภทรถ--</option>
                     <?php
@@ -94,7 +94,7 @@
 
             <!-- ยี่ห้อรถ -->
             <div class="mb-4">
-                <label for="brand" class="block text-sm font-sans text-gray-700">ยี่ห้อรถ:</label>
+                <label for="brand" class="block text-sm text-gray-700" style="font-family: 'Kanit', sans-serif;">ยี่ห้อรถ:</label>
                 <select id="brand" name="brand" required class="mt-1 block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                     <option value="">--เลือกยี่ห้อรถ--</option>
                     <?php
@@ -111,19 +111,19 @@
 
             <!-- ยอดชำระค่าปรับ -->
             <div class="mb-4">
-                <label for="price" class="block text-sm font-sans text-gray-700">ยอดชำระค่าปรับ:</label>
+                <label for="price" class="block text-sm text-gray-700" style="font-family: 'Kanit', sans-serif;">ยอดชำระค่าปรับ:</label>
                 <input type="number" id="price" name="price" required class="mt-1 block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
             </div>
 
             <!-- อุปกรณ์ -->
             <div class="mb-4">
-                <label for="device" class="block text-sm font-sans text-gray-700">อุปกรณ์:</label>
+                <label for="device" class="block text-sm text-gray-700" style="font-family: 'Kanit', sans-serif;">อุปกรณ์:</label>
                 <input type="text" name="device" required class="mt-1 block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
             </div>
 
             <!-- รหัสปลดล็อก -->
             <div class="mb-4">
-                <label for="unlockcar" class="block text-sm font-sans text-gray-700">รหัสปลดล็อก:</label>
+                <label for="unlockcar" class="block text-sm text-gray-700" style="font-family: 'Kanit', sans-serif;">รหัสปลดล็อก:</label>
                 <input type="text" id="unlockcar" name="unlockcar" readonly class="mt-1 block w-full px-4 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                 
                 <!-- ใช้ flexbox เพื่อจัดปุ่มให้อยู่ข้างกัน -->
@@ -136,7 +136,7 @@
                     </button>
                 </div>
             </div>
-            <p class="text-lg font-sans mb-4">ชื่อเจ้าหน้าที่บันทึก <span class="text-indigo-600"><?= htmlspecialchars($firstname) ?></span></p>
+            <p class="text-lg mb-4" style="font-family: 'Kanit', sans-serif;">ชื่อเจ้าหน้าที่บันทึก <span class="text-indigo-600"><?= htmlspecialchars($firstname) ?></span></p>
 
             <!-- ปุ่ม -->
             <div class="flex justify-between">

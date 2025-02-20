@@ -57,10 +57,10 @@ $result = $conn->query($query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Roles</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body{
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Kanit', sans-serif;
         }
         /* เมนูด้านซ้าย */
         #left-menu {
@@ -213,7 +213,7 @@ $result = $conn->query($query);
         });
     </script>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100"style="font-family: 'Kanit', sans-serif;">
     <header class="bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white shadow-lg">
         <div class="container mx-auto px-4 py-6 flex items-center justify-between">
             <!-- Menu Toggle Button -->
@@ -222,13 +222,13 @@ $result = $conn->query($query);
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <h1 class="text-xl font-sans">จัดการกับสถานะผู้ใช้</h1>
+            <h1 class="text-xl"style="font-family: 'Kanit', sans-serif;">จัดการกับสถานะผู้ใช้</h1>
             <div class="flex items-center space-x-6">
                 <div class="relative group cursor-pointer">
                     <img src="https://www.svgrepo.com/show/524199/user-circle.svg" alt="User Icon" class="h-6 w-6 group-hover:text-gray-200" style="filter: brightness(0) invert(1);">
                     <div class="absolute right-0 mt-2 w-40 bg-white text-gray-800 shadow-lg rounded-md opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200">
-                        <a href="profile1.php" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
-                        <a href="logout.php" class="block px-4 py-2 hover:bg-gray-100">Logout</a>
+                        <a href="profile1.php" class="block px-4 py-2 hover:bg-gray-100"style="font-family: 'Kanit', sans-serif;">Profile</a>
+                        <a href="logout.php" class="block px-4 py-2 hover:bg-gray-100"style="font-family: 'Kanit', sans-serif;">Logout</a>
                     </div>
                 </div>
             </div>
@@ -238,14 +238,14 @@ $result = $conn->query($query);
     <!-- Left Sliding Menu -->
     <div id="left-menu" class="fixed top-0 left-0 bg-white shadow-lg">
         <div class="p-4 bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white flex justify-between items-center">
-            <h2 class=" text-lg font-sans"></h2>
+            <h2 class=" text-lg"style="font-family: 'Kanit', sans-serif;"></h2>
             <button id="menu-close" class="text-gray-600 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
         </div>
-        <nav class="p-4">
+        <nav class="p-4"style="font-family: 'Kanit', sans-serif;">
             <ul>
             <li><a href="super_admin.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">หน้าหลัก</a></li>
                 <li><a href="super_check.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">ตรวจสอบสถานะคำร้องอนุมัติ</a></li>
@@ -257,43 +257,43 @@ $result = $conn->query($query);
         </nav>
     </div>
 
-    <div class="container mx-auto px-4 py-6">
+    <div class="container mx-auto px-4 py-6"style="font-family: 'Kanit', sans-serif;">
         <div class="mb-6">
             <input 
                 type="text" 
                 id="searchInput" 
-                class="p-2 border border-gray-300 rounded w-full" 
+                class="p-2 border border-gray-300 rounded w-full" style="font-family: 'Kanit', sans-serif;"
                 placeholder="ค้นหาข้อมูล"
             />
             <button 
                 onclick="searchTable()" 
-                class="mt-2 p-2 bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white rounded w-full"
+                class="mt-2 p-2 bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white rounded w-full" style="font-family: 'Kanit', sans-serif;"
             >
                 ค้นหา
             </button>
          </div>
 
          <div class="overflow-x-auto">
-        <table id="carInfoTable" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
+        <table id="carInfoTable" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base" style="font-family: 'Kanit', sans-serif;">
             <thead class="bg-gray-200">
                 <thead>
                     <tr class="bg-gray-200 text-left">
-                        <th class="border px-2 py-1 whitespace-nowrap">ID</th>
-                        <th class="border px-2 py-1 whitespace-nowrap">ชื่อ</th>
-                        <th class="border px-2 py-1 whitespace-nowrap">นามสกุล</th>
-                        <th class="border px-2 py-1 whitespace-nowrap">อีเมล</th>
-                        <th class="border px-2 py-1 whitespace-nowrap">สถานะ</th>
-                        <th class="border px-2 py-1 whitespace-nowrap"></th>
+                        <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">ID</th>
+                        <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">ชื่อ</th>
+                        <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">นามสกุล</th>
+                        <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">อีเมล</th>
+                        <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">สถานะ</th>
+                        <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;"></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php while ($row = $result->fetch_assoc()): ?>
                         <tr class="border-t hover:bg-gray-100">
-                            <td class="border px-2 py-1 whitespace-nowrap"><?php echo $row['id']; ?></td>
-                            <td class="border px-2 py-1 whitespace-nowrap"><?php echo $row['firstname']; ?></td>
-                            <td class="border px-2 py-1 whitespace-nowrap"><?php echo $row['lastname']; ?></td>
-                            <td class="border px-2 py-1 whitespace-nowrap"><?php echo $row['email']; ?></td>
-                            <td class="border px-2 py-1 whitespace-nowrap"><?php echo $row['role']; ?></td>
+                            <td class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;"><?php echo $row['id']; ?></td>
+                            <td class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;"><?php echo $row['firstname']; ?></td>
+                            <td class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;"><?php echo $row['lastname']; ?></td>
+                            <td class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;"><?php echo $row['email']; ?></td>
+                            <td class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;"><?php echo $row['role']; ?></td>
                             <td class="py-3 px-4 text-center">
                                 <button class="bg-yellow-400 text-white px-4 py-2 rounded hover:bg-yellow-500" 
                                         onclick="openModal(<?php echo $row['id']; ?>, '<?php echo $row['role']; ?>')">
@@ -314,19 +314,19 @@ $result = $conn->query($query);
     <div id="modal" class="fixed inset-0 flex items-center justify-center hidden">
         <div class="bg-white rounded-lg shadow-lg p-6 w-96">
             <form method="POST">
-                <h2 class="text-xl font-bold mb-4">สถานะเจ้าหน้าที่:</h2>
-                <p class="mb-4">สถานะเดิม: <span id="current_role" class="font-sans"></span></p>
+                <h2 class="text-xl font-bold mb-4"style="font-family: 'Kanit', sans-serif;">สถานะเจ้าหน้าที่:</h2>
+                <p class="mb-4">สถานะเดิม: <span id="current_role" style="font-family: 'Kanit', sans-serif;"></span></p>
                 <input type="hidden" name="user_id" id="user_id">
 
-                <label for="new_role" class="block text-sm font-medium text-gray-700 mb-2">:</label>
+                <label for="new_role" class="block text-sm font-medium text-gray-700 mb-2"style="font-family: 'Kanit', sans-serif;">:</label>
                 <select name="new_role" id="new_role" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
                     <option value="admin">Admin</option>
                     <option value="superadmin">Superadmin</option>
                 </select>
 
                 <div class="mt-6 flex justify-end space-x-4">
-                    <button type="button" class="bg-red-800 text-white px-4 py-2 rounded hover:bg-red-400" onclick="closeModal()">ยกเลิก</button>
-                    <button type="submit" name="update_role" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">เปลี่ยนแปลง</button>
+                    <button type="button" class="bg-red-800 text-white px-4 py-2 rounded hover:bg-red-400" onclick="closeModal()"style="font-family: 'Kanit', sans-serif;">ยกเลิก</button>
+                    <button type="submit" name="update_role" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"style="font-family: 'Kanit', sans-serif;">เปลี่ยนแปลง</button>
                 </div>
             </form>
         </div>

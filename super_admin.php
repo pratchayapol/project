@@ -43,10 +43,10 @@ $password_lock = htmlspecialchars($user['password_lock']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sliding Left Menu</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body{
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Kanit', sans-serif;
         }  
         /* เมนูด้านซ้าย */
         #left-menu {

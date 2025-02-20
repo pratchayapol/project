@@ -45,10 +45,10 @@ $password_lock = htmlspecialchars($user['password_lock']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sliding Left Menu</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body{
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Kanit', sans-serif;
         }
         #left-menu {
             transform: translateX(-100%);
@@ -72,7 +72,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
         };
     </script>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100" style="font-family: 'Kanit', sans-serif;">
     <!-- Navbar -->
     <header class="bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white shadow-lg">
         <div class="container mx-auto px-4 py-6 flex items-center justify-between">
@@ -88,8 +88,8 @@ $password_lock = htmlspecialchars($user['password_lock']);
                     <img src="https://www.svgrepo.com/show/524199/user-circle.svg" alt="User Icon" class="h-6 w-6 group-hover:text-gray-200" style="filter: brightness(0) invert(1);">
                     <!-- Dropdown -->
                     <div class="absolute right-0 mt-2 w-40 bg-white text-gray-800 shadow-lg rounded-md opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200">
-                        <a href="Profile.php" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
-                        <a href="logout.php" class="block px-4 py-2 hover:bg-gray-100">Logout</a>
+                        <a href="Profile.php" class="block px-4 py-2 hover:bg-gray-100"style="font-family: 'Kanit', sans-serif;">Profile</a>
+                        <a href="logout.php" class="block px-4 py-2 hover:bg-gray-100"style="font-family: 'Kanit', sans-serif;">Logout</a>
                     </div>
                 </div>
             </div>
@@ -99,14 +99,14 @@ $password_lock = htmlspecialchars($user['password_lock']);
     <!-- Left Sliding Menu -->
     <div id="left-menu" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg z-50">
         <div class="p-4 bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white flex justify-between items-center">
-            <h2 class=" text-lg font-sans"></h2>
+            <h2 class=" text-lg"style="font-family: 'Kanit', sans-serif;"></h2>
             <button id="menu-close" class="text-gray-600 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
         </div>
-        <nav class="p-4">
+        <nav class="p-4"style="font-family: 'Kanit', sans-serif;">
             <ul>
                 <li><a href="AddInformation.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">เพิ่มข้อมูล</a></li>
                 <li><a href="edit_car.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">แก้ไขข้อมูลรถยนต์</a></li>
@@ -119,68 +119,68 @@ $password_lock = htmlspecialchars($user['password_lock']);
     <div class="container mx-auto mt-12 px-6">
         <div class="bg-white shadow-md rounded-lg p-8">
             <p>
-                <img src="https://www.svgrepo.com/show/467431/user-5.svg" alt="User Icon" class="inline-block w-6 h-6 mr-2" />
+                <img src="https://www.svgrepo.com/show/467431/user-5.svg" alt="User Icon" class="inline-block w-6 h-6 mr-2" style="font-family: 'Kanit', sans-serif;" />
                 ยินดีต้อนรับเจ้าหน้าที่ <?php echo htmlspecialchars($firstname); ?>
             </p>
             <p>
-                <img src="https://www.svgrepo.com/show/513324/lock.svg" alt="Lock Icon" class="inline-block w-6 h-6 mr-2" />
+                <img src="https://www.svgrepo.com/show/513324/lock.svg" alt="Lock Icon" class="inline-block w-6 h-6 mr-2" style="font-family: 'Kanit', sans-serif;" />
                 รหัสเข้าสู่ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่ายสำหรับเจ้าหน้าที่: <span class="text-green-500"><?php echo htmlspecialchars($password_lock); ?></span>
             </p>
         </div>
     </div>
     <div class="container mx-auto mt-12 px-6">
         <div class="bg-white shadow-md rounded-lg p-8">
-            <h1 class="text-3xl gradient-heading bordered-heading mb-6">คู่มือการเข้าใช้ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่ายสำหรับเจ้าหน้าที่</h1>
-            <p class="text-gray-700 text-lg mb-8" style="font-size: 24px;">คู่มือการเข้าใช้ระบบรับรหัสและล็อกล้อ</p>
+            <h1 class="text-3xl gradient-heading bordered-heading mb-6"style="font-family: 'Kanit', sans-serif;">คู่มือการเข้าใช้ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่ายสำหรับเจ้าหน้าที่</h1>
+            <p class="text-gray-700 text-lg mb-8" style="font-size: 24px; font-family: 'Kanit', sans-serif;">คู่มือการเข้าใช้ระบบรับรหัสและล็อกล้อ</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- ปุ่มไอคอนข้อมูล -->
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300"style="font-family: 'Kanit', sans-serif;">
                     <img src="https://www.svgrepo.com/show/504058/button-electricity-charging-plug-energy-power.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">1.กดปุ่มบนอุปกรณ์</span>
+                    <span class="text-lg text-white" style="font-size: 1rem;">1.กดปุ่มบนอุปกรณ์</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300"style="font-family: 'Kanit', sans-serif;">
                     <img src="https://www.svgrepo.com/show/61290/wifi-logo.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">2.เชื่อมต่อ wi-fi : ESP32_LOCK</span>
+                    <span class="text-lg text-white" style="font-size: 1rem;">2.เชื่อมต่อ wi-fi : ESP32_LOCK</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300"style="font-family: 'Kanit', sans-serif;">
                     <img src="https://www.svgrepo.com/show/503562/scan-qrcode.svg"
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">3.สแกน QRCode บนกล่องอุปกรณ์</span>
+                    <span class="text-lg text-white" style="font-size: 1rem;">3.สแกน QRCode บนกล่องอุปกรณ์</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300"style="font-family: 'Kanit', sans-serif;">
                     <img src="https://www.svgrepo.com/show/476344/login-lock-refresh.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">4.ล็อกอินบนเว็บไซต์ระบบอุปกรณ์ล็อกล้อและปลดล็อกล้อ ด้วยหรัส <?php echo htmlspecialchars($password_lock); ?></span>
+                    <span class="text-lg text-white" style="font-size: 1rem;">4.ล็อกอินบนเว็บไซต์ระบบอุปกรณ์ล็อกล้อและปลดล็อกล้อ ด้วยหรัส <?php echo htmlspecialchars($password_lock); ?></span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300"style="font-family: 'Kanit', sans-serif;">
                     <img src="https://www.svgrepo.com/show/455949/click.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">5.กดดำเนินการต่อและรับรหัสผ่าน</span>
+                    <span class="text-lg text-white" style="font-size: 1rem;">5.กดดำเนินการต่อและรับรหัสผ่าน</span>
                 </button>
 
-                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300"style="font-family: 'Kanit', sans-serif;">
                     <img src="https://www.svgrepo.com/show/381143/password-account-security-reset-safety.svg" 
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-sans text-white" style="font-size: 1rem;">6.รับรหัสปลดล็อกอุปกรณ์และนำไปบันทึกในระบบบันทึกข้อมูลรถยนต์</span>
+                    <span class="text-lg text-white" style="font-size: 1rem;">6.รับรหัสปลดล็อกอุปกรณ์และนำไปบันทึกในระบบบันทึกข้อมูลรถยนต์</span>
                 </button>
             </div>
             <div class="bg-white shadow-md rounded-lg p-8 flex flex-col items-center justify-center">
@@ -190,7 +190,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
                     alt="คู่มือการสมัคร"
                     class="max-w-full"
                 />
-                <p class="text-gray-700 text-lg mb-8 text-center" style="font-size: 24px;">หรือเข้าที่ IP : 192.16.4.1</p>
+                <p class="text-gray-700 text-lg mb-8 text-center" style="font-size: 24px; font-family: 'Kanit', sans-serif;">หรือเข้าที่ IP : 192.16.4.1</p>
             </div>
         </div>
     </div>

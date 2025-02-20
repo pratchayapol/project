@@ -87,8 +87,11 @@ $conn->close();
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- เพิ่มลิงก์ SweetAlert2 -->
     <!-- เพิ่มลิงก์ Font Awesome สำหรับไอคอน -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        body{
+            font-family: 'Kanit', sans-serif;
+        }
         /* เมนูด้านซ้าย */
         #left-menu {
             transform: translateX(-100%);

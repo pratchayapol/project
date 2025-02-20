@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Kanit', sans-serif;
             background: url('https://cdn.pixabay.com/photo/2015/07/24/11/11/watercolor-858169_640.jpg') no-repeat center center fixed;
             background-size: cover;
         }
@@ -80,7 +80,7 @@
                 <img src="https://upload.wikimedia.org/wikipedia/th/e/e0/RMUTI_KORAT.png" alt="RMUTI Logo" class="w-24 h-auto">
             </div>
 
-            <h2 class="text-2xl font-sans text-center mb-4" style="font-size: 16px;">ลงทะเบียนเข้าสู่เว็บไซต์สำหรัชำระค่าปรับ</h2>
+            <h2 class="text-2xl text-center mb-4" style="font-size: 16px; font-family: 'Kanit', sans-serif;">ลงทะเบียนเข้าสู่เว็บไซต์สำหรัชำระค่าปรับ</h2>
 
             <form action="loginuser_db.php" method="post">
             <?php if(isset($_SESSION['error'])) : ?>
@@ -95,42 +95,42 @@
             <?php endif ?>
 
             <div>
-                <label for="first_name" class="block text-sm font-sans text-gray-700">ชื่อจริง</label>
+                <label for="first_name" class="block text-sm text-gray-700"style="font-family: 'Kanit', sans-serif;">ชื่อจริง</label>
                 <input type="text" id="first_name" name="first_name" required
                 class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
                 placeholder="ชื่อจริง" required>
             </div>
 
             <div>
-                <label for="last_name" class="block text-sm font-sans text-gray-700">นามสกุล</label>
+                <label for="last_name" class="block text-sm text-gray-700"style="font-family: 'Kanit', sans-serif;">นามสกุล</label>
                 <input type="text" id="last_name" name="last_name" required
                 class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
                 placeholder="นามสุกล" required>
             </div>
 
             <div>
-                <label for="email" class="block text-sm font-sans text-gray-700">อีเมล</label>
+                <label for="email" class="block text-sm text-gray-700"style="font-family: 'Kanit', sans-serif;">อีเมล</label>
                 <input type="email" id="email" name="email" required
                 class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
                 placeholder="อีเมล" required>
             </div>
 
             <div>
-                <label for="phone_number" class="block text-sm font-sans text-gray-700">เบอร์โทร</label>
+                <label for="phone_number" class="block text-sm text-gray-700"style="font-family: 'Kanit', sans-serif;">เบอร์โทร</label>
                 <input type="text" id="phone_number" name="phone_number" required
                 class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
                 placeholder="เบอร์โทร" required>
             </div>
 
             <div>
-                <label for="plate_number" class="block text-sm font-sans text-gray-700">หมายเลขทะเบียนรถ</label>
+                <label for="plate_number" class="block text-sm text-gray-700"style="font-family: 'Kanit', sans-serif;">หมายเลขทะเบียนรถ</label>
                 <input type="text" id="plate_number" name="plate_number" required
                 class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
                 placeholder="หมายเลขทะเบียนรถ" required>
             </div>
 
             <div class="mb-4">
-                <label for="province" class="block text-sm font-sans text-gray-700">จังหวัด:</label>
+                <label for="province" class="block text-sm text-gray-700"style="font-family: 'Kanit', sans-serif;">จังหวัด:</label>
                 <select id="province" name="province" required class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                     <option value="">--เลือกจังหวัด--</option>
                     <?php
@@ -147,7 +147,7 @@
             </div>
 
             <div class="mb-4">
-                <label for="device_user" class="block text-sm font-sans text-gray-700">หมายเลขอุปกรณ์ล็อก:</label>
+                <label for="device_user" class="block text-sm text-gray-700"style="font-family: 'Kanit', sans-serif;">หมายเลขอุปกรณ์ล็อก:</label>
                 <select id="id" name="device_user" required class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                     <option value="">--เลือกหมายเลขอุปกรณ์ล็อก--</option>
                     <option value="1">1</option>
@@ -176,11 +176,11 @@
             <!-- Buttons -->
             <div class="flex justify-between items-center">
                 <button type="button" onclick="goHome()"
-                    class="px-5 py-2 bg-gradient-to-r from-[#800000] to-[#B21807] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                    class="px-5 py-2 bg-gradient-to-r from-[#800000] to-[#B21807] text-white text-lg rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300"style="font-family: 'Kanit', sans-serif;">
                     ยกเลิก
                 </button>
                 <button type="submit" name="submit_payment"
-                    class="px-5 py-2 bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300">
+                    class="px-5 py-2 bg-gradient-to-r from-[#50C878] to-[#1B8A6B] text-white text-lg rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300"style="font-family: 'Kanit', sans-serif;">
                     ขั้นตอนต่อไป
                 </button>
             </div>

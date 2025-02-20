@@ -6,11 +6,11 @@
     <title>ข้อมูลที่ลงทะเบียน</title>
     <!-- เชื่อมต่อ Tailwind CSS จาก CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.1.8/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
 </head>
     <style>
             body {
-                font-family: 'Roboto', sans-serif;
+                font-family: 'Kanit', sans-serif;
                 background: url('https://cdn.pixabay.com/photo/2019/04/10/11/56/watercolor-4116932_640.png') no-repeat center center fixed;
                 background-size: cover;
             }

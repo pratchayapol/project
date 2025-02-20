@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ข้อมูลผู้ลงทะเบียน</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap" rel="stylesheet">
     <script>
         // ฟังก์ชันสำหรับแสดงตัวอย่างภาพที่เลือก
         function showPreview(input) {
@@ -39,7 +39,7 @@
     </script>
     <style>
         body{
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Kanit', sans-serif;
         }  
         /* เมนูด้านซ้าย */
         #left-menu {

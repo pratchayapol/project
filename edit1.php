@@ -73,11 +73,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>แก้ไขข้อมูล</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Kanit', sans-serif;
             background: url('https://cdn.pixabay.com/photo/2015/07/24/11/11/watercolor-858169_640.jpg') no-repeat center center fixed;
             background-size: cover;
         }
@@ -122,43 +122,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
         }
     </script>
 </head>
-<body class="bg-gray-100 font-sans antialiased flex items-center justify-center h-screen">
+<body class="bg-gray-100 antialiased flex items-center justify-center h-screen"style="font-family: 'Kanit', sans-serif;">
 
 <div class="w-full sm:w-80 md:w-[600px] lg:w-[700px] mx-auto mt-4 p-4 bg-white shadow-lg rounded-lg">
-    <h2 class="text-2xl font-sans text-center text-gray-800 mb-6">แก้ไขข้อมูล</h2>
+    <h2 class="text-2xl text-center text-gray-800 mb-6" style="font-family: 'Kanit', sans-serif;">แก้ไขข้อมูล </h2>
     
-    <form method="post" action="" class="space-y-4">
+    <form method="post" action="" class="space-y-4"style="font-family: 'Kanit', sans-serif;">
         <div>
-            <label for="first_name" class="block text-gray-700">ชื่อ</label>
+            <label for="first_name" class="block text-gray-700"style="font-family: 'Kanit', sans-serif;">ชื่อ</label>
             <input type="text" name="first_name" id="first_name" value="<?php echo htmlspecialchars($_SESSION['first_name']); ?>"
                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
         
         <div>
-            <label for="last_name" class="block text-gray-700">นามสกุล</label>
+            <label for="last_name" class="block text-gray-700"style="font-family: 'Kanit', sans-serif;">นามสกุล</label>
             <input type="text" name="last_name" id="last_name" value="<?php echo htmlspecialchars($_SESSION['last_name']); ?>"
                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
         
         <div>
-            <label for="email" class="block text-gray-700">อีเมล</label>
+            <label for="email" class="block text-gray-700"style="font-family: 'Kanit', sans-serif;">อีเมล</label>
             <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($_SESSION['email']); ?>"
                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
 
         <div>
-            <label for="phone_number" class="block text-gray-700">เบอร์โทร</label>
+            <label for="phone_number" class="block text-gray-700"style="font-family: 'Kanit', sans-serif;">เบอร์โทร</label>
             <input type="text" name="phone_number" id="phone_number" value="<?php echo htmlspecialchars($_SESSION['phone_number']); ?>"
                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
 
         <div class="flex justify-between items-center">
             <button type="button" onclick="confirmCancel()" 
-                class="w-1/2 py-2 px-4 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none">
+                class="w-1/2 py-2 px-4 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none"style="font-family: 'Kanit', sans-serif;">
                 ยกเลิก
             </button>
             <button type="button" onclick="confirmSave()" 
-                class="w-1/2 py-2 px-4 bg-green-400 text-white rounded-md hover:bg-green-500 focus:outline-none">
+                class="w-1/2 py-2 px-4 bg-green-400 text-white rounded-md hover:bg-green-500 focus:outline-none"style="font-family: 'Kanit', sans-serif;">
                 บันทึกการแก้ไข
             </button>
         </div>

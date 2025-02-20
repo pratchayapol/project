@@ -31,10 +31,10 @@ if (!$user) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Kanit', sans-serif;
             background: url('https://cdn.pixabay.com/photo/2019/04/10/11/56/watercolor-4116932_640.png') no-repeat center center fixed;
             background-size: cover;
         }
@@ -53,19 +53,19 @@ if (!$user) {
             </div>
             <!-- Card Content -->
             <div class="pt-8 pb-8 px-8 text-center">
-                <h2 class="text-3xl font-extrabold text-gray-800">ข้อมูลส่วนตัว</h2>
+                <h2 class="text-3xl font-extrabold text-gray-800"style="font-family: 'Kanit', sans-serif;">ข้อมูลส่วนตัว</h2>
                 <div class="mt-8 space-y-6">
                     <div class="text-left bg-gray-100 p-2 rounded-lg shadow">
-                        <p class="text-lg text-gray-700"><i class="fas fa-user text-gray-500 mr-2"></i><span class="font-sans text-gray-900">ชื่อจริง:</span> <?php echo htmlspecialchars($user['firstname']); ?></p>
+                        <p class="text-lg text-gray-700"><i class="fas fa-user text-gray-500 mr-2"></i><span class="text-gray-900"style="font-family: 'Kanit', sans-serif;">ชื่อจริง:</span> <?php echo htmlspecialchars($user['firstname']); ?></p>
                     </div>
                     <div class="text-left bg-gray-100 p-2 rounded-lg shadow">
-                        <p class="text-lg text-gray-700"><i class="fas fa-user text-gray-500 mr-2"></i><span class="font-sans text-gray-900">นามสกุล:</span> <?php echo htmlspecialchars($user['lastname']); ?></p>
+                        <p class="text-lg text-gray-700"><i class="fas fa-user text-gray-500 mr-2"></i><span class="text-gray-900"style="font-family: 'Kanit', sans-serif;">นามสกุล:</span> <?php echo htmlspecialchars($user['lastname']); ?></p>
                     </div>
                     <div class="text-left bg-gray-100 p-2 rounded-lg shadow">
-                        <p class="text-lg text-gray-700"><i class="fas fa-envelope text-gray-500 mr-2"></i><span class="font-sans text-gray-900">อีเมล:</span> <?php echo htmlspecialchars($user['email']); ?></p>
+                        <p class="text-lg text-gray-700"><i class="fas fa-envelope text-gray-500 mr-2"></i><span class="text-gray-900"style="font-family: 'Kanit', sans-serif;">อีเมล:</span> <?php echo htmlspecialchars($user['email']); ?></p>
                     </div>
                     <div class="text-left bg-gray-100 p-2 rounded-lg shadow">
-                        <p class="text-lg text-gray-700"><i class="fas fa-phone text-gray-500 mr-2"></i><span class="font-sans text-gray-900">เบอร์โทรที่ติดต่อได้:</span> <?php echo htmlspecialchars($user['phone']); ?></p>
+                        <p class="text-lg text-gray-700"><i class="fas fa-phone text-gray-500 mr-2"></i><span class="text-gray-900"style="font-family: 'Kanit', sans-serif;">เบอร์โทรที่ติดต่อได้:</span> <?php echo htmlspecialchars($user['phone']); ?></p>
                     </div>
                 </div>
 

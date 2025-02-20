@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Kanit', sans-serif;
             background: url('https://cdn.pixabay.com/photo/2019/04/10/11/56/watercolor-4116932_640.png') no-repeat center center fixed;
             background-size: cover;
         }
@@ -83,7 +83,7 @@
                 <img src="https://upload.wikimedia.org/wikipedia/th/e/e0/RMUTI_KORAT.png" alt="RMUTI Logo" class="w-24 h-auto">
             </div>
 
-            <h2 class="text-2xl font-sans text-center mb-6" style="font-size: 16px;">ลงทะเบียนเข้าสู่เว็บไซต์สำหรับเจ้าหน้าที่ใหม่</h2>
+            <h2 class="text-2xl text-center mb-6" style="font-size: 16px; font-family: 'Kanit', sans-serif;">ลงทะเบียนเข้าสู่เว็บไซต์สำหรับเจ้าหน้าที่ใหม่</h2>
 
             <form action="register_db.php" method="post">
             <?php if(isset($_SESSION['error'])) : ?>
@@ -99,7 +99,7 @@
 
                 <!-- First Name -->
                 <div class="mb-4">
-                    <label for="firstname" class="block text-sm font-sans text-gray-700">ชื่อ:</label>
+                    <label for="firstname" class="block text-sm text-gray-700"style="font-family: 'Kanit', sans-serif;">ชื่อ:</label>
                     <input type="text" name="firstname" id="firstname" 
                            class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
                            placeholder="ชื่อ" required>
@@ -107,7 +107,7 @@
 
                 <!-- Last Name -->
                 <div class="mb-4">
-                    <label for="lastname" class="block text-sm font-sans text-gray-700">นามสกุล:</label>
+                    <label for="lastname" class="block text-sm text-gray-700"style="font-family: 'Kanit', sans-serif;">นามสกุล:</label>
                     <input type="text" name="lastname" id="lastname" 
                            class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
                            placeholder="นามสกุล" required>
@@ -115,7 +115,7 @@
 
                 <!-- Email -->
                 <div class="mb-4">
-                    <label for="email" class="block text-sm font-sans text-gray-700">อีเมล:</label>
+                    <label for="email" class="block text-sm text-gray-700"style="font-family: 'Kanit', sans-serif;">อีเมล:</label>
                     <input type="email" name="email" id="email" 
                            class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200" 
                            placeholder="อีเมล" required>
@@ -123,7 +123,7 @@
 
                 <!-- Password -->
                 <div class="mb-4 relative">
-                    <label for="password" class="block text-sm font-sans text-gray-700">รหัสผ่าน:</label>
+                    <label for="password" class="block text-sm text-gray-700"style="font-family: 'Kanit', sans-serif;">รหัสผ่าน:</label>
                     <div class="relative">
                         <input type="password" name="password" id="password" 
                                pattern=".{6,}" 
@@ -139,7 +139,7 @@
 
                 <!-- Confirm Password -->
                 <div class="mb-6 relative">
-                    <label for="password_2" class="block text-sm font-sans text-gray-700">ยืนยันรหัสผ่าน:</label>
+                    <label for="password_2" class="block text-sm text-gray-700"style="font-family: 'Kanit', sans-serif;">ยืนยันรหัสผ่าน:</label>
                     <div class="relative">
                         <input type="password" name="password_2" id="password_2" 
                                pattern=".{6,}" 
@@ -155,13 +155,13 @@
 
                 <!-- Login Link -->
                 <div class="mb-4">
-                    <p class="text-sm text-gray-600">หากลงทะเบียนแล้ว <a href="login.php" class="text-indigo-600 hover:underline">เข้าสู่ระบบ</a></p>
+                    <p class="text-sm text-gray-600"style="font-family: 'Kanit', sans-serif;">หากลงทะเบียนแล้ว <a href="login.php" class="text-indigo-600 hover:underline">เข้าสู่ระบบ</a></p>
                 </div>
 
                 <!-- Submit Button -->
                 <div>
                     <button type="submit" name="reg_user" 
-                    class="w-full bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg font-sans rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300 font-sans py-2 px-4 rounded-lg shadow-sm mt-3">
+                    class="w-full bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300 py-2 px-4 rounded-lg shadow-sm mt-3"style="font-family: 'Kanit', sans-serif;">
                         ยืนยัน
                     </button>
                 </div>
