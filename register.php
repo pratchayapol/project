@@ -18,10 +18,17 @@
             const inputs = document.querySelectorAll("input[required]");
 
             inputs.forEach(input => {
-                // ตรวจสอบเมื่อกด submit แล้วไม่ได้กรอกข้อมูล
                 input.addEventListener("invalid", function () {
                     if (!input.value) {
-                        input.setCustomValidity("กรุณากรอกข้อมูลให้ครบถ้วน");
+                        if (input.id === "firstname") {
+                            input.setCustomValidity("กรุณากรอกชื่อให้ครบถ้วน");
+                        } else if (input.id === "lastname") {
+                            input.setCustomValidity("กรุณากรอกนามสกุลให้ครบถ้วน");
+                        } else if (input.id === "email") {
+                            input.setCustomValidity("กรุณากรอกอีเมลของท่านให้ครบถ้วน");
+                        } else if (input.id === "password") {
+                            input.setCustomValidity("กรุณากรอกรหัสผ่าน A-Z หรือ 0-9 ให้ครบ 6 ตัว เช่น AA0000");
+                        }
                     }
                 });
 
@@ -30,7 +37,7 @@
                     input.setCustomValidity("");
                 });
             });
-
+        });
             // ตรวจสอบรหัสผ่านให้ตรงกัน
             const password = document.getElementById("password");
             const confirmPassword = document.getElementById("password_2");
