@@ -167,7 +167,7 @@ $password_lock = htmlspecialchars($user['password_lock']);
                     alt="Icon Information" 
                     class="w-16 h-16 mb-4 mt-4" 
                     style="filter: brightness(0) invert(1);">
-                    <span class="text-lg font-medium text-white" style="font-size: 1rem;">4.ล็อกอินบนเว็บไซต์ระบบอุปกรณ์ล็อกล้อแบบสแกนจ่าย</span>
+                    <span class="text-lg text-white" style="font-size: 1rem;">4.ล็อกอินบนเว็บไซต์ระบบอุปกรณ์ล็อกล้อและปลดล็อกล้อ ด้วยหรัส <?php echo htmlspecialchars($password_lock); ?></span>
                 </button>
 
                 <button class="flex flex-col items-center bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white text-lg rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300"style="font-family: 'Kanit', sans-serif;">
