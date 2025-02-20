@@ -29,6 +29,9 @@
                         } else if (input.id === "password") {
                             input.setCustomValidity("กรุณากรอกรหัสผ่าน A-Z หรือ 0-9 ให้ครบ 6 ตัว เช่น AA0000");
                         }
+                        else if (input.id === "password_2") {
+                            input.setCustomValidity("กรุณากรอกรหัสผ่าน A-Z หรือ 0-9 ให้ครบ 6 ตัว เช่น AA0000");
+                        }
                     }
                 });
 
