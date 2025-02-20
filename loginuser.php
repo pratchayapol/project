@@ -14,6 +14,64 @@
             background-size: cover;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const inputs = document.querySelectorAll("input[required]");
+            const form = document.querySelector("form");
+
+            inputs.forEach(input => {
+                input.addEventListener("invalid", function () {
+                    if (!input.value) {
+                        if (input.id === "first_name") {
+                            input.setCustomValidity("กรุณากรอกชื่อให้ครบถ้วน");
+                        } else if (input.id === "last_name") {
+                            input.setCustomValidity("กรุณากรอกนามสกุลให้ครบถ้วน");
+                        } else if (input.id === "email") {
+                            input.setCustomValidity("กรุณากรอกอีเมลของท่านให้ครบถ้วน");
+                        } else if (input.id === "phone_number") {
+                            input.setCustomValidity("กรุณากรอกเบอร์โทร 10 หลัก");
+                        } else if (input.id === "plate_number") {
+                            input.setCustomValidity("กรุณากรอกเลขทะเบียนรถให้ถูกต้อง เช่น กก0000");
+                        }
+                    }
+                });
+
+                // ล้างข้อความแจ้งเตือนเมื่อเริ่มพิมพ์
+                input.addEventListener("input", function () {
+                    input.setCustomValidity("");
+                });
+            });
+
+            form.addEventListener("submit", function (event) {
+                const phoneNumber = document.getElementById("phone_number").value.trim();
+                const plateNumber = document.getElementById("plate_number").value.trim();
+
+                // ตรวจสอบเบอร์โทร (ต้องเป็นตัวเลข 10 หลัก)
+                const phonePattern = /^[0-9]{10}$/;
+                if (!phonePattern.test(phoneNumber)) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'ข้อผิดพลาด',
+                        text: 'กรุณากรอกเบอร์โทรให้ถูกต้อง (10 หลัก)'
+                    });
+                    event.preventDefault();
+                    return;
+                }
+
+                // ตรวจสอบรูปแบบทะเบียนรถ (เช่น กก 1234 หรือ กก1234)
+                const platePattern = /^[ก-ฮ]{2}\s?\d{4}$/;
+                if (!platePattern.test(plateNumber)) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'ข้อผิดพลาด',
+                        text: 'กรุณากรอกหมายเลขทะเบียนรถให้ถูกต้อง (ตัวอย่าง: กก 1234 หรือ กก1234)'
+                    });
+                    event.preventDefault();
+                    return;
+                }
+            });
+        });
+    </script>
 </head>
 <body class="flex items-center justify-center h-screen">
     <div class="flex items-center justify-center min-h-screen">
