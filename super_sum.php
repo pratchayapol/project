@@ -110,7 +110,13 @@ $conn->close();
             ค้นหา
           </button>
         </div>
-
+        <div class="container mx-auto">
+        <h1 class="text-xl mb-4">ค้นหาข้อมูลตามวัน-เดือน-ปี</h1>
+        
+        <form method="GET" class="mb-4">
+            <input type="date" name="date" class="border p-2 rounded" value="<?php echo $date_filter; ?>">
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">ค้นหา</button>
+        </form>
         <div class="overflow-x-auto">
         <table id="carInfoTable" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
             <thead class="bg-gray-200">
