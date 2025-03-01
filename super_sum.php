@@ -127,6 +127,7 @@
         <input type="text" name="name" placeholder="ชื่อ - นามสกุล" class="p-2 border border-gray-300 rounded">
         <input type="date" name="searchDate" class="p-2 border border-gray-300 rounded">
         <button type="submit" class="col-span-2 p-2 bg-blue-500 text-white rounded">ค้นหา</button>
+        <button type="submit" name="download_pdf" class="col-span-3 p-2 bg-red-500 text-white rounded">ดาวน์โหลด PDF</button>
     </form>
         <div class="overflow-x-auto">
         <table id="carInfoTable" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
@@ -199,3 +200,52 @@
 
 </body>
 </html>
+<?php
+// เช็คว่ากดดาวน์โหลด PDF หรือไม่
+if (isset($_POST['download_pdf'])) {
+    generatePDF($sql, $params);
+}
+
+// ฟังก์ชันสร้าง PDF
+function generatePDF($sql, $params) {
+    require_once('fpdf.php');
+
+    class PDF extends FPDF {
+        function Header() {
+            $this->SetFont('Arial', 'B', 16);
+            $this->Cell(0, 10, 'รายชื่อเจ้าหน้าที่', 0, 1, 'C');
+            $this->Ln(5);
+        }
+    }
+
+    include("server.php");
+    $stmt = $conn->prepare($sql);
+
+    if (!empty($params)) {
+        $stmt->bind_param(str_repeat("s", count($params)), ...$params);
+    }
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $pdf = new PDF();
+    $pdf->AddPage();
+    $pdf->SetFont('Arial', '', 12);
+
+    $pdf->Cell(50, 10, 'ชื่อ', 1, 0, 'C');
+    $pdf->Cell(50, 10, 'นามสกุล', 1, 0, 'C');
+    $pdf->Cell(60, 10, 'อีเมล', 1, 0, 'C');
+    $pdf->Cell(30, 10, 'วันที่ลงทะเบียน', 1, 1, 'C');
+
+    while ($row = $result->fetch_assoc()) {
+        $pdf->Cell(50, 10, $row['firstname'], 1);
+        $pdf->Cell(50, 10, $row['lastname'], 1);
+        $pdf->Cell(60, 10, $row['email'], 1);
+        $pdf->Cell(30, 10, $row['created_at'], 1, 1);
+    }
+
+    $conn->close();
+    $pdf->Output('D', 'user_list.pdf');
+    exit();
+}
+?>
