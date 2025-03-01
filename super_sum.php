@@ -35,7 +35,7 @@
 
   $conn->close();
 
-  use Mpdf\\Mpdf;
+  use Mpdf\Mpdf;
 
   try {
       // สร้างอินสแตนซ์ของ Mpdf
