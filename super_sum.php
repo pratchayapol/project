@@ -5,7 +5,7 @@
   $where = [];
   $params = [];
   $types = "";
-
+  
   // ค้นหาชื่อ-นามสกุล
   if (!empty($_POST['name'])) {
       $where[] = "(firstname LIKE ? OR lastname LIKE ?)";
