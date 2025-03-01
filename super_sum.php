@@ -1,88 +1,39 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php'; // โหลด Composer autoload
+  include("server.php");
 
-use TCPDF;
+  $where = [];
+  $params = [];
+  $types = "";
 
-// เช็คว่าได้รับการกดปุ่ม "ดาวน์โหลด PDF" หรือไม่
-if (isset($_POST['download_pdf'])) {
-    generatePDF();
-}
+  // ค้นหาชื่อ-นามสกุล
+  if (!empty($_POST['name'])) {
+      $where[] = "(firstname LIKE ? OR lastname LIKE ?)";
+      $name = "%" . $_POST['name'] . "%";
+      $params[] = $name;
+      $params[] = $name;
+      $types .= "ss";
+  }
 
-// ฟังก์ชันสร้าง PDF
-function generatePDF() {
-    // สร้างออบเจ็กต์ TCPDF
-    $pdf = new TCPDF();
-    
-    // ตั้งค่าฟอนต์ภาษาไทย (ฟอนต์ `thsarabun` เป็นฟอนต์ที่รองรับภาษาไทย)
-    $pdf->AddFont('thsarabun','','thsarabun.php'); // โหลดฟอนต์
-    $pdf->SetFont('thsarabun', '', 14); // ตั้งฟอนต์ที่ใช้
+  // ค้นหาตามวันที่ลงทะเบียน
+  if (!empty($_POST['searchDate'])) {
+      $where[] = "DATE(created_at) = ?";
+      $params[] = $_POST['searchDate'];
+      $types .= "s";
+  }
 
-    // ตั้งค่าอื่นๆ
-    $pdf->SetMargins(10, 10, 10);
-    $pdf->AddPage(); // เพิ่มหน้ากระดาษ
+  // สร้างเงื่อนไข SQL
+  $where_clause = count($where) > 0 ? "WHERE " . implode(" AND ", $where) : "";
+  $sql = "SELECT firstname, lastname, email,	password_lock, phone, created_at FROM user_register $where_clause ORDER BY created_at DESC";
 
-    // คำสั่ง SQL
-    include("server.php"); // รวมไฟล์เชื่อมต่อฐานข้อมูล
-    $where = [];
-    $params = [];
+  $stmt = $conn->prepare($sql);
+  if (!empty($params)) {
+      $stmt->bind_param($types, ...$params);
+  }
+  $stmt->execute();
+  $result = $stmt->get_result();
 
-    if (!empty($_POST['name'])) {
-        $where[] = "(firstname LIKE ? OR lastname LIKE ?)";
-        $name = "%" . $_POST['name'] . "%";
-        $params[] = $name;
-        $params[] = $name;
-    }
-
-    if (!empty($_POST['searchDate'])) {
-        $where[] = "DATE(created_at) = ?";
-        $params[] = $_POST['searchDate'];
-    }
-
-    $where_clause = count($where) > 0 ? "WHERE " . implode(" AND ", $where) : "";
-    $sql = "SELECT firstname, lastname, email, created_at FROM user_register $where_clause ORDER BY created_at DESC";
-    $stmt = $conn->prepare($sql);
-
-    if (!empty($params)) {
-        $stmt->bind_param(str_repeat("s", count($params)), ...$params);
-    }
-
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    // เขียนเนื้อหาของ PDF
-    $html = '<h2>รายชื่อเจ้าหน้าที่ในระบบ</h2>';
-    $html .= '<table border="1" cellpadding="5" cellspacing="0">
-                 <thead>
-                     <tr>
-                         <th>ชื่อ</th>
-                         <th>นามสกุล</th>
-                         <th>อีเมล</th>
-                         <th>วันที่ลงทะเบียน</th>
-                     </tr>
-                 </thead>
-                 <tbody>';
-
-    while ($row = $result->fetch_assoc()) {
-        $html .= '<tr>
-                      <td>' . $row['firstname'] . '</td>
-                      <td>' . $row['lastname'] . '</td>
-                      <td>' . $row['email'] . '</td>
-                      <td>' . $row['created_at'] . '</td>
-                  </tr>';
-    }
-
-    $html .= '</tbody></table>';
-
-    // เขียน HTML ลงใน PDF
-    $pdf->writeHTML($html);
-
-    // ปิดการเชื่อมต่อฐานข้อมูล
-    $conn->close();
-
-    // ส่งออก PDF (ดาวน์โหลด)
-    $pdf->Output('D', 'user_list.pdf');
-    exit();
-}
+  $conn->close();
+  
 ?>
 
 <!DOCTYPE html>
@@ -177,7 +128,6 @@ function generatePDF() {
         <input type="text" name="name" placeholder="ชื่อ - นามสกุล" class="p-2 border border-gray-300 rounded">
         <input type="date" name="searchDate" class="p-2 border border-gray-300 rounded">
         <button type="submit" class="col-span-2 p-2 bg-blue-500 text-white rounded">ค้นหา</button>
-        <button type="submit" name="download_pdf" class="col-span-3 p-2 bg-red-500 text-white rounded">ดาวน์โหลด PDF</button>
     </form>
         <div class="overflow-x-auto">
         <table id="carInfoTable" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
