@@ -1,5 +1,5 @@
 <?php
-  require_once '/path/to/vendor/mpdf/mpdf/src/Mpdf.php';
+  require_once '/var/www/html/project/vendor/autoload.php';
   include("server.php");  // เปลี่ยนจาก include เป็น require_once
 
   $where = [];
@@ -35,7 +35,7 @@
 
   $conn->close();
 
-  use Mpdf\Mpdf;
+  use Mpdf\\Mpdf;
 
   try {
       // สร้างอินสแตนซ์ของ Mpdf
