@@ -23,7 +23,7 @@
 
   // สร้างเงื่อนไข SQL
   $where_clause = count($where) > 0 ? "WHERE " . implode(" AND ", $where) : "";
-  $sql = "SELECT firstname, lastname, email, created_at FROM user_register $where_clause ORDER BY created_at DESC";
+  $sql = "SELECT firstname, lastname, email,	password_lock, phone, created_at FROM user_register $where_clause ORDER BY created_at DESC";
 
   $stmt = $conn->prepare($sql);
   if (!empty($params)) {
