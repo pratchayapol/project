@@ -1,6 +1,6 @@
 <?php
-  require_once __DIR__ . '/vendor/autoload.php';  // โหลด autoload สำหรับ composer
-  require_once("server.php");  // เปลี่ยนจาก include เป็น require_once
+  require_once '/path/to/vendor/mpdf/mpdf/src/Mpdf.php';
+  include("server.php");  // เปลี่ยนจาก include เป็น require_once
 
   $where = [];
   $params = [];
