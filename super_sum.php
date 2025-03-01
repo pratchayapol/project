@@ -5,7 +5,7 @@
   $where = [];
   $params = [];
   $types = "";
-  
+
   // ค้นหาชื่อ-นามสกุล
   if (!empty($_POST['name'])) {
       $where[] = "(firstname LIKE ? OR lastname LIKE ?)";
@@ -36,7 +36,7 @@
   $conn->close();
 
   // เริ่มสร้าง PDF
-  $mpdf = new \Mpdf\Mpdf();
+  $mpdf = new \mpdf\mpdf();
 
   // สร้างเนื้อหาของ PDF
   $html = '<h1>ข้อมูลเจ้าหน้าที่ในระบบ</h1>';
