@@ -1,12 +1,23 @@
 <?php
 include("server.php");
 
-// ดึงข้อมูลจากตาราง user_register
-$sql = "SELECT firstname, lastname, email, phone, password_lock created_at FROM user_register";
-$result = $conn->query($sql);
+  // ตรวจสอบว่ามีการส่งวันที่มาหรือไม่
+  $dateFilter = isset($_POST['dateFilter']) ? $_POST['dateFilter'] : '';
 
-// ปิดการเชื่อมต่อฐานข้อมูล
-$conn->close();
+  // เตรียม SQL ตามเงื่อนไขวันที่
+  $sql = "SELECT firstname, lastname, email, phone, password_lock, created_at FROM user_register";
+  if ($dateFilter) {
+      $sql .= " WHERE DATE(created_at) = ?";
+  }
+
+  $stmt = $conn->prepare($sql);
+  if ($dateFilter) {
+      $stmt->bind_param("s", $dateFilter);
+  }
+  $stmt->execute();
+  $result = $stmt->get_result();
+
+  $conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="th">
@@ -124,7 +135,7 @@ $conn->close();
                   <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">อีเมล</th>
                   <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">เบอร์โทรติดต่อ</th>
                   <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">รหัสเข้าระบบล็อกอุปกรณ์</th>
-                  <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">วันที่สมัครเข้าระบบ</th>
+                  <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">วันที่ลงทะเบียน</th>
               </tr>
             </thead>
             <tbody>
