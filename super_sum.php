@@ -1,24 +1,18 @@
 <?php
 include("server.php");
 
-  // ตรวจสอบว่ามีการส่งวันที่มาหรือไม่
-  $dateFilter = isset($_POST['dateFilter']) ? $_POST['dateFilter'] : '';
+$date_filter = "";
+if (isset($_POST['searchDate']) && !empty($_POST['searchDate'])) {
+    $search_date = $conn->real_escape_string($_POST['searchDate']);
+    $date_filter = "WHERE DATE(created_at) = '$search_date'";
+}
 
-  // เตรียม SQL ตามเงื่อนไขวันที่
-  $sql = "SELECT firstname, lastname, email, phone, password_lock, created_at FROM user_register";
-  if ($dateFilter) {
-      $sql .= " WHERE DATE(created_at) = ?";
-  }
+$sql = "SELECT firstname, lastname, email, phone, password_lock, created_at FROM user_register $date_filter";
+$result = $conn->query($sql);
 
-  $stmt = $conn->prepare($sql);
-  if ($dateFilter) {
-      $stmt->bind_param("s", $dateFilter);
-  }
-  $stmt->execute();
-  $result = $stmt->get_result();
-
-  $conn->close();
+$conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -106,25 +100,17 @@ include("server.php");
         </nav>
     </div>
     <div class="container mx-auto px-4 py-6">
-        <div class="bg-white shadow-lg rounded-lg p-4 md:p-6"style="font-family: 'Kanit', sans-serif;">
-        <div class="mb-6">
-          <input 
-            type="text" 
-            id="searchInput" 
-            class="p-2 border border-gray-300 rounded w-full" style="font-family: 'Kanit', sans-serif;"
-            placeholder="ค้นหาข้อมูล..."
-          />
-          <button 
-            onclick="searchTable()" 
-            class="mt-2 p-2 bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white rounded w-full" style="font-family: 'Kanit', sans-serif;"
-          >
-            ค้นหา
-          </button>
-        </div>
-        <form method="GET" class="mb-4">
-            <input type="date" name="date" class="border p-2 rounded" value="<?php echo $date_filter; ?>">
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">ค้นหา</button>
-        </form>
+    <form method="POST" class="mb-4">
+        <input 
+            type="date" 
+            name="searchDate" 
+            class="p-2 border border-gray-300 rounded"
+        />
+        <button 
+            type="submit" 
+            class="p-2 bg-blue-500 text-white rounded"
+        >ค้นหา</button>
+    </form>
         <div class="overflow-x-auto">
         <table id="carInfoTable" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
             <thead class="bg-gray-200">
