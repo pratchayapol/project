@@ -37,40 +37,47 @@
 
   use Mpdf\Mpdf;
 
-  // สร้างเนื้อหาของ PDF
-  $html = '<h1>ข้อมูลเจ้าหน้าที่ในระบบ</h1>';
-  $html .= '<table border="1" style="width: 100%; border-collapse: collapse;">';
-  $html .= '<tr>
-              <th>ชื่อ</th>
-              <th>นามสกุล</th>
-              <th>อีเมล</th>
-              <th>เบอร์โทรติดต่อ</th>
-              <th>รหัสเข้าระบบล็อกอุปกรณ์</th>
-              <th>วันที่ลงทะเบียน</th>
-            </tr>';
+  try {
+      // สร้างอินสแตนซ์ของ Mpdf
+      $mpdf = new Mpdf();
 
-  if ($result->num_rows > 0) {
-      while($row = $result->fetch_assoc()) {
-          $html .= "<tr>
-                      <td>" . $row["firstname"] . "</td>
-                      <td>" . $row["lastname"] . "</td>
-                      <td>" . $row["email"] . "</td>
-                      <td>" . $row["phone"] . "</td>
-                      <td>" . $row["password_lock"] . "</td>
-                      <td>" . $row["created_at"] . "</td>
-                    </tr>";
+      // สร้างเนื้อหาของ PDF
+      $html = '<h1>ข้อมูลเจ้าหน้าที่ในระบบ</h1>';
+      $html .= '<table border="1" style="width: 100%; border-collapse: collapse;">';
+      $html .= '<tr>
+                  <th>ชื่อ</th>
+                  <th>นามสกุล</th>
+                  <th>อีเมล</th>
+                  <th>เบอร์โทรติดต่อ</th>
+                  <th>รหัสเข้าระบบล็อกอุปกรณ์</th>
+                  <th>วันที่ลงทะเบียน</th>
+                </tr>';
+
+      if ($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()) {
+              $html .= "<tr>
+                          <td>" . $row["firstname"] . "</td>
+                          <td>" . $row["lastname"] . "</td>
+                          <td>" . $row["email"] . "</td>
+                          <td>" . $row["phone"] . "</td>
+                          <td>" . $row["password_lock"] . "</td>
+                          <td>" . $row["created_at"] . "</td>
+                        </tr>";
+          }
+      } else {
+          $html .= "<tr><td colspan='6' class='text-center'>ไม่มีข้อมูล</td></tr>";
       }
-  } else {
-      $html .= "<tr><td colspan='6' class='text-center'>ไม่มีข้อมูล</td></tr>";
+
+      $html .= '</table>';
+
+      // สร้าง PDF
+      $mpdf->WriteHTML($html);
+
+      // ส่งไฟล์ PDF ให้ผู้ใช้ดาวน์โหลด
+      $mpdf->Output('user_data.pdf', 'D'); // 'D' คือให้ดาวน์โหลด
+  } catch (\Mpdf\MpdfException $e) {
+      echo "เกิดข้อผิดพลาดในการสร้าง PDF: " . $e->getMessage();
   }
-
-  $html .= '</table>';
-
-  // สร้าง PDF
-  $mpdf->WriteHTML($html);
-
-  // ส่งไฟล์ PDF ให้ผู้ใช้ดาวน์โหลด
-  $mpdf->Output('user_data.pdf', 'D'); // 'D' คือให้ดาวน์โหลด
 ?>
 
 <!DOCTYPE html>
