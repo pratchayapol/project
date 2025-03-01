@@ -1,16 +1,38 @@
 <?php
-include("server.php");
+  include("server.php");
 
-$date_filter = "";
-if (isset($_POST['searchDate']) && !empty($_POST['searchDate'])) {
-    $search_date = $conn->real_escape_string($_POST['searchDate']);
-    $date_filter = "WHERE DATE(created_at) = '$search_date'";
-}
+  $where = [];
+  $params = [];
+  $types = "";
 
-$sql = "SELECT firstname, lastname, email, phone, password_lock, created_at FROM user_register $date_filter";
-$result = $conn->query($sql);
+  // ค้นหาชื่อ-นามสกุล
+  if (!empty($_POST['name'])) {
+      $where[] = "(firstname LIKE ? OR lastname LIKE ?)";
+      $name = "%" . $_POST['name'] . "%";
+      $params[] = $name;
+      $params[] = $name;
+      $types .= "ss";
+  }
 
-$conn->close();
+  // ค้นหาตามวันที่ลงทะเบียน
+  if (!empty($_POST['searchDate'])) {
+      $where[] = "DATE(created_at) = ?";
+      $params[] = $_POST['searchDate'];
+      $types .= "s";
+  }
+
+  // สร้างเงื่อนไข SQL
+  $where_clause = count($where) > 0 ? "WHERE " . implode(" AND ", $where) : "";
+  $sql = "SELECT firstname, lastname, email, created_at FROM user_register $where_clause ORDER BY created_at DESC";
+
+  $stmt = $conn->prepare($sql);
+  if (!empty($params)) {
+      $stmt->bind_param($types, ...$params);
+  }
+  $stmt->execute();
+  $result = $stmt->get_result();
+
+  $conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -100,16 +122,11 @@ $conn->close();
         </nav>
     </div>
     <div class="container mx-auto px-4 py-6">
-    <form method="POST" class="mb-4">
-        <input 
-            type="date" 
-            name="searchDate" 
-            class="p-2 border border-gray-300 rounded"
-        />
-        <button 
-            type="submit" 
-            class="p-2 bg-blue-500 text-white rounded"
-        >ค้นหา</button>
+    <!-- ฟอร์มค้นหา -->
+    <form method="POST" class="grid grid-cols-2 gap-4 mb-4 bg-white p-4 shadow-lg rounded-lg">
+        <input type="text" name="name" placeholder="ชื่อ - นามสกุล" class="p-2 border border-gray-300 rounded">
+        <input type="date" name="searchDate" class="p-2 border border-gray-300 rounded">
+        <button type="submit" class="col-span-2 p-2 bg-blue-500 text-white rounded">ค้นหา</button>
     </form>
         <div class="overflow-x-auto">
         <table id="carInfoTable" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
