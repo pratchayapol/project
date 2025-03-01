@@ -78,8 +78,13 @@ function generatePDF() {
     // ปิดการเชื่อมต่อฐานข้อมูล
     $conn->close();
 
-    // บันทึกไฟล์ PDF ไปยังโฟลเดอร์ที่กำหนด
-    $pdf->Output('downloads/USER_LIST.PDF', 'F'); // ใช้ 'F' เพื่อบันทึกในเซิร์ฟเวอร์
+    $outputPath = __DIR__ . '/downloads/USER_LIST.PDF'; // พาธที่สมบูรณ์
+
+    if (!is_dir(__DIR__ . '/downloads/')) {
+        mkdir(__DIR__ . '/downloads/', 0777, true); // สร้างโฟลเดอร์หากไม่มี
+    }
+
+    $pdf->Output($outputPath, 'F'); // ใช้ 'F' เพื่อบันทึกไฟล์
     exit();
 }
 ?>
