@@ -3,78 +3,94 @@
 
   $where = [];
   $params = [];
-  $types = "";
 
-  // ค้นหาชื่อ-นามสกุล
-  if (!empty($_POST['name'])) {
-      $where[] = "(firstname LIKE ? OR lastname LIKE ?)";
-      $name = "%" . $_POST['name'] . "%";
-      $params[] = $name;
-      $params[] = $name;
-      $types .= "ss";
-  }
-
-  // ค้นหาตามวันที่ลงทะเบียน
-  if (!empty($_POST['searchDate'])) {
-      $where[] = "DATE(created_at) = ?";
-      $params[] = $_POST['searchDate'];
-      $types .= "s";
-  }
-
-  // สร้างเงื่อนไข SQL
-  $where_clause = count($where) > 0 ? "WHERE " . implode(" AND ", $where) : "";
-  $sql = "SELECT firstname, lastname, email,	password_lock, phone, created_at FROM user_register $where_clause ORDER BY created_at DESC";
-
-  $stmt = $conn->prepare($sql);
-  if (!empty($params)) {
-      $stmt->bind_param($types, ...$params);
-  }
-  $stmt->execute();
-  $result = $stmt->get_result();
-
-  $conn->close();
-  // ฟังก์ชันสร้าง PDF
-function generatePDF($sql, $params) {
-  require_once('fpdf.php');
-
-  class PDF extends FPDF {
-      function Header() {
-          $this->SetFont('Arial', 'B', 16);
-          $this->Cell(0, 10, 'รายชื่อเจ้าหน้าที่', 0, 1, 'C');
-          $this->Ln(5);
+  // ตรวจสอบการส่งข้อมูลจากฟอร์มค้นหา
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      if (!empty($_POST['name'])) {
+          $where[] = "(firstname LIKE ? OR lastname LIKE ?)";
+          $name = "%" . $_POST['name'] . "%";
+          $params[] = $name;
+          $params[] = $name;
       }
+
+      if (!empty($_POST['searchDate'])) {
+          $where[] = "DATE(created_at) = ?";
+          $params[] = $_POST['searchDate'];
+      }
+
+      $where_clause = count($where) > 0 ? "WHERE " . implode(" AND ", $where) : "";
+      $sql = "SELECT firstname, lastname, email, password_lock, phone, created_at FROM user_register $where_clause ORDER BY created_at DESC";
+      $stmt = $conn->prepare($sql);
+
+      if (!empty($params)) {
+          $stmt->bind_param(str_repeat("s", count($params)), ...$params);
+      }
+
+      $stmt->execute();
+      $result = $stmt->get_result();
   }
 
-  include("server.php");
-  $stmt = $conn->prepare($sql);
+  // ฟังก์ชันสร้าง PDF
+  function generatePDF($sql, $params) {
+      require_once('fpdf.php');
 
-  if (!empty($params)) {
-      $stmt->bind_param(str_repeat("s", count($params)), ...$params);
+      class PDF extends FPDF {
+          function Header() {
+              $this->SetFont('Arial', 'B', 16);
+              $this->Cell(0, 10, 'รายชื่อเจ้าหน้าที่', 0, 1, 'C');
+              $this->Ln(5);
+          }
+      }
+
+      include("server.php");
+      $stmt = $conn->prepare($sql);
+
+      if (!empty($params)) {
+          $stmt->bind_param(str_repeat("s", count($params)), ...$params);
+      }
+
+      $stmt->execute();
+      $result = $stmt->get_result();
+
+      // ตรวจสอบการเชื่อมต่อฐานข้อมูล
+      if ($result->num_rows <= 0) {
+          echo "ไม่พบข้อมูลที่ต้องการ";
+          exit();
+      }
+
+      // สร้าง PDF
+      $pdf = new PDF();
+      $pdf->AddPage();
+      $pdf->SetFont('Arial', '', 12);
+
+      // เขียนหัวข้อใน PDF
+      $pdf->Cell(50, 10, 'ชื่อ', 1, 0, 'C');
+      $pdf->Cell(50, 10, 'นามสกุล', 1, 0, 'C');
+      $pdf->Cell(60, 10, 'อีเมล', 1, 0, 'C');
+      $pdf->Cell(30, 10, 'วันที่ลงทะเบียน', 1, 1, 'C');
+
+      // เติมข้อมูลใน PDF
+      while ($row = $result->fetch_assoc()) {
+          $pdf->Cell(50, 10, $row['firstname'], 1);
+          $pdf->Cell(50, 10, $row['lastname'], 1);
+          $pdf->Cell(60, 10, $row['email'], 1);
+          $pdf->Cell(30, 10, $row['created_at'], 1, 1);
+      }
+
+      // ปิดการเชื่อมต่อฐานข้อมูล
+      $conn->close();
+
+      // ส่ง PDF ให้ดาวน์โหลด
+      $pdf->Output('D', 'user_list.pdf');
+      exit();
   }
 
-  $stmt->execute();
-  $result = $stmt->get_result();
-
-  $pdf = new PDF();
-  $pdf->AddPage();
-  $pdf->SetFont('Arial', '', 12);
-
-  $pdf->Cell(50, 10, 'ชื่อ', 1, 0, 'C');
-  $pdf->Cell(50, 10, 'นามสกุล', 1, 0, 'C');
-  $pdf->Cell(60, 10, 'อีเมล', 1, 0, 'C');
-  $pdf->Cell(30, 10, 'วันที่ลงทะเบียน', 1, 1, 'C');
-
-  while ($row = $result->fetch_assoc()) {
-      $pdf->Cell(50, 10, $row['firstname'], 1);
-      $pdf->Cell(50, 10, $row['lastname'], 1);
-      $pdf->Cell(60, 10, $row['email'], 1);
-      $pdf->Cell(30, 10, $row['created_at'], 1, 1);
+  // ตรวจสอบว่ามีการกดปุ่มดาวน์โหลด PDF
+  if (isset($_POST['download_pdf'])) {
+      generatePDF($sql, $params); // สร้าง PDF เมื่อกดปุ่มดาวน์โหลด
   }
 
   $conn->close();
-  $pdf->Output('D', 'user_list.pdf');
-  exit();
-}
 ?>
 
 <!DOCTYPE html>
