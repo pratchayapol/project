@@ -78,8 +78,8 @@ function generatePDF() {
     // ปิดการเชื่อมต่อฐานข้อมูล
     $conn->close();
 
-    // ส่งออก PDF (ดาวน์โหลด)
-    $pdf->Output('D', 'user_list.pdf');
+    // บันทึกไฟล์ PDF ไปยังโฟลเดอร์ที่กำหนด
+    $pdf->Output('downloads/USER_LIST.PDF', 'F'); // ใช้ 'F' เพื่อบันทึกในเซิร์ฟเวอร์
     exit();
 }
 ?>
