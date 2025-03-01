@@ -1,4 +1,5 @@
 <?php
+  require_once __DIR__ . '/vendor/autoload.php';
   include("server.php");
 
   $where = [];
@@ -23,7 +24,7 @@
 
   // สร้างเงื่อนไข SQL
   $where_clause = count($where) > 0 ? "WHERE " . implode(" AND ", $where) : "";
-  $sql = "SELECT firstname, lastname, email,	password_lock, phone, created_at FROM user_register $where_clause ORDER BY created_at DESC";
+  $sql = "SELECT firstname, lastname, email, password_lock, phone, created_at FROM user_register $where_clause ORDER BY created_at DESC";
 
   $stmt = $conn->prepare($sql);
   if (!empty($params)) {
@@ -33,7 +34,44 @@
   $result = $stmt->get_result();
 
   $conn->close();
-  
+
+  // เริ่มสร้าง PDF
+  $mpdf = new \Mpdf\Mpdf();
+
+  // สร้างเนื้อหาของ PDF
+  $html = '<h1>ข้อมูลเจ้าหน้าที่ในระบบ</h1>';
+  $html .= '<table border="1" style="width: 100%; border-collapse: collapse;">';
+  $html .= '<tr>
+              <th>ชื่อ</th>
+              <th>นามสกุล</th>
+              <th>อีเมล</th>
+              <th>เบอร์โทรติดต่อ</th>
+              <th>รหัสเข้าระบบล็อกอุปกรณ์</th>
+              <th>วันที่ลงทะเบียน</th>
+            </tr>';
+
+  if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+          $html .= "<tr>
+                      <td>" . $row["firstname"] . "</td>
+                      <td>" . $row["lastname"] . "</td>
+                      <td>" . $row["email"] . "</td>
+                      <td>" . $row["phone"] . "</td>
+                      <td>" . $row["password_lock"] . "</td>
+                      <td>" . $row["created_at"] . "</td>
+                    </tr>";
+      }
+  } else {
+      $html .= "<tr><td colspan='6' class='text-center'>ไม่มีข้อมูล</td></tr>";
+  }
+
+  $html .= '</table>';
+
+  // สร้าง PDF
+  $mpdf->WriteHTML($html);
+
+  // ส่งไฟล์ PDF ให้ผู้ใช้ดาวน์โหลด
+  $mpdf->Output('user_data.pdf', 'D'); // 'D' คือให้ดาวน์โหลด
 ?>
 
 <!DOCTYPE html>
@@ -128,6 +166,10 @@
         <input type="text" name="name" placeholder="ชื่อ - นามสกุล" class="p-2 border border-gray-300 rounded">
         <input type="date" name="searchDate" class="p-2 border border-gray-300 rounded">
         <button type="submit" class="col-span-2 p-2 bg-blue-500 text-white rounded">ค้นหา</button>
+    </form>
+    <!-- ปุ่มดาวน์โหลด PDF -->
+    <form method="POST" action="download_pdf.php" class="mb-4">
+        <button type="submit" class="p-2 bg-green-500 text-white rounded">ดาวน์โหลด PDF</button>
     </form>
         <div class="overflow-x-auto">
         <table id="carInfoTable" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
