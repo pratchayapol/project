@@ -14,8 +14,7 @@ function generatePDF() {
     $pdf = new TCPDF();
     
     // ตั้งค่าฟอนต์ภาษาไทย (ฟอนต์ `thsarabun` เป็นฟอนต์ที่รองรับภาษาไทย)
-    $pdf->AddFont('thsarabun','','thsarabun.php'); // โหลดฟอนต์
-    $pdf->SetFont('thsarabun', '', 14); // ตั้งฟอนต์ที่ใช้
+    $pdf->SetFont('dejavusans', '', 14); // ใช้ฟอนต์ที่รองรับภาษาไทย
 
     // ตั้งค่าอื่นๆ
     $pdf->SetMargins(10, 10, 10);
