@@ -35,8 +35,7 @@
 
   $conn->close();
 
-  // เริ่มสร้าง PDF
-  $mpdf = new \Mpdf\Mpdf();
+  use Mpdf\Mpdf;
 
   // สร้างเนื้อหาของ PDF
   $html = '<h1>ข้อมูลเจ้าหน้าที่ในระบบ</h1>';
