@@ -2,7 +2,7 @@
 include("server.php");
 
 // ดึงข้อมูลจากตาราง user_register
-$sql = "SELECT firstname, lastname, email, phone, password_lock FROM user_register";
+$sql = "SELECT firstname, lastname, email, phone, password_lock created_at FROM user_register";
 $result = $conn->query($sql);
 
 // ปิดการเชื่อมต่อฐานข้อมูล
@@ -127,6 +127,7 @@ $conn->close();
                   <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">อีเมล</th>
                   <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">เบอร์โทรติดต่อ</th>
                   <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">รหัสเข้าระบบล็อกอุปกรณ์</th>
+                  <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">วันที่สมัครเข้าระบบ</th>
               </tr>
             </thead>
             <tbody>
@@ -139,6 +140,7 @@ $conn->close();
                         <td class='border px-2 py-1 whitespace-nowrap'>" . $row["email"] . "</td>
                         <td class='border px-2 py-1 whitespace-nowrap'>" . $row["phone"] . "</td>
                         <td class='border px-2 py-1 whitespace-nowrap'>" . $row["password_lock"] . "</td>
+                        <td class='border px-2 py-1 whitespace-nowrap'>" . $row["created_at"] . "</td>
                         </tr>";
                 }
               } else {
