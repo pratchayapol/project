@@ -1,54 +1,29 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php'; // โหลด Composer autoload
 
-use TCPDF;
+use Mpdf\Mpdf;
 
-// เช็คว่าได้รับการกดปุ่ม "ดาวน์โหลด PDF" หรือไม่
 if (isset($_POST['download_pdf'])) {
     generatePDF();
 }
 
-// ฟังก์ชันสร้าง PDF
 function generatePDF() {
-    // สร้างออบเจ็กต์ TCPDF
-    $pdf = new TCPDF();
-    
-    // ตั้งค่าฟอนต์ภาษาไทย (ฟอนต์ `thsarabun` เป็นฟอนต์ที่รองรับภาษาไทย)
-    $pdf->SetFont('dejavusans', '', 14); // ใช้ฟอนต์ที่รองรับภาษาไทย
+    // สร้างอินสแตนซ์ของ mPDF
+    $mpdf = new Mpdf();
 
-    // ตั้งค่าอื่นๆ
-    $pdf->SetMargins(10, 10, 10);
-    $pdf->AddPage(); // เพิ่มหน้ากระดาษ
+    // กำหนดฟอนต์ที่ใช้ในการพิมพ์ (สามารถใช้ฟอนต์ที่รองรับภาษาไทยได้)
+    $mpdf->SetFont('angsana', '', 14);  // ใช้ฟอนต์ Angsana หรือฟอนต์ที่รองรับภาษาไทย
 
-    // คำสั่ง SQL
-    include("server.php"); // รวมไฟล์เชื่อมต่อฐานข้อมูล
-    $where = [];
-    $params = [];
+    // เริ่มหน้าใหม่
+    $mpdf->AddPage();
 
-    if (!empty($_POST['name'])) {
-        $where[] = "(firstname LIKE ? OR lastname LIKE ?)";
-        $name = "%" . $_POST['name'] . "%";
-        $params[] = $name;
-        $params[] = $name;
-    }
-
-    if (!empty($_POST['searchDate'])) {
-        $where[] = "DATE(created_at) = ?";
-        $params[] = $_POST['searchDate'];
-    }
-
-    $where_clause = count($where) > 0 ? "WHERE " . implode(" AND ", $where) : "";
-    $sql = "SELECT firstname, lastname, email, password_lock, phone, created_at FROM user_register $where_clause ORDER BY created_at DESC";
+    include("server.php");
+    $sql = "SELECT firstname, lastname, email, created_at FROM user_register ORDER BY created_at DESC";
     $stmt = $conn->prepare($sql);
-
-    if (!empty($params)) {
-        $stmt->bind_param(str_repeat("s", count($params)), ...$params);
-    }
-
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // เขียนเนื้อหาของ PDF
+    // สร้าง HTML สำหรับแสดงข้อมูลในตาราง
     $html = '<h2>รายชื่อเจ้าหน้าที่ในระบบ</h2>';
     $html .= '<table border="1" cellpadding="5" cellspacing="0">
                  <thead>
@@ -61,6 +36,7 @@ function generatePDF() {
                  </thead>
                  <tbody>';
 
+    // แสดงข้อมูลในตาราง
     while ($row = $result->fetch_assoc()) {
         $html .= '<tr>
                       <td>' . $row['firstname'] . '</td>
@@ -71,20 +47,23 @@ function generatePDF() {
     }
 
     $html .= '</tbody></table>';
-
     // เขียน HTML ลงใน PDF
-    $pdf->writeHTML($html);
+    $mpdf->WriteHTML($html);
 
-    // ปิดการเชื่อมต่อฐานข้อมูล
     $conn->close();
 
+    // กำหนดพาธสำหรับบันทึกไฟล์ PDF
     $outputPath = __DIR__ . '/downloads/USER_LIST.PDF'; // พาธที่สมบูรณ์
 
     if (!is_dir(__DIR__ . '/downloads/')) {
         mkdir(__DIR__ . '/downloads/', 0777, true); // สร้างโฟลเดอร์หากไม่มี
     }
 
-    $pdf->Output($outputPath, 'F'); // ใช้ 'F' เพื่อบันทึกไฟล์
+    // บันทึก PDF ลงไฟล์
+    $mpdf->Output($outputPath, 'F'); // ใช้ 'F' เพื่อบันทึกไฟล์
+
+    // ส่ง PDF ให้ดาวน์โหลด
+    // $mpdf->Output('USER_LIST.PDF', 'D'); // หากต้องการดาวน์โหลดไฟล์แทนการบันทึก
     exit();
 }
 ?>
