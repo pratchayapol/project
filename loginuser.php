@@ -77,7 +77,7 @@
     <div class="flex items-center justify-center min-h-screen">
         <div class="bg-white shadow-md rounded-lg p-4 w-full max-w-md">
             <div class="flex items-center justify-center mb-6">
-                <img src="https://upload.wikimedia.org/wikipedia/th/e/e0/RMUTI_KORAT.png" alt="RMUTI Logo" class="w-24 h-auto">
+                <img src="https://e7.pngegg.com/pngimages/951/368/png-clipart-rajamangala-university-of-technology-thanyaburi-rajamangala-university-of-technology-isan-thanyaburi-district-rajamangala-university-of-technology-tawan-ok-technology-electronics-university.png" alt="RMUTI Logo" class="w-24 h-auto">
             </div>
 
             <h2 class="text-2xl text-center mb-4" style="font-size: 16px; font-family: 'Kanit', sans-serif;">ลงทะเบียนเข้าสู่เว็บไซต์สำหรัชำระค่าปรับ</h2>

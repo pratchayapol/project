@@ -1,84 +1,93 @@
 <?php
-  require_once '/var/www/html/project/vendor/autoload.php';
-  include("server.php");  // เปลี่ยนจาก include เป็น require_once
+require_once 'vendor/autoload.php';
+include("server.php");  // เปลี่ยนจาก include เป็น require_once
 
-  $where = [];
-  $params = [];
-  $types = "";
-  
-  // ค้นหาชื่อ-นามสกุล
-  if (!empty($_POST['name'])) {
-      $where[] = "(firstname LIKE ? OR lastname LIKE ?)";
-      $name = "%" . $_POST['name'] . "%";
-      $params[] = $name;
-      $params[] = $name;
-      $types .= "ss";
-  }
+$where = [];
+$params = [];
+$types = "";
 
-  // ค้นหาตามวันที่ลงทะเบียน
-  if (!empty($_POST['searchDate'])) {
-      $where[] = "DATE(created_at) = ?";
-      $params[] = $_POST['searchDate'];
-      $types .= "s";
-  }
+// ค้นหาชื่อ-นามสกุล
+if (!empty($_POST['name'])) {
+    $where[] = "(firstname LIKE ? OR lastname LIKE ?)";
+    $name = "%" . $_POST['name'] . "%";
+    $params[] = $name;
+    $params[] = $name;
+    $types .= "ss";
+}
 
-  // สร้างเงื่อนไข SQL
-  $where_clause = count($where) > 0 ? "WHERE " . implode(" AND ", $where) : "";
-  $sql = "SELECT firstname, lastname, email, password_lock, phone, created_at FROM user_register $where_clause ORDER BY created_at DESC";
+// ค้นหาตามวันที่ลงทะเบียน
+if (!empty($_POST['searchDate'])) {
+    $where[] = "DATE(created_at) = ?";
+    $params[] = $_POST['searchDate'];
+    $types .= "s";
+}
 
-  $stmt = $conn->prepare($sql);
-  if (!empty($params)) {
-      $stmt->bind_param($types, ...$params);
-  }
-  $stmt->execute();
-  $result = $stmt->get_result();
+// สร้างเงื่อนไข SQL
+$where_clause = count($where) > 0 ? "WHERE " . implode(" AND ", $where) : "";
+$sql = "SELECT firstname, lastname, email, password_lock, phone, created_at FROM user_register $where_clause ORDER BY created_at DESC";
 
-  $conn->close();
+$stmt = $conn->prepare($sql);
+if (!empty($params)) {
+    $stmt->bind_param($types, ...$params);
+}
+$stmt->execute();
+$result = $stmt->get_result();
 
-  use Mpdf\Mpdf;
+$conn->close();
 
-  try {
-      // สร้างอินสแตนซ์ของ Mpdf
-      $mpdf = new Mpdf();
+use TCPDF;
 
-      // สร้างเนื้อหาของ PDF
-      $html = '<h1>ข้อมูลเจ้าหน้าที่ในระบบ</h1>';
-      $html .= '<table border="1" style="width: 100%; border-collapse: collapse;">';
-      $html .= '<tr>
-                  <th>ชื่อ</th>
-                  <th>นามสกุล</th>
-                  <th>อีเมล</th>
-                  <th>เบอร์โทรติดต่อ</th>
-                  <th>รหัสเข้าระบบล็อกอุปกรณ์</th>
-                  <th>วันที่ลงทะเบียน</th>
-                </tr>';
+try {
+    // สร้างอินสแตนซ์ของ TCPDF
+    $pdf = new TCPDF();
 
-      if ($result->num_rows > 0) {
-          while($row = $result->fetch_assoc()) {
-              $html .= "<tr>
-                          <td>" . $row["firstname"] . "</td>
-                          <td>" . $row["lastname"] . "</td>
-                          <td>" . $row["email"] . "</td>
-                          <td>" . $row["phone"] . "</td>
-                          <td>" . $row["password_lock"] . "</td>
-                          <td>" . $row["created_at"] . "</td>
-                        </tr>";
-          }
-      } else {
-          $html .= "<tr><td colspan='6' class='text-center'>ไม่มีข้อมูล</td></tr>";
-      }
+    // กำหนดค่าเริ่มต้นสำหรับ PDF
+    $pdf->SetCreator(PDF_CREATOR);
+    $pdf->SetAuthor('Your Name');
+    $pdf->SetTitle('ข้อมูลเจ้าหน้าที่ในระบบ');
 
-      $html .= '</table>';
+    // เพิ่มหน้าใหม่
+    $pdf->AddPage();
 
-      // สร้าง PDF
-      $mpdf->WriteHTML($html);
+    // สร้างเนื้อหาของ PDF
+    $html = '<h1>ข้อมูลเจ้าหน้าที่ในระบบ</h1>';
+    $html .= '<table border="1" style="width: 100%; border-collapse: collapse;">';
+    $html .= '<tr>
+                <th>ชื่อ</th>
+                <th>นามสกุล</th>
+                <th>อีเมล</th>
+                <th>เบอร์โทรติดต่อ</th>
+                <th>รหัสเข้าระบบล็อกอุปกรณ์</th>
+                <th>วันที่ลงทะเบียน</th>
+              </tr>';
 
-      // ส่งไฟล์ PDF ให้ผู้ใช้ดาวน์โหลด
-      $mpdf->Output('user_data.pdf', 'D'); // 'D' คือให้ดาวน์โหลด
-  } catch (\Mpdf\MpdfException $e) {
-      echo "เกิดข้อผิดพลาดในการสร้าง PDF: " . $e->getMessage();
-  }
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $html .= "<tr>
+                        <td>" . $row["firstname"] . "</td>
+                        <td>" . $row["lastname"] . "</td>
+                        <td>" . $row["email"] . "</td>
+                        <td>" . $row["phone"] . "</td>
+                        <td>" . $row["password_lock"] . "</td>
+                        <td>" . $row["created_at"] . "</td>
+                      </tr>";
+        }
+    } else {
+        $html .= "<tr><td colspan='6' class='text-center'>ไม่มีข้อมูล</td></tr>";
+    }
+
+    $html .= '</table>';
+
+    // เขียนเนื้อหาลงใน PDF
+    $pdf->writeHTML($html);
+
+    // ส่ง PDF ไปให้ผู้ใช้ดาวน์โหลด
+    $pdf->Output('user_data.pdf', 'D'); // 'D' คือให้ดาวน์โหลด
+} catch (Exception $e) {
+    echo "เกิดข้อผิดพลาดในการสร้าง PDF: " . $e->getMessage();
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="th">
