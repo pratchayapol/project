@@ -138,102 +138,89 @@ $conn->close();
         </nav>
     </div>
     <div class="container mx-auto px-4 py-6">
-    <!-- ฟอร์มค้นหา -->
     <form method="POST" class="grid grid-cols-2 gap-4 mb-4 bg-white p-4 shadow-lg rounded-lg">
-        <input type="text" name="searchName" placeholder="ชื่อ - นามสกุล" class="p-2 border border-gray-300 rounded" 
-               value="<?php echo isset($_POST['searchName']) ? $_POST['searchName'] : ''; ?>">
-        <input type="date" name="searchDate" class="p-2 border border-gray-300 rounded" 
-               value="<?php echo isset($_POST['searchDate']) ? $_POST['searchDate'] : ''; ?>">
-        <input type="email" name="searchEmail" placeholder="อีเมล" class="p-2 border border-gray-300 rounded" 
-               value="<?php echo isset($_POST['searchEmail']) ? $_POST['searchEmail'] : ''; ?>">
+        <input type="text" name="searchName" placeholder="ชื่อ - นามสกุล" class="p-2 border border-gray-300 rounded" value="<?php echo isset($_POST['searchName']) ? $_POST['searchName'] : ''; ?>">
+        <input type="date" name="searchDate" class="p-2 border border-gray-300 rounded" value="<?php echo isset($_POST['searchDate']) ? $_POST['searchDate'] : ''; ?>">
+        <input type="email" name="searchEmail" placeholder="อีเมล" class="p-2 border border-gray-300 rounded" value="<?php echo isset($_POST['searchEmail']) ? $_POST['searchEmail'] : ''; ?>">
         <button type="submit" class="col-span-2 p-2 bg-blue-500 text-white rounded">ค้นหา</button>
     </form>
-
-    <!-- ตารางข้อมูล -->
-    <div class="overflow-x-auto">
+        <div class="overflow-x-auto">
         <table id="carInfoTable" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
             <thead class="bg-gray-200">
+                <thead>
                 <tr class="bg-gray-200 text-left">
-                    <th class="border px-2 py-1 whitespace-nowrap">ชื่อ</th>
-                    <th class="border px-2 py-1 whitespace-nowrap">นามสกุล</th>
-                    <th class="border px-2 py-1 whitespace-nowrap">อีเมล</th>
-                    <th class="border px-2 py-1 whitespace-nowrap">เบอร์โทรติดต่อ</th>
-                    <th class="border px-2 py-1 whitespace-nowrap">รหัสเข้าระบบล็อกอุปกรณ์</th>
-                    <th class="border px-2 py-1 whitespace-nowrap">วันที่ลงทะเบียน</th>
-                </tr>
+                  <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">ชื่อ</th>
+                  <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">นามสกุล</th>
+                  <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">อีเมล</th>
+                  <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">เบอร์โทรติดต่อ</th>
+                  <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">รหัสเข้าระบบล็อกอุปกรณ์</th>
+                  <th class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">วันที่ลงทะเบียน</th>
+              </tr>
             </thead>
             <tbody>
-                <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>
-                                <td class='border px-2 py-1 whitespace-nowrap'>" . $row["firstname"] . "</td>
-                                <td class='border px-2 py-1 whitespace-nowrap'>" . $row["lastname"] . "</td>
-                                <td class='border px-2 py-1 whitespace-nowrap'>" . $row["email"] . "</td>
-                                <td class='border px-2 py-1 whitespace-nowrap'>" . $row["phone"] . "</td>
-                                <td class='border px-2 py-1 whitespace-nowrap'>" . $row["password_lock"] . "</td>
-                                <td class='border px-2 py-1 whitespace-nowrap'>" . $row["created_at"] . "</td>
-                              </tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='6' class='p-2 text-center'>ไม่มีข้อมูล</td></tr>";
+              <?php
+              if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                  echo "<tr>
+                        <td class='border px-2 py-1 whitespace-nowrap'>" . $row["firstname"] . "</td>
+                        <td class='border px-2 py-1 whitespace-nowrap'>" . $row["lastname"] . "</td>
+                        <td class='border px-2 py-1 whitespace-nowrap'>" . $row["email"] . "</td>
+                        <td class='border px-2 py-1 whitespace-nowrap'>" . $row["phone"] . "</td>
+                        <td class='border px-2 py-1 whitespace-nowrap'>" . $row["password_lock"] . "</td>
+                        <td class='border px-2 py-1 whitespace-nowrap'>" . $row["created_at"] . "</td>
+                        </tr>";
                 }
-                ?>
+              } else {
+                echo "<tr><td colspan='5' class='p-2 text-center'>ไม่มีข้อมูล</td></tr>";
+              }
+              ?>
             </tbody>
-        </table>
-    </div>
-</div>
+          </table>
+        </div>
+      </div>
     </div>
 
-    <script>
+  <script>
+    function searchTable() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const rows = document.querySelectorAll("#carInfoTable tbody tr");
+
+      rows.forEach(row => {
+        const cells = row.querySelectorAll("td");
+        let showRow = false;
+
+        cells.forEach(cell => {
+          if (cell.textContent.toLowerCase().includes(input)) {
+            showRow = true;
+          }
+        });
+
+        row.style.display = showRow ? "" : "none";
+      });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuClose = document.getElementById('menu-close');
+            const leftMenu = document.getElementById('left-menu');
+
+            menuToggle.addEventListener('click', () => {
+                leftMenu.classList.add('open');
+            });
+
+            menuClose.addEventListener('click', () => {
+                leftMenu.classList.remove('open');
+            });
+        });
         $(document).ready(function () {
-            // DataTables
             new DataTable('#carInfoTable', {
                 layout: {
                     topStart: {
-                        buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
-                    }
-                },
-                language: {
-                    search: "ค้นหา:",
-                    lengthMenu: "แสดง _MENU_ รายการ",
-                    info: "แสดง _START_ ถึง _END_ จากทั้งหมด _TOTAL_ รายการ",
-                    paginate: {
-                        first: "หน้าแรก",
-                        last: "หน้าสุดท้าย",
-                        next: "ถัดไป",
-                        previous: "ก่อนหน้า"
+                        buttons: ['csv', 'excel', 'pdf', 'print']
                     }
                 }
             });
-
-            // ฟังก์ชันค้นหาข้อมูลแบบ manual
-            function searchTable() {
-                const input = document.querySelector("[name='searchName']").value.toLowerCase();
-                const emailInput = document.querySelector("[name='searchEmail']").value.toLowerCase();
-                const dateInput = document.querySelector("[name='searchDate']").value;
-                const rows = document.querySelectorAll("#carInfoTable tbody tr");
-
-                rows.forEach(row => {
-                    const name = row.cells[0].textContent.toLowerCase() + " " + row.cells[1].textContent.toLowerCase();
-                    const email = row.cells[2].textContent.toLowerCase();
-                    const date = row.cells[5].textContent;
-
-                    let showRow = true;
-                    if (input && !name.includes(input)) showRow = false;
-                    if (emailInput && !email.includes(emailInput)) showRow = false;
-                    if (dateInput && date !== dateInput) showRow = false;
-
-                    row.style.display = showRow ? "" : "none";
-                });
-            }
-
-            document.querySelector("form").addEventListener("submit", function (e) {
-                e.preventDefault();
-                searchTable();
-            });
         });
-    </script>
+  </script>
 
 </body>
 </html>
