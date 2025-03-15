@@ -1,91 +1,41 @@
 <?php
-require_once 'vendor/autoload.php';
-include("server.php");  // เปลี่ยนจาก include เป็น require_once
+include("server.php");
 
-$where = [];
-$params = [];
-$types = "";
+$date_filter = "";
+$name_filter = "";
+$email_filter = "";
 
-// ค้นหาชื่อ-นามสกุล
-if (!empty($_POST['name'])) {
-    $where[] = "(firstname LIKE ? OR lastname LIKE ?)";
-    $name = "%" . $_POST['name'] . "%";
-    $params[] = $name;
-    $params[] = $name;
-    $types .= "ss";
+// กรองวันที่
+if (isset($_POST['searchDate']) && !empty($_POST['searchDate'])) {
+    $search_date = $conn->real_escape_string($_POST['searchDate']);
+    $date_filter = "WHERE DATE(created_at) = '$search_date'";
 }
 
-// ค้นหาตามวันที่ลงทะเบียน
-if (!empty($_POST['searchDate'])) {
-    $where[] = "DATE(created_at) = ?";
-    $params[] = $_POST['searchDate'];
-    $types .= "s";
+// กรองชื่อ
+if (isset($_POST['searchName']) && !empty($_POST['searchName'])) {
+    $search_name = $conn->real_escape_string($_POST['searchName']);
+    if ($date_filter == "") {
+        $name_filter = "WHERE firstname LIKE '%$search_name%' OR lastname LIKE '%$search_name%'";
+    } else {
+        $name_filter = "AND (firstname LIKE '%$search_name%' OR lastname LIKE '%$search_name%')";
+    }
 }
 
-// สร้างเงื่อนไข SQL
-$where_clause = count($where) > 0 ? "WHERE " . implode(" AND ", $where) : "";
-$sql = "SELECT firstname, lastname, email, password_lock, phone, created_at FROM user_register $where_clause ORDER BY created_at DESC";
-
-$stmt = $conn->prepare($sql);
-if (!empty($params)) {
-    $stmt->bind_param($types, ...$params);
+// กรองอีเมล
+if (isset($_POST['searchEmail']) && !empty($_POST['searchEmail'])) {
+    $search_email = $conn->real_escape_string($_POST['searchEmail']);
+    if ($date_filter == "" && $name_filter == "") {
+        $email_filter = "WHERE email LIKE '%$search_email%'";
+    } else {
+        $email_filter = "AND email LIKE '%$search_email%'";
+    }
 }
-$stmt->execute();
-$result = $stmt->get_result();
+
+// รวมการกรอง
+$sql = "SELECT firstname, lastname, email, phone, password_lock, created_at FROM user_register $date_filter $name_filter $email_filter";
+$result = $conn->query($sql);
 
 $conn->close();
-
-use TCPDF;
-
-try {
-    // สร้างอินสแตนซ์ของ TCPDF
-    $pdf = new TCPDF();
-
-    // กำหนดค่าเริ่มต้นสำหรับ PDF
-    $pdf->SetCreator(PDF_CREATOR);
-    $pdf->SetAuthor('Your Name');
-    $pdf->SetTitle('ข้อมูลเจ้าหน้าที่ในระบบ');
-
-    // เพิ่มหน้าใหม่
-    $pdf->AddPage();
-
-    // สร้างเนื้อหาของ PDF
-    $html = '<h1>ข้อมูลเจ้าหน้าที่ในระบบ</h1>';
-    $html .= '<table border="1" style="width: 100%; border-collapse: collapse;">';
-    $html .= '<tr>
-                <th>ชื่อ</th>
-                <th>นามสกุล</th>
-                <th>อีเมล</th>
-                <th>เบอร์โทรติดต่อ</th>
-                <th>รหัสเข้าระบบล็อกอุปกรณ์</th>
-                <th>วันที่ลงทะเบียน</th>
-              </tr>';
-
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            $html .= "<tr>
-                        <td>" . $row["firstname"] . "</td>
-                        <td>" . $row["lastname"] . "</td>
-                        <td>" . $row["email"] . "</td>
-                        <td>" . $row["phone"] . "</td>
-                        <td>" . $row["password_lock"] . "</td>
-                        <td>" . $row["created_at"] . "</td>
-                      </tr>";
-        }
-    } else {
-        $html .= "<tr><td colspan='6' class='text-center'>ไม่มีข้อมูล</td></tr>";
-    }
-
-    $html .= '</table>';
-
-    // เขียนเนื้อหาลงใน PDF
-    $pdf->writeHTML($html);
-
-    // ส่ง PDF ไปให้ผู้ใช้ดาวน์โหลด
-    $pdf->Output('user_data.pdf', 'D'); // 'D' คือให้ดาวน์โหลด
-} catch (Exception $e) {
-    echo "เกิดข้อผิดพลาดในการสร้าง PDF: " . $e->getMessage();
-}
 ?>
 
 
