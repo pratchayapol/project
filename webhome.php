@@ -18,7 +18,7 @@
 <body class="text-xl flex items-center justify-center h-screen" style="font-family: 'Kanit', sans-serif;">
     <div class="bg-white p-8 rounded-lg shadow-xl border border-gray-200 w-96 text-center">
         <div class="flex items-center justify-center mb-6">
-            <img src="https://upload.wikimedia.org/wikipedia/th/e/e0/RMUTI_KORAT.png" alt="RMUTI Logo" class="w-24 h-auto">
+            <img src="https://i.postimg.cc/wTy8jZs0/download.jpg" alt="RMUTI Logo" class="w-24 h-auto">
         </div>
         <h1 class="text-2xl text-gray-800 mb-6" style="font-family: 'Kanit', sans-serif;">วิธีการเข้าใช้งานเว็บไซต์</h1>
         <div class="space-y-6">
