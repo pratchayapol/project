@@ -90,19 +90,18 @@ $conn->close();
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <h1 class="text-xl"style="font-family: 'Kanit', sans-serif;">เจ้าหน้าที่ในระบบทั้งหมด</h1>
-            <div class="flex items-center space-x-6">
+            <h1 class="text-xl" style="font-family: 'Kanit', sans-serif;">เจ้าหน้าที่ในระบบทั้งหมด</h1>
+            <div class="flex items-center space-x-2"> <!-- ใช้ space-x-2 เพื่อให้ระยะห่างเหมาะสม -->
+                <a href="logout.php" class="block px-4 py-2 hover:bg-gray-100" style="font-family: 'Kanit', sans-serif;">Logout</a>
                 <div class="relative group cursor-pointer">
-                    <h1><a href="logout.php" class="block px-4 py-2 hover:bg-gray-100"style="font-family: 'Kanit', sans-serif;">Logout</a></h1>
                     <img src="https://www.svgrepo.com/show/524199/user-circle.svg" alt="User Icon" class="h-6 w-6 group-hover:text-gray-200" style="filter: brightness(0) invert(1);">
                     <div class="absolute right-0 mt-2 w-40 bg-white text-gray-800 shadow-lg rounded-md opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200">
-                        <a href="profile1.php" class="block px-4 py-2 hover:bg-gray-100"style="font-family: 'Kanit', sans-serif;">Profile</a>
+                        <a href="profile1.php" class="block px-4 py-2 hover:bg-gray-100" style="font-family: 'Kanit', sans-serif;">Profile</a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-
     <!-- Left Sliding Menu -->
     <div id="left-menu" class="fixed top-0 left-0 bg-white shadow-lg">
         <div class="p-4 bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white flex justify-between items-center">
