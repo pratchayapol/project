@@ -38,7 +38,6 @@ $result = $conn->query($sql);
 $conn->close();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -126,15 +125,11 @@ $conn->close();
         </nav>
     </div>
     <div class="container mx-auto px-4 py-6">
-    <!-- ฟอร์มค้นหา -->
     <form method="POST" class="grid grid-cols-2 gap-4 mb-4 bg-white p-4 shadow-lg rounded-lg">
-        <input type="text" name="name" placeholder="ชื่อ - นามสกุล" class="p-2 border border-gray-300 rounded">
-        <input type="date" name="searchDate" class="p-2 border border-gray-300 rounded">
+        <input type="text" name="searchName" placeholder="ชื่อ - นามสกุล" class="p-2 border border-gray-300 rounded" value="<?php echo isset($_POST['searchName']) ? $_POST['searchName'] : ''; ?>">
+        <input type="date" name="searchDate" class="p-2 border border-gray-300 rounded" value="<?php echo isset($_POST['searchDate']) ? $_POST['searchDate'] : ''; ?>">
+        <input type="email" name="searchEmail" placeholder="อีเมล" class="p-2 border border-gray-300 rounded" value="<?php echo isset($_POST['searchEmail']) ? $_POST['searchEmail'] : ''; ?>">
         <button type="submit" class="col-span-2 p-2 bg-blue-500 text-white rounded">ค้นหา</button>
-    </form>
-    <!-- ปุ่มดาวน์โหลด PDF -->
-    <form method="POST" action="download_pdf.php" class="mb-4">
-        <button type="submit" class="p-2 bg-green-500 text-white rounded">ดาวน์โหลด PDF</button>
     </form>
         <div class="overflow-x-auto">
         <table id="carInfoTable" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
