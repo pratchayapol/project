@@ -151,7 +151,7 @@ $conn->close();
         <button type="submit" class="col-span-2 p-2 bg-blue-500 text-white rounded">ค้นหา</button>
     </form>
         <div class="overflow-x-auto">
-        <table id="carInfoTable" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
+        <table id="example" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
             <thead class="bg-gray-200">
                 <thead>
                 <tr class="bg-gray-200 text-left">
@@ -189,7 +189,7 @@ $conn->close();
   <script>
     function searchTable() {
       const input = document.getElementById("searchInput").value.toLowerCase();
-      const rows = document.querySelectorAll("#carInfoTable tbody tr");
+      const rows = document.querySelectorAll("#example tbody tr");
 
       rows.forEach(row => {
         const cells = row.querySelectorAll("td");
@@ -218,7 +218,7 @@ $conn->close();
             });
         });
         $(document).ready(function () {
-            new DataTable('#carInfoTable', {
+            new DataTable('#example', {
                 layout: {
                     topStart: {
                         buttons: ['csv', 'excel', 'pdf', 'print']
