@@ -153,8 +153,6 @@ $conn->close();
             </thead>
             <tbody>
                 <?php
-                header('Content-Type: text/html; charset=utf-8');
-                mysqli_set_charset($conn, "utf8");
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>
@@ -191,9 +189,6 @@ $conn->close();
             $('#example').DataTable({
                 dom: 'Bfrtip',
                 buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
-                language: {
-                    url: "https://cdn.datatables.net/plug-ins/1.11.5/i18n/Thai.json"
-                }
             });
         });
     </script>
