@@ -187,15 +187,6 @@ $conn->close();
                 leftMenu.classList.remove('open');
             });
         });
-        // กำหนดฟอนต์สำหรับ pdfmake ให้รองรับภาษาไทย
-        pdfMake.fonts = {
-            THSarabunNew: {
-                normal: 'https://cdn.jsdelivr.net/gh/dtinth/pdfmake-thai@master/fonts/THSarabunNew.ttf',
-                bold: 'https://cdn.jsdelivr.net/gh/dtinth/pdfmake-thai@master/fonts/THSarabunNew-Bold.ttf',
-                italics: 'https://cdn.jsdelivr.net/gh/dtinth/pdfmake-thai@master/fonts/THSarabunNew-Italic.ttf',
-                bolditalics: 'https://cdn.jsdelivr.net/gh/dtinth/pdfmake-thai@master/fonts/THSarabunNew-BoldItalic.ttf'
-            }
-        };
 
         $(document).ready(function() {
             $('#example').DataTable({
