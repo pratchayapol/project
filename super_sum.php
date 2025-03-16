@@ -187,10 +187,38 @@ $conn->close();
                 leftMenu.classList.remove('open');
             });
         });
+        // กำหนดฟอนต์สำหรับ pdfmake ให้รองรับภาษาไทย
+        pdfMake.fonts = {
+            THSarabunNew: {
+                normal: 'https://cdn.jsdelivr.net/gh/dtinth/pdfmake-thai@master/fonts/THSarabunNew.ttf',
+                bold: 'https://cdn.jsdelivr.net/gh/dtinth/pdfmake-thai@master/fonts/THSarabunNew-Bold.ttf',
+                italics: 'https://cdn.jsdelivr.net/gh/dtinth/pdfmake-thai@master/fonts/THSarabunNew-Italic.ttf',
+                bolditalics: 'https://cdn.jsdelivr.net/gh/dtinth/pdfmake-thai@master/fonts/THSarabunNew-BoldItalic.ttf'
+            }
+        };
+
         $(document).ready(function() {
             $('#example').DataTable({
                 dom: 'Bfrtip',
-                buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                buttons: [
+                    'copy', 'csv', 'excel', 
+                    {
+                        extend: 'pdfHtml5',
+                        text: 'PDF',
+                        customize: function(doc) {
+                            doc.defaultStyle = {
+                                font: 'THSarabunNew', // ใช้ฟอนต์ภาษาไทย
+                                fontSize: 14
+                            };
+                            doc.styles.tableHeader = {
+                                font: 'THSarabunNew',
+                                fontSize: 16,
+                                bold: true
+                            };
+                        }
+                    }, 
+                    'print'
+                ],
                 language: {
                     url: "https://cdn.datatables.net/plug-ins/1.11.5/i18n/Thai.json"
                 }
