@@ -189,6 +189,7 @@ $conn->close();
             $('#example').DataTable({
                 dom: 'Bfrtip',
                 buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+                searching: false
             });
         });
     </script>
