@@ -37,7 +37,7 @@
 
     <div class="w-full max-w-sm p-6 bg-white rounded-lg shadow-md">
         <div class="flex justify-center mb-6">
-            <img src="https://upload.wikimedia.org/wikipedia/th/e/e0/RMUTI_KORAT.png" alt="Logo" class="w-20 h-auto">
+            <img src="https://i.postimg.cc/wTy8jZs0/download.jpg" alt="Logo" class="w-20 h-auto">
         </div>
         <h2 class="text-2xl text-center text-gray-800 mb-6" style="font-size: 16px; font-family: 'Kanit', sans-serif;">ยินดีต้อนรับเข้าสู่เว็บไซต์สำหรับเจ้าหน้าที่</h2>
         
