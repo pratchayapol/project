@@ -20,7 +20,7 @@
         <div class="flex items-center justify-center mb-6">
             <img src="https://i.postimg.cc/wTy8jZs0/download.jpg" alt="RMUTI Logo" class="w-24 h-auto">
         </div>
-        <h1 class="text-xl text-gray-800 mb-6" style="font-family: 'Kanit', sans-serif;">ระบบบันทึกข้อมูลรถและสแกนจ่ายชำระค่าปรับ</h1>
+        <h1 class="text-base text-gray-800 mb-6" style="font-family: 'Kanit', sans-serif;">ระบบบันทึกข้อมูลรถและสแกนจ่ายชำระค่าปรับ</h1>
         <div class="space-y-6">
             <!-- ปุ่มคู่มือสำหรับเจ้าหน้าที่ -->
             <a href="webboard.php" class="block">
