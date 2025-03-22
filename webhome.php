@@ -15,8 +15,8 @@
         
     </style>
 </head>
-<body class="text-xl flex items-center justify-center h-screen" style="font-family: 'Kanit', sans-serif;">
-    <div class="bg-white p-8 rounded-lg shadow-xl border border-gray-200 w-96 text-center">
+<body class="flex items-center justify-center h-screen" style="font-family: 'Kanit', sans-serif;">
+    <div class="bg-white p-8 rounded-lg shadow-xl border border-gray-200 w-100 text-center">
         <div class="flex items-center justify-center mb-6">
             <img src="https://i.postimg.cc/wTy8jZs0/download.jpg" alt="RMUTI Logo" class="w-24 h-auto">
         </div>
