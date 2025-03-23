@@ -8,6 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.2.2/css/buttons.dataTables.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.2/js/dataTables.buttons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.2/js/buttons.print.min.js"></script>
     <style>
         body{
             font-family: 'Kanit', sans-serif;
@@ -85,7 +95,6 @@
                     <!-- Dropdown -->
                     <div class="absolute right-0 mt-2 w-40 bg-white text-gray-800 shadow-lg rounded-md opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200">
                         <a href="profile.php" class="block px-4 py-2 hover:bg-gray-100" style="font-family: 'Kanit', sans-serif;">Profile</a>
-                        <a href="logout.php" class="block px-4 py-2 hover:bg-gray-100" style="font-family: 'Kanit', sans-serif;">Logout</a>
                     </div>
                 </div>
             </div>
@@ -114,22 +123,14 @@
     </div>
 
     <div class="container mx-auto px-4 py-6" style="font-family: 'Kanit', sans-serif;">
-        <div class="mb-6">
-            <input 
-                type="text" 
-                id="searchInput" 
-                class="p-2 border border-gray-300 rounded w-full" style="font-family: 'Kanit', sans-serif;"
-                placeholder="ค้นหาข้อมูล"
-            />
-            <button 
-                onclick="searchTable()" 
-                class="mt-2 p-2 bg-gradient-to-r from-[#2B547E] to-[#29465B] text-white rounded w-full" style="font-family: 'Kanit', sans-serif;"
-            >
-                ค้นหา
-            </button>
-        </div>
+        <form method="POST" class="grid grid-cols-2 gap-4 mb-4 bg-white p-4 shadow-lg rounded-lg">
+            <input type="text" name="searchName" placeholder="ชื่อ - นามสกุล" class="p-2 border border-gray-300 rounded" value="<?php echo isset($_POST['searchName']) ? $_POST['searchName'] : ''; ?>">
+            <input type="date" name="searchDate" class="p-2 border border-gray-300 rounded" value="<?php echo isset($_POST['searchDate']) ? $_POST['searchDate'] : ''; ?>">
+            <input type="email" name="searchEmail" placeholder="อีเมล" class="p-2 border border-gray-300 rounded" value="<?php echo isset($_POST['searchEmail']) ? $_POST['searchEmail'] : ''; ?>">
+            <button type="submit" class="col-span-2 p-2 bg-blue-500 text-white rounded">ค้นหา</button>
+        </form>
         <div class="overflow-x-auto">
-        <table id="carInfoTable" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
+        <table id="example" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
             <thead class="bg-gray-200">
                 <thead>
                     <tr class="bg-gray-200 text-left" style="font-family: 'Kanit', sans-serif;">
@@ -179,6 +180,48 @@
 
         document.getElementById('menu-close').addEventListener('click', function () {
             document.getElementById('left-menu').classList.remove('open');
+        });
+        $(document).ready(function () {
+            $('#example').DataTable({
+                dom: "<'flex justify-between space-x-4'<'w-1/2'l><'w-1/2'f>>" +  // ใช้ Flexbox พร้อมเว้นวรรค
+                    "<'overflow-x-auto'<'w-full' tr>>" + 
+                    "<'flex justify-between space-x-4'<'w-1/2'i><'w-1/2'p>>" + // ใช้ Flexbox พร้อมเว้นวรรคสำหรับการแบ่งหน้า
+                    "<'mt-4'<'w-full'B>>", // เว้นวรรคให้ปุ่ม
+                buttons: [
+                    {
+                        extend: 'copy',
+                        className: 'bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300'
+                    },
+                    {
+                        extend: 'csv',
+                        className: 'bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300'
+                    },
+                    {
+                        extend: 'excel',
+                        className: 'bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300'
+                    },
+                    {
+                        extend: 'pdf',
+                        className: 'bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300'
+                    },
+                    {
+                        extend: 'print',
+                        className: 'bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300'
+                    }
+                ],
+                searching: false,  // ปิดการค้นหา
+                paging: true,
+                lengthMenu: [5, 10, 25, 50, 100],
+                pageLength: 10,
+                language: {
+                    paginate: {
+                        previous: "«",
+                        next: "»"
+                    },
+                    lengthMenu: "แสดง _MENU_ รายการ",
+                    info: "แสดง _START_ ถึง _END_ จากทั้งหมด _TOTAL_ รายการ",
+                }
+            });
         });
     </script>
 </body>
