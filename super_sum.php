@@ -213,7 +213,7 @@ $conn->close();
                     className: 'bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300'
                 }
             ],
-            searching: true,
+            searching: false,  // ปิดการค้นหา
             paging: true,
             lengthMenu: [5, 10, 25, 50, 100],
             pageLength: 10,
@@ -224,7 +224,6 @@ $conn->close();
                 },
                 lengthMenu: "แสดง _MENU_ รายการ",
                 info: "แสดง _START_ ถึง _END_ จากทั้งหมด _TOTAL_ รายการ",
-                searching: false
             }
         });
     });
