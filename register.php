@@ -80,7 +80,7 @@
     <div class="flex items-center justify-center min-h-screen">
         <div class="bg-white shadow-md rounded-lg  w-full px-3 py-1">
             <div class="flex items-center justify-center mb-6">
-                <img src="https://upload.wikimedia.org/wikipedia/th/e/e0/RMUTI_KORAT.png" alt="RMUTI Logo" class="w-24 h-auto">
+                <img src="https://i.postimg.cc/wTy8jZs0/download.jpg" alt="RMUTI Logo" class="w-24 h-auto">
             </div>
 
             <h2 class="text-2xl text-center mb-6" style="font-size: 16px; font-family: 'Kanit', sans-serif;">ลงทะเบียนเข้าสู่เว็บไซต์สำหรับเจ้าหน้าที่ใหม่</h2>
