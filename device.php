@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -145,7 +147,7 @@
                         <th class="border px-2 py-1 whitespace-nowrap">เวลาที่เพิ่ม</th>
                     </tr>
                 </thead>
-                <tbody id="device-list">
+                <tbody id="example">
                     <!-- ข้อมูลจะถูกเพิ่มที่นี่ผ่าน JavaScript -->
                 </tbody>
             </table>
@@ -157,7 +159,7 @@
         fetch('device_db.php')
             .then(response => response.json())
             .then(data => {
-                const deviceList = document.querySelector('#device-list');
+                const deviceList = document.querySelector('#example');
                 data.forEach(device => {
                     const row = document.createElement('tr');
                     row.classList.add('border-b', 'border-gray-200');
