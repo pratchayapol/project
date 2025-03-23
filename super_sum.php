@@ -224,7 +224,7 @@ $conn->close();
                 },
                 lengthMenu: "แสดง _MENU_ รายการ",
                 info: "แสดง _START_ ถึง _END_ จากทั้งหมด _TOTAL_ รายการ",
-                search: "ค้นหา:"
+                searching: false
             }
         });
     });
