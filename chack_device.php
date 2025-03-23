@@ -186,46 +186,47 @@ $result = $conn->query($sql);
             <input type="email" name="searchEmail" placeholder="อีเมล" class="p-2 border border-gray-300 rounded" value="<?php echo isset($_POST['searchEmail']) ? $_POST['searchEmail'] : ''; ?>">
             <button type="submit" class="col-span-2 p-2 bg-blue-500 text-white rounded">ค้นหา</button>
         </form>
-    <div class="overflow-x-auto">
-        <table id="example" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
-            <thead class="bg-gray-200">
-                <thead>
-                <tr class="bg-gray-200 text-left">
-                    <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">หมายเลขทะเบียน</th>
-                    <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">จังหวัด</th>
-                    <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">ประเภท</th>
-                    <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">ยี่ห้อ</th>
-                    <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">ยอดชำระยอดชำระค่าปรับ</th>
-                    <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">อุปกรณ์</th>
-                    <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">รหัสปลดล็อก</th>
-                    <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">วันที่บันทึก</th>
-                    <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">ชื่อ</th>
-                    <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">อีเมล</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: 'Kanit', sans-serif;'>" . $row['plate_number'] . "</td>";
-                        echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: 'Kanit', sans-serif;'>" . $row['province'] . "</td>";
-                        echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: 'Kanit', sans-serif;'>" . $row['car_type'] . "</td>";
-                        echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: 'Kanit', sans-serif;'>" . $row['brand'] . "</td>";
-                        echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: 'Kanit', sans-serif;'>" . $row['price'] . "</td>";
-                        echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: 'Kanit', sans-serif;'>" . $row['device'] . "</td>";
-                        echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: 'Kanit', sans-serif;'>" . $row['unlockcar'] . "</td>";
-                        echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: 'Kanit', sans-serif;'>" . $row['created_at'] . "</td>";
-                        echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: 'Kanit', sans-serif;'>" . $row['firstname'] . " " . $row['lastname'] . "</td>";
-                        echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: 'Kanit', sans-serif;'>" . $row['email'] . "</td>";
-                        echo "</tr>";
+
+        <div class="overflow-x-auto">
+            <table id="example" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
+                <thead class="bg-gray-200">
+                    <tr class="bg-gray-200 text-left">
+                        <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">หมายเลขทะเบียน</th>
+                        <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">จังหวัด</th>
+                        <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">ประเภท</th>
+                        <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">ยี่ห้อ</th>
+                        <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">ยอดชำระค่าปรับ</th>
+                        <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">อุปกรณ์</th>
+                        <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">รหัสปลดล็อก</th>
+                        <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">วันที่บันทึก</th>
+                        <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">ชื่อ</th>
+                        <th class="border px-2 py-1 whitespace-nowrap" style="font-family: 'Kanit', sans-serif;">อีเมล</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: \"Kanit\", sans-serif;'>" . $row['plate_number'] . "</td>";
+                            echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: \"Kanit\", sans-serif;'>" . $row['province'] . "</td>";
+                            echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: \"Kanit\", sans-serif;'>" . $row['car_type'] . "</td>";
+                            echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: \"Kanit\", sans-serif;'>" . $row['brand'] . "</td>";
+                            echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: \"Kanit\", sans-serif;'>" . $row['price'] . "</td>";
+                            echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: \"Kanit\", sans-serif;'>" . $row['device'] . "</td>";
+                            echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: \"Kanit\", sans-serif;'>" . $row['unlockcar'] . "</td>";
+                            echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: \"Kanit\", sans-serif;'>" . $row['created_at'] . "</td>";
+                            echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: \"Kanit\", sans-serif;'>" . $row['firstname'] . " " . $row['lastname'] . "</td>";
+                            echo "<td class='border px-2 py-1 whitespace-nowrap' style='font-family: \"Kanit\", sans-serif;'>" . $row['email'] . "</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='10' class='border px-2 py-1 whitespace-nowrap text-center' style='font-family: \"Kanit\", sans-serif;'>ไม่มีข้อมูล</td></tr>";
                     }
-                } else {
-                    echo "<tr><td colspan='10' class='border px-2 py-1 whitespace-nowrap text-center' style='font-family: 'Kanit', sans-serif;'>ไม่มีข้อมูล</td></tr>";
-                }
-                ?>
-            </tbody>
-        </table>
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script>
