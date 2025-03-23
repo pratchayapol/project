@@ -207,7 +207,7 @@ if (!$result) {
             <button type="submit" class="col-span-2 p-2 bg-blue-500 text-white rounded">ค้นหา</button>
         </form>
         <div class="overflow-x-auto">
-        <table id="carInfoTable" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
+        <table id="example" class="table-auto w-full border-collapse border border-gray-300 text-xs sm:text-sm md:text-base">
             <thead class="bg-gray-200">
                 <tr class="text-left">
                     <th  class="border px-2 py-1 whitespace-nowrap"style="font-family: 'Kanit', sans-serif;">ทะเบียน</th>
