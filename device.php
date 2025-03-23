@@ -89,6 +89,7 @@
             </button>
             <h1 class="text-xl" style="font-family: 'Kanit', sans-serif;">ตรวจเช็คสถานะอุปกรณ์</h1>
             <div class="flex items-center space-x-6">
+            <a href="logout.php" class="block px-4 py-2 hover:bg-gray-100" style="font-family: 'Kanit', sans-serif;">Logout</a>
                 <div class="relative group cursor-pointer">
                     <!-- User Icon with External SVG -->
                     <img src="https://www.svgrepo.com/show/524199/user-circle.svg" alt="User Icon" class="h-6 w-6 group-hover:text-gray-200" style="filter: brightness(0) invert(1);">
