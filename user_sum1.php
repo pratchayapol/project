@@ -201,9 +201,9 @@ if (!$result) {
 
     <div class="container mx-auto px-4 py-6" style="font-family: 'Kanit', sans-serif;">
         <form method="POST" class="grid grid-cols-2 gap-4 mb-4 bg-white p-4 shadow-lg rounded-lg">
-            <input type="text" name="searchName" placeholder="ชื่อ - นามสกุล" class="p-2 border border-gray-300 rounded" value="<?php echo isset($_POST['searchName']) ? $_POST['searchName'] : ''; ?>">
+            <input type="text" name="searchName" placeholder="ะเบียนรถ-จังหวัด" class="p-2 border border-gray-300 rounded" value="<?php echo isset($_POST['searchName']) ? $_POST['searchName'] : ''; ?>">
             <input type="date" name="searchDate" class="p-2 border border-gray-300 rounded" value="<?php echo isset($_POST['searchDate']) ? $_POST['searchDate'] : ''; ?>">
-            <input type="email" name="searchEmail" placeholder="อีเมล" class="p-2 border border-gray-300 rounded" value="<?php echo isset($_POST['searchEmail']) ? $_POST['searchEmail'] : ''; ?>">
+            <input type="email" name="searchEmail" placeholder="ยี่ห้อรถ" class="p-2 border border-gray-300 rounded" value="<?php echo isset($_POST['searchEmail']) ? $_POST['searchEmail'] : ''; ?>">
             <button type="submit" class="col-span-2 p-2 bg-blue-500 text-white rounded">ค้นหา</button>
         </form>
         <div class="overflow-x-auto">
