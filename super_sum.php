@@ -187,30 +187,30 @@ $conn->close();
         });
         $(document).ready(function () {
         $('#example').DataTable({
-            dom: "<'flex justify-between'<'w-1/2'l><'w-1/2'f>>" + // ใช้ Flexbox ในการจัดตำแหน่ง
+            dom: "<'flex justify-between space-x-4'<'w-1/2'l><'w-1/2'f>>" +  // ใช้ Flexbox พร้อมเว้นวรรค
                  "<'overflow-x-auto'<'w-full' tr>>" + 
-                 "<'flex justify-between'<'w-1/2'i><'w-1/2'p>>" + // ใช้ Flexbox สำหรับข้อมูลและการแบ่งหน้า
-                 "<'mt-4'<'w-full'B>>",
+                 "<'flex justify-between space-x-4'<'w-1/2'i><'w-1/2'p>>" + // ใช้ Flexbox พร้อมเว้นวรรคสำหรับการแบ่งหน้า
+                 "<'mt-4'<'w-full'B>>", // เว้นวรรคให้ปุ่ม
             buttons: [
                 {
                     extend: 'copy',
-                    className: 'bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg'
+                    className: 'bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300'
                 },
                 {
                     extend: 'csv',
-                    className: 'bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg'
+                    className: 'bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300'
                 },
                 {
                     extend: 'excel',
-                    className: 'bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-lg'
+                    className: 'bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300'
                 },
                 {
                     extend: 'pdf',
-                    className: 'bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg'
+                    className: 'bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300'
                 },
                 {
                     extend: 'print',
-                    className: 'bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-lg'
+                    className: 'bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300'
                 }
             ],
             searching: true,
