@@ -185,13 +185,49 @@ $conn->close();
                 leftMenu.classList.remove('open');
             });
         });
-        $(document).ready(function() {
-            $('#example').DataTable({
-                dom: 'Bfrtip',
-                buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
-                searching: false
-            });
+        $(document).ready(function () {
+        $('#example').DataTable({
+            dom: "<'flex justify-between'<'w-1/2'l><'w-1/2'f>>" + // ใช้ Flexbox ในการจัดตำแหน่ง
+                 "<'overflow-x-auto'<'w-full' tr>>" + 
+                 "<'flex justify-between'<'w-1/2'i><'w-1/2'p>>" + // ใช้ Flexbox สำหรับข้อมูลและการแบ่งหน้า
+                 "<'mt-4'<'w-full'B>>",
+            buttons: [
+                {
+                    extend: 'copy',
+                    className: 'bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg'
+                },
+                {
+                    extend: 'csv',
+                    className: 'bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg'
+                },
+                {
+                    extend: 'excel',
+                    className: 'bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-lg'
+                },
+                {
+                    extend: 'pdf',
+                    className: 'bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg'
+                },
+                {
+                    extend: 'print',
+                    className: 'bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-lg'
+                }
+            ],
+            searching: true,
+            paging: true,
+            lengthMenu: [5, 10, 25, 50, 100],
+            pageLength: 10,
+            language: {
+                paginate: {
+                    previous: "«",
+                    next: "»"
+                },
+                lengthMenu: "แสดง _MENU_ รายการ",
+                info: "แสดง _START_ ถึง _END_ จากทั้งหมด _TOTAL_ รายการ",
+                search: "ค้นหา:"
+            }
         });
+    });
     </script>
 </body>
 </html>
