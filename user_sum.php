@@ -9,7 +9,7 @@ if (!isset($_SESSION['email'])) {
 }
 
 // ตรวจสอบบทบาทของผู้ใช้
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'superadmin') {
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     header("Location: webboard.php");
     exit();
 }
