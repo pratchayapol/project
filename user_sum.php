@@ -191,7 +191,7 @@ if (!$result) {
             <ul>
                 <li><a href="menu_home.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">หน้าหลัก</a></li>
                 <li><a href="AddInformation.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">เพิ่มข้อมูล</a></li>
-                <li><a href="edit_car.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">แก้ไขข้อมูลรถยนต์</a></li>
+                <li><a href="edit_car.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">แก้ไขข้อมูลรถ</a></li>
                 <li><a href="device.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">ตรวจเช็คสถานะอุปกรณ์</a></li>
                 <li><a href="dashboard.php" class="block py-2 px-4 text-gray-700 hover:bg-gray-200">สรุปยอดค่าปรับรายเดือน</a></li>
             </ul>

@@ -110,7 +110,7 @@ $user_id = $_SESSION['user_id']
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <h1 class="text-xl" style="font-family: 'Kanit', sans-serif;">แก้ไขข้อมูลรถยนต์</h1>
+            <h1 class="text-xl" style="font-family: 'Kanit', sans-serif;">แก้ไขข้อมูลรถ</h1>
             <div class="flex items-center space-x-6">
                 <div class="relative group cursor-pointer">
                     <!-- User Icon with External SVG -->
