@@ -100,7 +100,7 @@ $conn->close(); // ปิดการเชื่อมต่อฐานข้�
     <div class="bg-white shadow-lg rounded-lg p-2 sm:p-4 w-full max-w-sm mx-auto m-2 sm:m-4">
         <!-- Logo -->
         <div class="flex justify-center mb-4">
-            <img src="https://upload.wikimedia.org/wikipedia/th/e/e0/RMUTI_KORAT.png" 
+            <img src="https://i.postimg.cc/wTy8jZs0/download.jpg" 
                  alt="RMUTI Logo" 
                  class="h-16 w-auto rounded-full shadow-md">
         </div>
