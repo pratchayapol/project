@@ -60,7 +60,7 @@ services:
       - "4903:80"
     environment:
       PMA_HOST: mariadb  # ใช้ mariadb แทน db
-      MYSQL_ROOT_PASSWORD: admin1234
+      MYSQL_ROOT_PASSWORD: '@Project67'
       PMA_LANGUAGE: th
       TZ: Asia/Bangkok
     depends_on:
