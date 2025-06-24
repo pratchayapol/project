@@ -1,6 +1,6 @@
 <?php
 
-    $servername = "localhost";
+    $servername = "mariadb";
     $username = "root";
     $password = "@Project67";
     $dbname = "project";

@@ -1,0 +1,23 @@
+FROM php:8.2-fpm
+
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip unzip \
+    locales \
+    tzdata \
+    && docker-php-ext-install pdo pdo_mysql mysqli \
+    && echo "Asia/Bangkok" > /etc/timezone \
+    && ln -sf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime \
+    && dpkg-reconfigure -f noninteractive tzdata \
+    && echo "th_TH.UTF-8 UTF-8" > /etc/locale.gen \
+    && locale-gen th_TH.UTF-8 \
+    && update-locale LANG=th_TH.UTF-8
+
+ENV LANG=th_TH.UTF-8 \
+    LANGUAGE=th_TH:th \
+    LC_ALL=th_TH.UTF-8 \
+    TZ=Asia/Bangkok
+
+WORKDIR /var/www/html
