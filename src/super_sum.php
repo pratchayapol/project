@@ -151,6 +151,13 @@ $conn->close();
                     <th class="border px-2 py-1">วันที่ลงทะเบียน</th>
                 </tr>
             </thead>
+            <?php
+            // ฟังก์ชันช่วยป้องกัน null และ XSS
+            function safe($text) {
+                return htmlspecialchars($text ?? '', ENT_QUOTES, 'UTF-8');
+            }
+            ?>
+
             <tbody>
                 <?php
                 if ($result->num_rows > 0) {
@@ -162,7 +169,7 @@ $conn->close();
                             <td class='border px-2 py-1'>" . safe($row["phone"]) . "</td>
                             <td class='border px-2 py-1'>" . safe($row["password_lock"]) . "</td>
                             <td class='border px-2 py-1'>" . safe($row["created_at"]) . "</td>
-                              </tr>";
+                        </tr>";
                     }
                 } else {
                     echo "<tr><td colspan='6' class='border px-2 py-1 text-center'>ไม่มีข้อมูล</td></tr>";
